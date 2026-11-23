@@ -1,0 +1,140 @@
+vendor/fonts/ — self-hosted web fonts for the five demo sites
+(reference-a, reference-b, reference-c, reference-d, demo-portfolio)
+
+Downloaded 2026-09-21 with curl from the Google Fonts CSS2 API, using a current
+Chrome user agent so the API hands over woff2 rather than ttf. The exact axis and
+weight ranges each page already asked for were used, so these are the same files
+the browser used to fetch from fonts.gstatic.com at runtime — they now sit here and
+are referenced through relative paths (../vendor/fonts/...). Nothing is fetched
+from a third party any more.
+
+Only the "latin" and "latin-ext" unicode-range subsets are kept. The pages are in
+English; the cyrillic, greek, vietnamese and devanagari subsets Google also offers
+were deliberately left out. Each face is declared with its own unicode-range, so
+latin-ext is only downloaded if a page actually contains such a character — on
+first load of the current pages it is not.
+
+Archivo, Anybody and Instrument Sans are VARIABLE fonts carrying BOTH a weight
+(wght) and a width (wdth) axis. That matters: the pages set font-stretch (72%, 84%,
+86%, 96%, 108%, 118% ...), which a static instance would silently ignore. Verified
+after download by reading the fvar table (see the axis ranges noted per family) and
+again in the browser by measuring rendered text width across the width range.
+
+The weight and width RANGES in the @font-face rules on each page are copied verbatim
+from the stylesheet Google used to return. They are narrower than what the files can
+do (noted below). That is on purpose: it keeps the rendering identical to before.
+
+Licence check: every family was looked up individually in the google/fonts
+repository (raw.githubusercontent.com/google/fonts/main/<dir>/METADATA.pb). All seven
+sit in the "ofl/" tree and state license: "OFL". Each downloaded file also carries a
+licence URL of its own in its name table, quoted below. The OFL permits self-hosting
+and redistribution; it requires the copyright notice and licence to travel with the
+files, which is what this file is for. None of these families is reserved-name
+restricted in a way that affects use as-is; no font here was renamed or modified.
+
+Full licence text: https://openfontlicense.org/open-font-license-official-text/
+
+
+Archivo — used by reference-b, reference-c, reference-d, demo-portfolio
+  designer:    Omnibus-Type
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/archivo, license: "OFL")
+  copyright:   Copyright 2020 The Archivo Project Authors
+               (https://github.com/Omnibus-Type/Archivo)
+  licence URL in file:  http://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900
+               -> https://fonts.gstatic.com/s/archivo/v25/
+  retrieved:   2026-09-21
+  file axes:   wght 100–900, wdth 62–125   (variable, both axes present)
+  files:       archivo-var-latin.woff2        87.9 KB
+               archivo-var-latin-ext.woff2    83.8 KB
+  note:        one and the same file serves all four sites — Google returns the
+               identical woff2 for the 62..125/400..900, 62..125/400..800 and
+               90..110/400..700 requests; only the declared range differs.
+
+Anybody — used by reference-a
+  designer:    Tyler Finck
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/anybody, license: "OFL")
+  copyright:   Copyright 2020 The Anybody Project Authors
+               (https://github.com/Etcetera-Type-Co/Anybody)
+  licence URL in file:  https://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..110,400..700
+               -> https://fonts.gstatic.com/s/anybody/v13/
+  retrieved:   2026-09-21
+  file axes:   wdth 50–150, wght 100–900   (variable, both axes present)
+  files:       anybody-var-latin.woff2        55.5 KB
+               anybody-var-latin-ext.woff2    44.6 KB
+
+Instrument Sans — used by reference-a
+  designer:    Rodrigo Fuenzalida, Jordan Egstad
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/instrumentsans, license: "OFL")
+  copyright:   Copyright 2022 The Instrument Sans Project Authors
+               (https://github.com/Instrument/instrument-sans)
+  licence URL in file:  https://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@85..100,400..600
+               -> https://fonts.gstatic.com/s/instrumentsans/v4/
+  retrieved:   2026-09-21
+  file axes:   wdth 75–100, wght 400–700   (variable, both axes present)
+  files:       instrument-sans-var-latin.woff2        55.7 KB
+               instrument-sans-var-latin-ext.woff2    18.3 KB
+
+Big Shoulders Display — used by reference-b
+  designer:    Patric King
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/bigshouldersdisplay, license: "OFL")
+  copyright:   Copyright 2019 The Big Shoulders Project Authors
+               (https://github.com/xotypeco/big_shoulders)
+  licence URL in file:  https://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900
+               -> https://fonts.gstatic.com/s/bigshouldersdisplay/v24/
+  retrieved:   2026-09-21
+  file axes:   wght 100–900   (variable, weight only — no width axis)
+  files:       big-shoulders-display-var-latin.woff2        34.6 KB
+               big-shoulders-display-var-latin-ext.woff2    28.7 KB
+  note:        Google declares 600, 800 and 900 as three separate @font-face rules
+               pointing at this one variable file. That was kept verbatim, so the
+               browser still instances exactly those three weights and downloads once.
+
+Big Shoulders Stencil Display — used by reference-b
+  designer:    Patric King
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/bigshouldersstencildisplay, license: "OFL")
+  copyright:   Copyright 2019 The Big Shoulders Project Authors
+               (https://github.com/xotypeco/big_shoulders)
+  licence URL in file:  https://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800
+               -> https://fonts.gstatic.com/s/bigshouldersstencildisplay/v30/
+  retrieved:   2026-09-21
+  file axes:   none — this one is a STATIC instance at weight 800, which is all the
+               page asked for. No fvar table.
+  files:       big-shoulders-stencil-display-var-latin.woff2        14.3 KB
+               big-shoulders-stencil-display-var-latin-ext.woff2    13.1 KB
+  note:        the "-var-" in the filename is inherited from the naming scheme and is
+               inaccurate for this one file; the file itself is static.
+
+IBM Plex Sans — used by demo-portfolio
+  designer:    Mike Abbink, Bold Monday
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/ibmplexsans, license: "OFL")
+  copyright:   Copyright 2019 IBM Corp. All rights reserved.
+  licence URL in file:  http://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600
+               -> https://fonts.gstatic.com/s/ibmplexsans/v23/
+  retrieved:   2026-09-21
+  file axes:   wght 100–700   (variable, weight only — no width axis)
+  files:       ibm-plex-sans-var-latin.woff2        39.2 KB
+               ibm-plex-sans-var-latin-ext.woff2    25.2 KB
+  note:        as with Big Shoulders Display, 400/500/600 are three declarations over
+               one variable file. Kept verbatim; downloaded once.
+
+Kalam — used by reference-a (400) and reference-b (400, 700)
+  designer:    Indian Type Foundry
+  licence:     SIL Open Font License 1.1  (google/fonts: ofl/kalam, license: "OFL")
+  copyright:   Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)
+  licence URL in file:  http://scripts.sil.org/OFL
+  source:      https://fonts.googleapis.com/css2?family=Kalam:wght@400;700
+               -> https://fonts.gstatic.com/s/kalam/v18/
+  retrieved:   2026-09-21
+  file axes:   none — static faces, one file per weight.
+  files:       kalam-400-latin.woff2        13.7 KB
+               kalam-400-latin-ext.woff2     6.6 KB
+               kalam-700-latin.woff2        12.7 KB
+               kalam-700-latin-ext.woff2     6.0 KB
+  note:        Kalam is a Devanagari family; its devanagari subset was left out
+               because these pages are English-only.

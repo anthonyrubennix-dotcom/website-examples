@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark Transmission — Transmission shop in Riverton (example page, invented business)</title>
+<meta name="description" content="Transmission shop at 6 Gearline Ct, Riverton, IN 47000. Open Mon–Fri 8 am–5 pm. Call (317) 555-0143.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1c1f22">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-10 -10 20 20%22%3E%3Ccircle r=%2210%22 fill=%22%23b9bdbf%22/%3E%3Ccircle r=%225.6%22 fill=%22%23a8472b%22/%3E%3Ccircle r=%221.8%22 fill=%22%231c1f22%22/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/f1-800.webp" imagesrcset="assets/img/f1-800.webp 800w, assets/img/f1.webp 1600w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
+<style>
+/* Archivo, variable in weight AND width — the only typeface on the page. Self-hosted, OFL 1.1. */
+@font-face{font-family:"Archivo";src:url(assets/fonts/archivo-var-latin.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --block:#E7E5E0;     /* painted cinder block of the shop wall */
+  --paper:#F4F2EE;
+  --ink:#1B1E21;       /* shop-floor charcoal */
+  --muted:#4B5258;
+  --line:rgba(27,30,33,.18);
+  --red:#E2A62B;       /* accent from the shop photos, darkened until white text passes AA */
+  --red-lt:#E2A62B;
+  --red-ink:#1B1E21;  /* text on the accent: white, or ink for light accents (yellow) */
+  --red-text:#815F19; /* accent used as text on the light ground */    /* the same accent, lifted for use on charcoal */
+  --pad:clamp(16px,4.4vw,64px);
+  --max:1320px;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+body{background:var(--block) var(--grain);color:var(--ink);font:400 18px/1.55 "Archivo",system-ui,sans-serif;font-stretch:100%;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+.dark :focus-visible,.panel :focus-visible{outline-color:var(--red-lt)}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--ink);color:#fff;padding:10px 14px;border-radius:4px;text-decoration:none}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.missing{background:#FFE9A8;color:#3A2A00;outline:1px dashed #8A6A00;padding:1px 6px;border-radius:2px;font-weight:600;font-stretch:90%;font-size:.8em;letter-spacing:0;text-transform:none}
+
+/* ── type: one family; the width axis does the work a second font would ── */
+h1,h2,.big{font-weight:850;font-stretch:64%;text-transform:uppercase;line-height:.84;letter-spacing:-.01em}
+h1{font-size:clamp(60px,7.4vw,132px)}
+h2{font-size:clamp(46px,6.6vw,108px)}
+.lead{font-size:clamp(19px,1.55vw,22px);line-height:1.45}
+
+/* ── buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border:0;border-radius:999px;cursor:pointer;text-decoration:none;font:680 17px/1 "Archivo",sans-serif;font-stretch:90%;letter-spacing:.005em;transition:background .2s,color .2s,box-shadow .2s,transform .12s}
+.btn:active{transform:translateY(1px)}
+.btn.red{background:var(--red);color:var(--red-ink);box-shadow:0 10px 24px -12px rgba(136,100,26,.7)}
+.btn.red:hover{background:#C79226}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.dark .btn.line,.panel .btn.line,.dock .btn.line{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.75)}
+.dark .btn.line:hover,.panel .btn.line:hover,.dock .btn.line:hover{background:#fff;color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* live status pill */
+.status{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;line-height:1.2}
+.status i{width:10px;height:10px;border-radius:50%;background:#8B9197;flex:none}
+.status.open i{background:#2F9A5B;box-shadow:0 0 0 4px rgba(47,154,91,.2)}
+
+/* ── the brake rotor, built from gradients. The disc turns; the machined sheen stays put, like light on a real rotor. ── */
+.rotor{--s:320px;width:var(--s);height:var(--s);position:relative;border-radius:50%;flex:none;display:block}
+.rotor .disc,.rotor .sheen,.rotor .hat-sheen{position:absolute;inset:0;border-radius:50%;display:block}
+.rotor .disc{background:
+  radial-gradient(circle closest-side,#0e1012 0 17%,#caa467 17.5% 20%,#5a3a22 20.5% 21.5%,transparent 22%),
+  radial-gradient(circle closest-side at 40% 36%,rgba(255,196,160,.22),transparent 38%),
+  radial-gradient(circle closest-side,#96502f 0 50%,#7a3f23 51% 55%,#34292a 55.6% 57.2%,transparent 57.6%),
+  radial-gradient(circle closest-side,transparent 94.5%,#6b341d 95%,#a45a37 97%,#5a2c19 99.2%,transparent 100%),
+  repeating-radial-gradient(circle closest-side,rgba(35,39,43,.13) 0 .7px,transparent .7px 2.4px,rgba(255,255,255,.16) 2.4px 3px,transparent 3px 4.3px),
+  radial-gradient(circle closest-side,#a9aeb1 58%,#c6cacc 70%,#b9bdc0 84%,#a5aaad 93%,#8f5236 96%)}
+.rotor .score{position:absolute;inset:0;border-radius:50%;-webkit-mask:radial-gradient(circle closest-side,transparent var(--a),#000 calc(var(--a) + .5%) var(--b),transparent calc(var(--b) + .5%));mask:radial-gradient(circle closest-side,transparent var(--a),#000 calc(var(--a) + .5%) var(--b),transparent calc(var(--b) + .5%))}
+.rotor .s1{--a:66%;--b:69%;background:conic-gradient(from 20deg,transparent 0 30deg,rgba(55,59,63,.45) 30deg 110deg,transparent 110deg 220deg,rgba(55,59,63,.3) 220deg 250deg,transparent 250deg)}
+.rotor .s2{--a:80%;--b:82%;background:conic-gradient(from 140deg,transparent 0 60deg,rgba(55,59,63,.4) 60deg 150deg,transparent 150deg)}
+.rotor .s3{--a:88%;--b:92%;background:conic-gradient(from 260deg,rgba(120,62,36,.5) 0 22deg,transparent 22deg 180deg,rgba(120,62,36,.35) 180deg 196deg,transparent 196deg)}
+.rotor .lug{position:absolute;left:50%;top:50%;width:9%;height:9%;margin:-4.5% 0 0 -4.5%;border-radius:50%;
+  background:radial-gradient(circle at 38% 34%,#f4f1ea 0 16%,#c2bdb2 34%,#77726a 62%,#2a2d31 66% 100%);
+  transform:rotate(calc(var(--i) * 72deg)) translateY(-200%);box-shadow:0 1px 2px rgba(0,0,0,.5)}
+.rotor .lug.on{background:radial-gradient(circle at 38% 34%,#fff 0 16%,#E2A62B 38%,#C79226 64%,#2a2d31 68% 100%)}
+.rotor .fleck{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(70,30,14,.55),transparent 70%)}
+.rotor .sheen{pointer-events:none;background:conic-gradient(from -35deg,rgba(255,255,255,.62),rgba(255,255,255,0) 38deg,rgba(0,0,0,.2) 92deg,rgba(255,255,255,0) 145deg,rgba(255,255,255,.5) 180deg,rgba(255,255,255,0) 218deg,rgba(0,0,0,.2) 272deg,rgba(255,255,255,0) 322deg,rgba(255,255,255,.62));
+  -webkit-mask:radial-gradient(circle closest-side,transparent 57.5%,#000 58% 94.5%,transparent 95%);mask:radial-gradient(circle closest-side,transparent 57.5%,#000 58% 94.5%,transparent 95%)}
+.rotor .hat-sheen{pointer-events:none;background:radial-gradient(circle closest-side at 36% 30%,rgba(255,220,190,.28),transparent 45%),radial-gradient(circle closest-side,transparent 20%,rgba(0,0,0,.18) 48%,transparent 56%)}
+.rotor.shadow{filter:drop-shadow(0 26px 30px rgba(0,0,0,.34)) drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+
+/* ── header ── */
+header.top{position:sticky;top:0;z-index:40;background:rgba(231,229,224,.9);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:26px;height:72px;white-space:nowrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:840;font-stretch:66%;font-size:27px;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+.brand .rotor{--s:38px}
+nav.links{display:flex;gap:28px;margin-left:auto;font-weight:540;font-size:15.5px}
+nav.links a{text-decoration:none;padding:6px 0;background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat;transition:background-size .25s}
+nav.links a:hover,nav.links a[aria-current="true"]{background-size:100% 2px}
+header .btn{min-height:46px;padding:0 18px;font-size:15.5px}
+header .btn{flex:none}
+/* overflow-x:hidden auf body wird an den Viewport weitergereicht und laesst Seitwaerts-Scrollen per Skript/iOS zu; clip an main nicht */
+main,footer.site{overflow-x:clip}
+
+/* ── hero: type on the wall, the shop photo runs off the right edge ── */
+.hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);min-height:min(calc(100svh - 72px),880px);position:relative}
+.hero-text{padding:clamp(32px,3.6vw,64px) clamp(24px,4vw,64px) clamp(56px,6vw,96px) max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));display:flex;flex-direction:column;justify-content:center}
+.hero h1 .soft{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero .lead{max-width:34ch;margin-top:26px}
+.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:28px}
+.hero-meta .status{padding:9px 14px;border-radius:999px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.stars-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none}
+.stars-link span{color:var(--red-text);letter-spacing:2px}
+.stars-link:hover{text-decoration:underline}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-photo{position:relative;background:var(--ink);overflow:hidden}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 60%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,30,33,.18),transparent 22%),linear-gradient(0deg,rgba(27,30,33,.4),transparent 30%)}
+.hero-photo figcaption{position:absolute;right:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));bottom:22px;z-index:2;color:#fff;font-size:14px;font-weight:560;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero>.rotor{--s:clamp(220px,25vw,380px);position:absolute;left:calc(51% - var(--s) * .3);bottom:calc(var(--s) * -.32);z-index:5}
+
+/* ── tread: the band that rolls between chapters ── */
+.tread{height:26px;overflow:hidden;background:var(--ink)}
+.tread svg{display:block;width:calc(100% + 96px);height:26px;margin-left:-48px}
+
+/* ── questions ── */
+.sec{padding-block:clamp(72px,10vw,150px)}
+.qa{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(32px,6vw,110px);align-items:start}
+.qa-intro{position:sticky;top:110px}
+.qa-intro p{max-width:30ch;margin-top:26px;color:var(--muted)}
+.qa-intro .phone{display:inline-block;margin-top:22px;font-weight:820;font-stretch:68%;font-size:clamp(36px,3.8vw,54px);line-height:1;text-decoration:none;padding-bottom:6px;background:linear-gradient(var(--red),var(--red)) 0 100%/100% 4px no-repeat}
+.faq{display:grid}
+.faq>div{position:relative;padding:30px 0 32px}
+.faq>div::before{content:"";position:absolute;left:0;right:0;top:0;height:1.5px;background:var(--ink);transform:scaleX(var(--rule,1));transform-origin:left}
+.faq>div:first-child{padding-top:6px}
+.faq>div:first-child::before{display:none}
+.faq dt{font-weight:720;font-stretch:80%;font-size:clamp(26px,2.6vw,36px);line-height:1.08;letter-spacing:-.005em}
+.faq dd{margin-top:12px;max-width:52ch;color:#2E3337}
+.faq dd p+p{margin-top:10px}
+.faq .status{margin-top:14px;padding:8px 13px;border-radius:999px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.quote-call{display:inline-flex;align-items:center;gap:10px;margin-top:4px;font-weight:680;font-stretch:90%;text-decoration:none;color:var(--red-text);border-bottom:2px solid currentColor;padding-bottom:2px}
+.quote-call:hover{color:var(--ink)}
+.faq blockquote{margin-top:4px;font-size:21px;font-weight:560;font-stretch:88%;line-height:1.3}
+.faq cite{display:block;font-style:normal;color:var(--muted);font-size:15px;margin-top:8px;font-weight:500;font-stretch:100%}
+
+/* ── services ── */
+.svc{background:var(--paper) var(--grain);border-block:1px solid var(--line)}
+.svc-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(32px,5vw,88px);align-items:start}
+.svc-head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.svc-head p{max-width:30ch;color:var(--muted)}
+.svc-list{list-style:none;border-top:2px solid var(--ink)}
+.svc-list a{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr) auto;gap:6px 28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .3s,background .3s}
+.svc-list h3{font-weight:820;font-stretch:66%;text-transform:uppercase;font-size:clamp(34px,3.7vw,56px);line-height:.92}
+.svc-list p{color:var(--muted);font-size:17px}
+.svc-list .ask{font-weight:650;font-stretch:88%;font-size:15px;color:var(--red-text);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s}
+.svc-list a:hover,.svc-list a:focus-visible{padding-inline:16px;background:rgba(226,166,43,.12)}
+.svc-list a:hover .ask,.svc-list a:focus-visible .ask{opacity:1;transform:none}
+.svc-note{margin-top:18px;font-size:15px}
+.svc-side{position:sticky;top:110px}
+.svc-side .frame{border-radius:10px;overflow:hidden;background:var(--ink);aspect-ratio:4/5}
+.svc-side img{width:100%;height:118%;object-fit:cover;object-position:40% 50%}
+.svc-side figcaption{margin-top:12px;color:var(--muted);font-size:15px}
+
+/* ── reviews: the words are the content ── */
+.dark{background:var(--ink) var(--grain);color:#E8E6E1}
+.rv-top{display:flex;flex-wrap:wrap;gap:18px 36px;align-items:flex-end;margin-bottom:clamp(56px,7vw,100px)}
+.rv-top .big{font-size:clamp(130px,17vw,250px);line-height:.76;color:#fff}
+.rv-top p{max-width:30ch;font-size:clamp(19px,1.7vw,23px);color:#C9CDD0;line-height:1.4}
+.rv-top .stars{display:block;color:var(--red-lt);letter-spacing:5px;font-size:24px;margin-bottom:8px}
+.rv-h{color:#fff;margin-bottom:clamp(48px,6vw,90px)}
+.quotes{display:grid;gap:clamp(56px,7vw,110px)}
+.quote-ph{border:2px dashed #6B7176;border-radius:4px;padding:clamp(18px,2vw,28px);max-width:30ch;font-size:clamp(22px,2.4vw,30px);line-height:1.2}
+.quote.quote-ph p::before,.quote.quote-ph p::after{content:none}
+.quote-ph .ph-tag{font-size:14px;font-weight:700;font-stretch:100%;letter-spacing:.06em;text-transform:uppercase;color:#FFD66B;margin-bottom:10px}
+.quote-ph .ph-txt{color:#A9AFB4}
+.quote{max-width:22ch;font-weight:600;font-stretch:80%;font-size:clamp(30px,4.3vw,64px);line-height:1.04;letter-spacing:-.01em}
+.quote:nth-child(2){margin-left:auto;text-align:right}
+.quote:nth-child(3){margin-left:14%}
+.quote p::before{content:"\201C";color:var(--red-lt)}
+.quote p::after{content:"\201D";color:var(--red-lt)}
+.quote footer{margin-top:18px;font-size:16px;font-weight:500;font-stretch:100%;letter-spacing:0;color:#A9AFB4}
+.lobby{position:relative;height:clamp(280px,44vw,660px);overflow:hidden;margin-top:clamp(80px,10vw,150px)}
+.lobby img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover}
+.lobby figcaption{position:absolute;left:max(var(--pad),calc((100vw - var(--max)) / 2 + var(--pad)));bottom:20px;color:#fff;font-size:14px;font-weight:560;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+
+/* ── hours as a day gauge + location panel ── */
+.visit{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,5vw,88px);align-items:start}
+.week{position:relative;margin-top:34px}
+.scale,.week li{display:grid;grid-template-columns:172px minmax(0,1fr) 160px;gap:0 20px;align-items:center}
+.scale{font-size:13px;font-weight:600;color:var(--muted);height:24px;padding-inline:14px}
+.scale div{position:relative;height:100%}
+.scale div span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.scale div span:first-child{transform:none}
+.week ol{list-style:none;position:relative;border-top:2px solid var(--ink)}
+.week li{position:relative;z-index:1;padding:15px 14px;border-bottom:1px solid var(--line);font-size:18px;font-variant-numeric:tabular-nums;transition:color .15s}
+.week .day{font-weight:560}
+.week .time{text-align:right}
+.track{position:relative;height:12px;border-radius:6px;background:rgba(27,30,33,.09)}
+.track .win{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--ink);transform-origin:left}
+.track .now{position:absolute;top:-9px;bottom:-9px;width:4px;margin-left:-2px;border-radius:2px;background:#FFE9A8;box-shadow:0 0 0 2px var(--ink)}
+.week li.today,.week li.lit{color:var(--red-ink)}
+.week li.today .day{font-weight:720}
+.week li.today .day::after{content:" · today";font-weight:500}
+.week li.today .track,.week li.lit .track{background:color-mix(in srgb,var(--red-ink) 22%,transparent)}
+.week li.today .win,.week li.lit .win{background:var(--red-ink)}
+.week li.cursor{position:absolute;left:0;right:0;top:0;height:0;padding:0;border:0;background:var(--red);border-radius:4px;z-index:0}
+.week-state{margin-top:20px}
+.panel{background:var(--ink) var(--grain);color:#E8E6E1;border-radius:14px;padding:clamp(26px,3vw,40px);position:relative;overflow:hidden}
+.panel h2{font-size:clamp(40px,4.4vw,64px);color:#fff;position:relative}
+.panel .addr{margin-top:20px;font-size:clamp(24px,2.3vw,30px);font-weight:700;font-stretch:80%;line-height:1.2;color:#fff;position:relative}
+.panel .cta{margin-top:24px;position:relative}
+.panel>.rotor{--s:280px;position:absolute;right:-100px;top:-100px;opacity:.14}
+.map-open{margin-top:22px;background:none;border:0;color:#fff;font:600 16px "Archivo",sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:6px 0}
+.map-note{color:#A9AFB4;font-size:14px;margin-top:4px}
+.map{margin-top:20px;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:#2B2F33}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* ── estimate ── */
+.est{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,88px);align-items:start}
+.est-intro p{margin-top:24px;color:#C9CDD0;max-width:32ch}
+.est-intro a{color:#fff}
+form{display:grid;gap:18px;background:var(--paper);color:var(--ink);padding:clamp(22px,3.2vw,44px);border-radius:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:7px;font-weight:620;font-size:15.5px}
+label .opt{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:17px;font-weight:400;min-height:54px;padding:13px 15px;border:1.5px solid #7D8388;border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:128px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--red);outline-offset:1px;border-color:var(--ink)}
+input[aria-invalid="true"]{border-color:var(--red);border-width:2px}
+.err{color:#C79226;font-size:15px;font-weight:600}
+.err:empty{display:none}
+form .btn{width:100%}
+.sent{background:#E3F1E8;border-left:4px solid #2F7A4D;padding:14px 16px;border-radius:6px;font-size:16.5px}
+.sent[hidden]{display:none}
+.form-note{color:var(--muted);font-size:15px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ── footer ── */
+footer.site{background:#121416;color:#C9CDD0;padding-block:64px 128px}
+footer.site .wrap{display:grid;grid-template-columns:auto 1fr;gap:28px 56px;align-items:center}
+footer.site img{width:260px;border-radius:8px}
+footer.site p{font-size:16px;line-height:1.7}
+footer.site a{color:#fff}
+.demo-flag{grid-column:1/-1;border-top:1px solid #33383D;padding-top:20px;font-size:14px!important;color:#AAB0B5}
+
+/* ── mobile call dock ── */
+.dock{display:none}
+@media (max-width:1400px){header .status{display:none}}
+@media (max-width:1180px){nav.links{display:none}.brand{margin-right:auto}}
+@media (max-width:900px){
+  nav.links,header .btn{display:none}
+  .brand{margin-right:auto}
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-text{padding:36px var(--pad) 40px}
+  .hero-photo{aspect-ratio:4/3}
+  .hero>.rotor{--s:36vw;left:auto;right:var(--pad);bottom:calc(var(--s) * -.3)}
+  .qa,.svc-wrap,.visit,.est{grid-template-columns:minmax(0,1fr)}
+  .qa-intro,.svc-side{position:static}
+  .svc-side .frame{aspect-ratio:16/11}
+  .svc-list a{grid-template-columns:minmax(0,1fr)}
+  .svc-list .ask{opacity:1;transform:none}
+  .quote:nth-child(3){margin-left:0}
+  .scale,.week li{grid-template-columns:minmax(0,1fr) auto}
+  .scale{display:none}
+  .week li{row-gap:10px}
+  .week .track{grid-column:1/-1;grid-row:2}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  footer.site .wrap{grid-template-columns:minmax(0,1fr)}
+  .dock{display:grid;grid-template-columns:1.5fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));z-index:50;padding:8px;background:rgba(27,30,33,.96);border-radius:999px;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+  .dock .btn{min-height:54px;padding:0 10px;font-size:16.5px}
+}
+@media (max-width:420px){
+  h1{font-size:clamp(52px,16vw,74px)}
+  .hero h1 .soft{-webkit-text-stroke-width:1.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ── motif variants per trade. Same element, same motion — only the disc changes. ── */
+.rotor.m-reifen .score,.rotor.m-reifen .fleck,.rotor.m-reifen .hat-sheen,
+.rotor.m-zahnrad .score,.rotor.m-zahnrad .fleck,.rotor.m-zahnrad .hat-sheen,
+.rotor.m-lack .score,.rotor.m-lack .fleck,.rotor.m-lack .hat-sheen{display:none}
+/* tire: tread ring, sidewall, machined rim */
+.rotor.m-reifen .disc{background:
+  radial-gradient(circle closest-side,#0e1012 0 12%,#8e959b 12.5% 14%,transparent 14.5%),
+  radial-gradient(circle closest-side,transparent 0 56%,#16181a 56.5% 59%,transparent 59.5%),
+  repeating-conic-gradient(from 0deg,rgba(0,0,0,.28) 0 3deg,transparent 3deg 36deg),
+  radial-gradient(circle closest-side,#e1e4e6 0 22%,#9aa1a6 36%,#d5d8db 50%,#7f868b 56%,transparent 56.5%),
+  radial-gradient(circle closest-side,transparent 0 59%,#2a2d30 59.5% 64%,#232629 64.5% 84%,transparent 84.5%),
+  repeating-conic-gradient(#141618 0 5deg,#2c2f33 5deg 10deg)}
+.rotor.m-reifen .sheen{background:conic-gradient(from -35deg,rgba(255,255,255,.28),rgba(255,255,255,0) 40deg,rgba(0,0,0,.18) 95deg,rgba(255,255,255,0) 150deg,rgba(255,255,255,.22) 185deg,rgba(255,255,255,0) 230deg);
+  -webkit-mask:radial-gradient(circle closest-side,#000 58%,transparent 58.5%);mask:radial-gradient(circle closest-side,#000 58%,transparent 58.5%)}
+/* gear: teeth cut by a mask (a circle plus the tooth pattern) */
+.rotor.m-zahnrad .disc{background:
+  radial-gradient(circle closest-side,#0e1012 0 14%,#E2A62B 14.5% 17%,transparent 17.5%),
+  radial-gradient(circle closest-side,transparent 0 44%,rgba(0,0,0,.28) 44.5% 46.5%,transparent 47%),
+  repeating-conic-gradient(from 10deg,rgba(0,0,0,.14) 0 45deg,transparent 45deg 90deg),
+  linear-gradient(140deg,#e2e5e7,#9aa1a6 48%,#cfd3d6 70%,#8a9196);
+  -webkit-mask:radial-gradient(circle closest-side,#000 80%,transparent 80.5%),repeating-conic-gradient(#000 0 9deg,transparent 9deg 20deg);
+  mask:radial-gradient(circle closest-side,#000 80%,transparent 80.5%),repeating-conic-gradient(#000 0 9deg,transparent 9deg 20deg)}
+.rotor.m-zahnrad .sheen{-webkit-mask:radial-gradient(circle closest-side,#000 80%,transparent 80.5%);mask:radial-gradient(circle closest-side,#000 80%,transparent 80.5%)}
+/* paint: a swatch fan in the shop's own colour, from bright to deep */
+.rotor.m-lack .disc{background:
+  radial-gradient(circle closest-side,#0e1012 0 12%,#e8e6e1 12.5% 15%,transparent 15.5%),
+  radial-gradient(circle closest-side,transparent 0 96%,rgba(0,0,0,.25) 97%),
+  repeating-conic-gradient(rgba(0,0,0,.22) 0 .8deg,transparent .8deg 45deg),
+  conic-gradient(#f4f2ee 0 45deg,#d6d9dc 45deg 90deg,#E2A62B 90deg 135deg,#E2A62B 135deg 180deg,
+    #C79226 180deg 225deg,#9aa1a6 225deg 270deg,#c4c8cb 270deg 315deg,#E2A62B 315deg 360deg)}} 0 30deg,#E2A62B 30deg 60deg,#C79226 60deg 90deg,#1B1E21 90deg 120deg,#6f757a 120deg 150deg,#c9cdd0 150deg 180deg,
+    #f4f2ee 180deg 210deg,#E2A62B 210deg 240deg,#E2A62B 240deg 270deg,#C79226 270deg 300deg,#1B1E21 300deg 330deg,#9aa1a6 330deg 360deg)}
+.rotor.m-lack .sheen{background:radial-gradient(circle closest-side at 36% 30%,rgba(255,255,255,.45),transparent 50%)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+<pattern id="treadPat" width="48" height="26" patternUnits="userSpaceOnUse"><path d="M3 3 L19 3 L13 12 L-3 12 Z M27 3 L43 3 L37 12 L21 12 Z M51 3 L67 3 L61 12 L45 12 Z M-3 14 L13 14 L19 23 L3 23 Z M21 14 L37 14 L43 23 L27 23 Z M45 14 L61 14 L67 23 L51 23 Z" fill="#4A5056"/></pattern>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#main" aria-label="Benchmark Transmission, back to top"><span class="rotor m-zahnrad" id="markRotor" aria-hidden="true"><span class="disc"><i class="lug" style="--i:0"></i><i class="lug" style="--i:1"></i><i class="lug" style="--i:2"></i><i class="lug" style="--i:3"></i><i class="lug" style="--i:4"></i></span><span class="sheen"></span></span>Benchmark Transmission</a>
+  <nav class="links" aria-label="Main"><a href="#questions">Questions</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; map</a><a href="#estimate">Estimate</a></nav>
+  <span class="status" data-status><i></i><span>Mon–Fri 8 am–5 pm</span></span>
+  <a class="btn red" href="tel:+13175550143"><svg aria-hidden="true"><use href="#phone"/></svg>(317) 555-0143</a>
+</div></header>
+<main id="main">
+
+<style>#h1{font-size:min(7.4vw,132px,calc(38vw / 6.50))}@media (max-width:900px){#h1{font-size:min(16vw,calc(88vw / 6.50))!important}}</style>
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-text">
+    <h1 id="h1">Transmissions<br><span class="soft">in Riverton.</span></h1>
+    <p class="lead">Transmission shop at 6 Gearline Ct, Riverton. Open Mon–Fri 8 am–5 pm.</p>
+    <div class="hero-meta">
+      <p class="status" data-status><i></i><span>Mon–Fri 8 am–5 pm</span></p>
+    </div>
+    <div class="cta"><a class="btn red" href="tel:+13175550143"><svg aria-hidden="true"><use href="#phone"/></svg>Call (317) 555-0143</a><a class="btn line" href="#estimate">Request an estimate</a></div>
+  </div>
+  <figure class="hero-photo"><img fetchpriority="high" src="assets/img/f1-800.webp" srcset="assets/img/f1-800.webp 800w, assets/img/f1.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw" width="800" height="600" alt="Benchmark Transmission in Riverton"><figcaption>6 Gearline Ct</figcaption></figure>
+  <div class="rotor shadow m-zahnrad" id="heroRotor" aria-hidden="true"><div class="disc"><span class="score s1"></span><span class="score s2"></span><span class="score s3"></span><i class="fleck" style="left:38%;top:30%;width:7%;height:7%"></i><i class="fleck" style="left:56%;top:58%;width:9%;height:9%"></i><i class="fleck" style="left:33%;top:57%;width:5%;height:5%"></i><i class="lug" style="--i:0"></i><i class="lug" style="--i:1"></i><i class="lug" style="--i:2"></i><i class="lug" style="--i:3"></i><i class="lug" style="--i:4"></i></div><div class="hat-sheen"></div><div class="sheen"></div></div>
+</section>
+<div class="tread" aria-hidden="true"><svg><rect class="roll" x="0" y="0" width="100%" height="26" fill="url(#treadPat)"/></svg></div>
+
+<section class="sec" id="questions" data-chapter="0" aria-labelledby="q-h"><div class="wrap qa">
+  <div class="qa-intro">
+    <h2 id="q-h">Asked every day</h2>
+    <p>The questions that usually come in by phone, answered right here. For anything else — or a price for your car — call the shop.</p>
+    <a class="phone" href="tel:+13175550143">(317) 555-0143</a>
+  </div>
+  <dl class="faq"><div><dt>Are you open on Saturday?</dt><dd><p>No. We're open Mon–Fri 8 am–5 pm. Saturday and Sunday we're closed.</p><p class="status" data-status><i></i><span>Mon–Fri 8 am–5 pm</span></p></dd></div><div><dt>What does a transmission repair cost?</dt><dd><p><a class="quote-call" href="tel:+13175550143">Call us for a quote → (317) 555-0143</a></p></dd></div><div><dt>Can I just drop by?</dt><dd><p>Call first so we can tell you when there's room — (317) 555-0143. You'll find us at 6 Gearline Ct, Riverton.</p></dd></div></dl>
+</div></section>
+
+<section class="sec svc" id="services" data-chapter="1" aria-labelledby="s-h"><div class="wrap svc-wrap">
+  <div>
+    <div class="svc-head">
+      <h2 id="s-h">What we work on</h2>
+      <p>Not sure what it is? Call and describe the noise — or pick one and send a request.</p>
+    </div>
+    <ul class="svc-list"><li><a href="#estimate" data-svc="Transmission"><h3>Transmission</h3><p>Slipping, hard shifts, leaks.</p><span class="ask">Ask about it →</span></a></li><li><a href="#estimate" data-svc="Diagnostics"><h3>Diagnostics</h3><p>Check-engine light, strange noises, warning lights.</p><span class="ask">Ask about it →</span></a></li><li><a href="#estimate" data-svc="Clutch"><h3>Clutch</h3><p>Slipping, grabbing or hard-to-press clutches.</p><span class="ask">Ask about it →</span></a></li><li><a href="#estimate" data-svc="Fluid service"><h3>Fluid service</h3><p>Transmission fluid and filter changes.</p><span class="ask">Ask about it →</span></a></li></ul>
+    <p class="svc-note" style="color:var(--muted)">Draft list — we confirm the services with the shop before launch.</p>
+  </div>
+  <figure class="svc-side"><div class="frame"><img loading="lazy" src="assets/img/f6-800.webp" srcset="assets/img/f6-800.webp 800w, assets/img/f6.webp 1600w" sizes="(max-width: 900px) 100vw, 30vw" width="800" height="600" alt="Benchmark Transmission"></div><figcaption>Benchmark Transmission, 6 Gearline Ct.</figcaption></figure>
+</div></section>
+
+<section class="sec dark" id="reviews" data-chapter="2" aria-labelledby="r-h" style="padding-bottom:0">
+  <div class="wrap">
+    <h2 id="r-h" class="rv-h">What customers say</h2>
+    <div class="quotes"><!--zitate--><div class="quote quote-ph" role="note"><p class="ph-tag">Placeholder 1 of 3 · not a real review</p><p class="ph-txt">One of your customers’ reviews goes here, word for word. You pick it; you confirm it before launch.</p></div><div class="quote quote-ph" role="note"><p class="ph-tag">Placeholder 2 of 3 · not a real review</p><p class="ph-txt">One of your customers’ reviews goes here, word for word. You pick it; you confirm it before launch.</p></div><div class="quote quote-ph" role="note"><p class="ph-tag">Placeholder 3 of 3 · not a real review</p><p class="ph-txt">One of your customers’ reviews goes here, word for word. You pick it; you confirm it before launch.</p></div><!--/zitate--></div>
+  </div>
+  <figure class="lobby"><img loading="lazy" src="assets/img/f7-800.webp" srcset="assets/img/f7-800.webp 800w, assets/img/f7.webp 1600w" sizes="100vw" width="800" height="600" alt="Benchmark Transmission"><figcaption>Benchmark Transmission.</figcaption></figure>
+</section>
+
+<section class="sec" id="visit" data-chapter="3" aria-labelledby="v-h"><div class="wrap visit">
+  <div>
+    <h2 id="v-h">Hours</h2>
+    <div class="week">
+      <div class="scale" aria-hidden="true"><span></span><div><span style="left:0.000%">6 am</span><span style="left:46.154%">12 pm</span><span style="left:92.308%">6 pm</span></div><span></span></div>
+      <ol id="hours"><li class="cursor" aria-hidden="true"></li><li data-d="1"><span class="day">Monday</span><span class="track" aria-hidden="true"><i class="win" style="left:15.385%;width:69.231%"></i></span><span class="time">8:00 am – 5:00 pm</span></li><li data-d="2"><span class="day">Tuesday</span><span class="track" aria-hidden="true"><i class="win" style="left:15.385%;width:69.231%"></i></span><span class="time">8:00 am – 5:00 pm</span></li><li data-d="3"><span class="day">Wednesday</span><span class="track" aria-hidden="true"><i class="win" style="left:15.385%;width:69.231%"></i></span><span class="time">8:00 am – 5:00 pm</span></li><li data-d="4"><span class="day">Thursday</span><span class="track" aria-hidden="true"><i class="win" style="left:15.385%;width:69.231%"></i></span><span class="time">8:00 am – 5:00 pm</span></li><li data-d="5"><span class="day">Friday</span><span class="track" aria-hidden="true"><i class="win" style="left:15.385%;width:69.231%"></i></span><span class="time">8:00 am – 5:00 pm</span></li><li data-d="6"><span class="day">Saturday</span><span class="track" aria-hidden="true"></span><span class="time">Closed</span></li><li data-d="0"><span class="day">Sunday</span><span class="track" aria-hidden="true"></span><span class="time">Closed</span></li></ol>
+    </div>
+    <p class="status week-state" data-status><i></i><span>Mon–Fri 8 am–5 pm</span></p>
+  </div>
+  <div class="panel">
+    <div class="rotor m-zahnrad" aria-hidden="true"><div class="disc"><i class="lug" style="--i:0"></i><i class="lug" style="--i:1"></i><i class="lug" style="--i:2"></i><i class="lug" style="--i:3"></i><i class="lug" style="--i:4"></i></div><div class="sheen"></div></div>
+    <h2>Find the shop</h2>
+    <p class="addr">6 Gearline Ct<br>Riverton, IN 47000</p>
+    <div class="cta">
+      <a class="btn red" href="#visit"><svg aria-hidden="true"><use href="#pin"/></svg>Directions</a>
+      <a class="btn line" href="tel:+13175550143">(317) 555-0143</a>
+    </div>
+    <div id="mapSlot">
+      <button class="map-open" type="button" id="mapBtn">Show the map here</button>
+      <p class="map-note">Loaded from Google only after you click.</p>
+    </div>
+  </div>
+</div></section>
+<div class="tread" aria-hidden="true"><svg><rect class="roll" x="0" y="0" width="100%" height="26" fill="url(#treadPat)"/></svg></div>
+
+<section class="sec dark" id="estimate" data-chapter="4" aria-labelledby="e-h"><div class="wrap est">
+  <div class="est-intro">
+    <h2 id="e-h">Request an estimate</h2>
+    <p>Tell us what the car is doing and which day suits you. For anything urgent, call <a href="tel:+13175550143">(317) 555-0143</a>.</p>
+  </div>
+  <form id="estForm" novalidate>
+    <div class="row2">
+      <label>Your name<input name="name" autocomplete="given-name" required aria-describedby="err"></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-0123" required aria-describedby="err"></label>
+    </div>
+    <div class="row2">
+      <label>Vehicle &amp; year<input name="car" placeholder="e.g. 2016 Honda Civic"></label>
+      <label><span>Preferred day</span><select name="day" id="daySel"><option value="">No preference</option></select></label>
+    </div>
+    <label>What's going on?<textarea name="issue" id="issue" placeholder="Describe the noise, the warning light, or the work you need."></textarea></label>
+    <p class="err" id="err" aria-live="polite"></p>
+    <button class="btn red" type="submit">Send request</button>
+    <p class="sent" id="sent" role="status" tabindex="-1" hidden></p>
+    <p class="form-note">Sample page: this form shows how the request works, but nothing is sent.</p>
+    <label class="hp" aria-hidden="true">Leave empty<input name="website" tabindex="-1" autocomplete="off"></label>
+  </form>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap" style="grid-template-columns:minmax(0,1fr)">
+  <p><strong style="color:#fff">Benchmark Transmission</strong><br>6 Gearline Ct, Riverton, IN 47000<br><a href="tel:+13175550143">(317) 555-0143</a> · Mon–Fri 8 am–5 pm</p>
+  <p class="demo-flag">Example page by an independent web designer. Benchmark Transmission is an invented business: name, address, phone number and photos are placeholders, and no real shop is shown here.</p>
+</div></footer>
+<div class="dock" role="group" aria-label="Quick actions">
+  <a class="btn red" href="tel:+13175550143"><svg aria-hidden="true"><use href="#phone"/></svg>Call</a>
+  <a class="btn line" href="#visit">Directions</a>
+</div>
+<script>
+const LIVE=false, T0=Date.now();
+const TZ="America/Chicago", HOURS={"0": [], "1": [[8.0, 17.0]], "2": [[8.0, 17.0]], "3": [[8.0, 17.0]], "4": [[8.0, 17.0]], "5": [[8.0, 17.0]], "6": []};
+const DAYNAMES=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+function fmt(h){const H=Math.floor(h),M=Math.round((h-H)*60),ap=H<12||H===24?"am":"pm",h12=H%12||12;return h12+":"+String(M).padStart(2,"0")+" "+ap}
+function shopNow(){
+  if(!TZ) return null;
+  const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {d:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday),h:+p.hour+ +p.minute/60};
+}
+const NOW=shopNow(), TODAY=NOW?NOW.d:-1, HOUR=NOW?NOW.h:-1;
+(function(){
+  if(!NOW) return;
+  const today=HOURS[TODAY]||[], cur=today.find(([a,b])=>HOUR>=a&&HOUR<b);
+  let txt;
+  if(cur) txt="Open now · closes at "+fmt(cur[1]);
+  else{
+    const later=today.find(([a])=>a>HOUR);
+    if(later) txt="Closed now · opens today at "+fmt(later[0]);
+    else for(let i=1;i<=7;i++){const d=(TODAY+i)%7,sp=HOURS[d]||[];if(sp.length){txt="Closed now · opens "+(i===1?"tomorrow":DAYNAMES[d])+" at "+fmt(sp[0][0]);break}}
+  }
+  if(txt) document.querySelectorAll("[data-status]").forEach(el=>{el.classList.toggle("open",!!cur);el.querySelector("span").textContent=txt;});
+  const row=document.querySelector('#hours li[data-d="'+TODAY+'"]');
+  if(row){
+    row.classList.add("today");row.setAttribute("aria-current","date");
+    const S0=6,S1=19;
+    if(HOUR>=S0&&HOUR<=S1){const n=document.createElement("i");n.className="now";n.style.left=((HOUR-S0)/(S1-S0)*100)+"%";row.querySelector(".track").appendChild(n);}
+  }
+  const c=document.querySelector("#hours .cursor");
+  window.placeCursor=()=>{if(row&&c){c.style.top=row.offsetTop+"px";c.style.height=row.offsetHeight+"px";}};
+  placeCursor(); addEventListener("resize",placeCursor);
+})();
+window.placeCursor=window.placeCursor||(()=>{});
+(function(){
+  const sel=document.getElementById("daySel"), base=Date.now(), OPEN=[1, 2, 3, 4, 5];
+  const fmt=new Intl.DateTimeFormat("en-US",{timeZone:TZ||undefined,weekday:"short",month:"short",day:"numeric"});
+  const wd=new Intl.DateTimeFormat("en-US",{timeZone:TZ||undefined,weekday:"short"});
+  for(let i=1,added=0;added<6&&i<21;i++){
+    const t=new Date(base+i*864e5), w=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(wd.format(t));
+    if(OPEN.length&&!OPEN.includes(w)) continue;
+    const o=document.createElement("option"); o.textContent=fmt.format(t); sel.appendChild(o); added++;
+  }
+})();
+document.querySelectorAll("[data-svc]").forEach(a=>a.addEventListener("click",()=>{
+  const t=document.getElementById("issue"); if(!t.value.trim()) t.value=a.dataset.svc+": ";
+}));
+document.getElementById("mapBtn").addEventListener("click",()=>{
+  const slot=document.getElementById("mapSlot"), box=document.createElement("div"), f=document.createElement("iframe");
+  box.className="map"; f.title="Map: Benchmark Transmission"; f.referrerPolicy="no-referrer";
+  f.srcdoc="<p style=\"font:16px sans-serif;padding:24px\">On the real site, the map of the shop appears here.</p>";
+  box.appendChild(f); slot.replaceChildren(box); f.focus();
+  window.ScrollTrigger&&ScrollTrigger.refresh();
+});
+document.getElementById("estForm").addEventListener("submit",ev=>{
+  ev.preventDefault();
+  const f=ev.target, err=document.getElementById("err"), sent=document.getElementById("sent");
+  const bad=[f.name,f.phone].filter(i=>!i.value.trim()||(i===f.phone&&i.value.replace(/\D/g,"").length<10));
+  [f.name,f.phone].forEach(i=>i.setAttribute("aria-invalid",bad.includes(i)));
+  if(bad.length){err.textContent=bad.includes(f.name)?"Please add your name.":"Please add a phone number with area code.";bad[0].focus();return;}
+  err.textContent="";
+  const day=f.day.value?" for "+f.day.value:"", btn=f.querySelector("button[type=submit]");
+  const done=()=>{sent.textContent="Thanks, "+f.name.value.trim()+" — your request"+day+" is in. We'll call you back."+(LIVE?"":" (Sample page: nothing was actually sent.)");sent.hidden=false;sent.focus();btn.disabled=true;};
+  if(!LIVE){done();return;}
+  btn.disabled=true;
+  fetch("/api/estimate",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({
+    name:f.name.value,phone:f.phone.value,car:f.car.value,day:f.day.value,issue:f.issue.value,website:f.website.value,t:Date.now()-T0})})
+    .then(r=>{if(!r.ok)throw 0;done();})
+    .catch(()=>{btn.disabled=false;err.textContent="Sorry, that didn't go through. Please call us at (317) 555-0143.";});
+});
+</script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script>
+/* ── motion layer. Without it (or with reduced motion) the page is complete and static. ── */
+addEventListener("DOMContentLoaded",()=>{
+  if(!window.gsap||!window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm=gsap.matchMedia();
+  mm.add({motion:"(prefers-reduced-motion: no-preference)",desk:"(min-width: 901px)"},ctx=>{
+    if(!ctx.conditions.motion) return;
+    const desk=ctx.conditions.desk;
+
+    // 1 · the rotor turns with the page. Only the disc turns — the machined sheen holds still, as light on a real rotor does.
+    gsap.to(".rotor .disc",{rotation:1080,ease:"none",
+      scrollTrigger:{trigger:document.documentElement,start:"top top",end:"bottom bottom",scrub:.5}});
+    // it rolls in on arrival
+    if(document.querySelector("#heroRotor")) gsap.from("#heroRotor",{x:desk?-160:120,duration:1.2,ease:"power3.out",delay:.1});
+    if(document.querySelector("#heroRotor")) gsap.from("#heroRotor .disc",{rotation:desk?-240:240,duration:1.2,ease:"power3.out",delay:.1});
+
+    // 2 · the studs of the header rotor count the chapters
+    const lugs=[...document.querySelectorAll("#markRotor .lug")], links=[...document.querySelectorAll("nav.links a")];
+    document.querySelectorAll("[data-chapter]").forEach(sec=>{
+      const i=+sec.dataset.chapter;
+      ScrollTrigger.create({trigger:sec,start:"top 55%",end:"bottom 55%",onToggle:s=>{
+        if(s.isActive) lugs.forEach((c,j)=>c.classList.toggle("on",j<=i));
+        if(links[i]) s.isActive?links[i].setAttribute("aria-current","true"):links[i].removeAttribute("aria-current");
+      }});
+    });
+    ScrollTrigger.create({trigger:"#questions",start:"top 55%",onLeaveBack:()=>lugs.forEach(c=>c.classList.remove("on"))});
+
+    // 3 · tread bands roll sideways while they cross the screen, alternating direction
+    gsap.utils.toArray(".tread .roll").forEach((r,i)=>{
+      gsap.fromTo(r,{x:i%2?0:-96},{x:i%2?-96:0,ease:"none",
+        scrollTrigger:{trigger:r.closest(".tread"),start:"top bottom",end:"bottom top",scrub:true}});
+    });
+
+    // 4 · questions: the rule above each one is drawn, then the question settles in
+    gsap.utils.toArray(".faq>div").forEach(q=>{
+      gsap.timeline({scrollTrigger:{trigger:q,start:"top 88%",once:true}})
+        .fromTo(q,{"--rule":0},{"--rule":1,duration:.55,ease:"power2.inOut"})
+        .from(q.querySelector("dt"),{y:22,opacity:0,duration:.6,ease:"power3.out"},"-=.3")
+        .from(q.querySelector("dd"),{opacity:0,duration:.5},"-=.35");
+    });
+
+    // 5 · services come off the list one after another, like parts laid out on the bench
+    gsap.from(".svc-list li",{clipPath:"inset(0 100% 0 0)",x:-28,duration:.75,ease:"power3.out",stagger:.09,
+      scrollTrigger:{trigger:".svc-list",start:"top 80%",once:true}});
+    if(document.querySelector(".svc-side img")) gsap.fromTo(".svc-side img",{yPercent:-8},{yPercent:4,ease:"none",scrollTrigger:{trigger:".svc-side",start:"top bottom",end:"bottom top",scrub:true}});
+
+    // 6 · review words are read in: each quote brightens word by word as it passes
+    document.querySelectorAll(".quote p").forEach(p=>{
+      const txt=p.textContent;
+      p.innerHTML='<span class="sr">'+txt+'</span><span aria-hidden="true">'+txt.split(" ").map(w=>'<span class="w">'+w+'</span>').join(" ")+'</span>';
+      // starts at half strength, not near zero: dimmed words still pass AA for large text
+      gsap.fromTo(p.querySelectorAll(".w"),{opacity:.5},{opacity:1,stagger:.05,ease:"none",
+        scrollTrigger:{trigger:p,start:"top 85%",end:desk?"bottom 50%":"bottom 60%",scrub:true}});
+    });
+    if(document.querySelector(".lobby img")) gsap.fromTo(".lobby img",{yPercent:-8},{yPercent:8,ease:"none",scrollTrigger:{trigger:".lobby",start:"top bottom",end:"bottom top",scrub:true}});
+
+    // 7 · the hours: opening windows fill in from 8 am, a red bar ratchets down from Monday to today,
+    //     then the "now" needle drops in. The row under the bar is lit white, so text is never dark-on-red.
+    const cur=document.querySelector("#hours .cursor"), today=document.querySelector("#hours li.today");
+    const rows=[...document.querySelectorAll("#hours li[data-d]")];
+    const light=()=>{const y=parseFloat(cur.style.top)||0;rows.forEach(r=>r.classList.toggle("lit",Math.abs(r.offsetTop-y)<4));};
+    ScrollTrigger.create({trigger:"#hours",start:"top 75%",once:true,onEnter:()=>{
+      const tl=gsap.timeline();
+      tl.from("#hours .win",{scaleX:0,duration:.55,ease:"power2.out",stagger:.07});
+      if(today){
+        const steps=Math.max(rows.indexOf(today),1), needle=today.querySelector(".now");
+        today.classList.remove("today");
+        tl.fromTo(cur,{top:rows[0].offsetTop},{top:today.offsetTop,duration:.16*steps+.2,ease:"steps("+steps+")",onUpdate:light,
+          onComplete:()=>{rows.forEach(r=>r.classList.remove("lit"));today.classList.add("today");placeCursor();}},.2);
+        if(needle) tl.from(needle,{scaleY:0,opacity:0,duration:.35,ease:"back.out(3)"});
+      }
+    }});
+  });
+
+  // lazy images change the page height: re-measure every trigger once they (and the font) are in
+  let t; const refresh=()=>{clearTimeout(t);t=setTimeout(()=>{ScrollTrigger.refresh();window.placeCursor&&placeCursor();},120);};
+  document.querySelectorAll("img").forEach(i=>{if(!i.complete) i.addEventListener("load",refresh,{once:true});});
+  addEventListener("load",refresh);
+  document.fonts&&document.fonts.ready.then(refresh);
+});
+</script>
+</body>
+</html>

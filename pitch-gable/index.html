@@ -1,0 +1,2529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitch &amp; Gable Roofing — a demonstration page</title>
+<meta name="description" content="A scene-as-a-page demonstration for a roofing company. Pitch &amp; Gable Roofing, the town of Harrow Bend, the phone number and the quotes are all invented. One continuous 3D scene runs behind the page: up the ladder, over the eave, into the valley, and back down to the curb.">
+<!-- No noindex on purpose. Unlike our client drafts, this page is meant to be linked and found:
+     the business on it is invented, so there is nobody whose data could leak. -->
+<meta name="theme-color" content="#0C121A">
+<meta property="og:title" content="Pitch &amp; Gable Roofing — a demonstration page">
+<meta property="og:description" content="A website where one continuous 3D scene is the page. Demo: the roofing company on it does not exist.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230C121A%22/%3E%3Cpath d=%22M4 18 16 7l12 11v2h-3.4L16 12l-8.6 8H4z%22 fill=%22%23FF8A3C%22/%3E%3Crect x=%224%22 y=%2222%22 width=%2224%22 height=%222.6%22 rx=%221.3%22 fill=%22%23FF8A3C%22 opacity=%22.5%22/%3E%3C/svg%3E">
+<style>
+/* ---------------------------------------------------------------------
+   Type, served from this server. Nothing is fetched from a third party.
+   Same families, same files Google Fonts would have handed over (woff2,
+   latin + latin-ext only), now sitting in ../vendor/fonts next to three.js,
+   GSAP and Lenis. The weight and width ranges below are copied verbatim
+   from the stylesheet Google used to return, so the rendering does not move.
+   Archivo stays variable on the wght AND the wdth axis — that second axis is
+   what the font-stretch on this page (72%, 76%, 80%, 84%, 88%) rides on; a
+   static instance would drop it silently. IBM Plex Sans is one variable file
+   declared three times (400/500/600), as Google declared it: fetched once.
+   Downloaded 2026-09-21. Licences: ../vendor/fonts/LIZENZEN.txt
+--------------------------------------------------------------------- */
+/* latin-ext */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-stretch:62% 125%;font-display:swap;src:url(../vendor/fonts/archivo-var-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+/* latin */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-stretch:62% 125%;font-display:swap;src:url(../vendor/fonts/archivo-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* latin-ext */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+/* latin */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* latin-ext */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+/* latin */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* latin-ext */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+/* latin */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(../vendor/fonts/ibm-plex-sans-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "RoofingContractor", "name": "Pitch & Gable Roofing", "disambiguatingDescription": "Fictional business. This markup describes a demonstration website; the company, the address, the phone number and the opening hours are invented and no rating is claimed.", "telephone": "+1-555-555-0147", "email": "hello@example.invalid", "areaServed": "Harrow Bend (fictional)", "address": {"@type": "PostalAddress", "streetAddress": "218 Slate Row", "addressLocality": "Harrow Bend", "addressCountry": "US"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00"}]}</script>
+<script type="importmap">
+{"imports":{"three":"../vendor/three-0.170.0/build/three.module.js","three/addons/":"../vendor/three-0.170.0/examples/jsm/"}}
+</script>
+<style>
+/*
+  fog    #0C121A  blue hour at ground level; body, scene fog and clear colour are the same value
+  text   #E9E7E2  warm off-white
+  quiet  #91A0AE  cool secondary — the colour the sky lends to everything at this hour
+  glow   #FF8A3C  the ONE accent: the work lamp on the lawn, the head torch, the porch light
+*/
+:root{
+  --fog:#0C121A;--fog-rgb:12,18,26;--solid:#111821;--text:#E9E7E2;--quiet:#91A0AE;--line:rgba(233,231,226,.16);
+  --glow:#FF8A3C;--glow-ink:#1A0E05;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(20px,6vw,104px);--hdr:72px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--fog);-webkit-text-size-adjust:100%}
+body{background:var(--fog);color:var(--text);font:400 18px/1.62 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--glow);outline-offset:4px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--glow);color:var(--glow-ink);padding:10px 14px;border-radius:4px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
+/* the scene sits behind everything */
+#stage{position:fixed;inset:0;z-index:0;opacity:0;transition:opacity 1.4s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+#stage.on{opacity:1}
+#stage canvas{display:block;width:100%;height:100%}
+/* loading: a thin line under the header, never over the phone number */
+#load{position:fixed;left:0;right:0;top:var(--hdr);z-index:19;pointer-events:none;transition:opacity .55s cubic-bezier(.2,.7,.2,1)}
+#load.out{opacity:0}
+#load .rail{height:2px;background:rgba(233,231,226,.10)}
+#load .fill{height:2px;width:100%;transform:scaleX(.04);transform-origin:0 50%;background:var(--glow);box-shadow:inset 0 1px 0 rgba(255,255,255,.38);transition:transform .9s cubic-bezier(.25,.75,.25,1)}
+#load .note{margin:11px var(--pad) 0;text-align:right;font-family:var(--display);font-weight:600;font-stretch:88%;letter-spacing:.16em;font-size:12px;line-height:1;text-transform:uppercase;color:var(--quiet);opacity:.85}
+html.no-gl #load{display:none}
+@media (prefers-reduced-motion: reduce){#load,#load .fill{transition:none}}
+.grain{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Fallback without WebGL. There are no photos on this page by design, so the still
+   is drawn in CSS: a blue-hour sky, a roof line, and the courses of a shingle roof. */
+.nogl-bg{display:none}
+.no-gl .nogl-bg{display:block;position:fixed;inset:0;z-index:0;
+  background:
+    repeating-linear-gradient(180deg,rgba(0,0,0,.30) 0 1px,rgba(255,255,255,.012) 1px 9px,rgba(0,0,0,0) 9px 22px),
+    linear-gradient(105deg,rgba(255,138,60,.10),rgba(255,138,60,0) 42%),
+    linear-gradient(180deg,#0A1220 0%,#111C28 52%,#1A2129 66%,#0C121A 100%)}
+.no-gl .nogl-bg::after{content:"";position:absolute;left:-10%;right:-10%;top:52%;height:48%;
+  background:linear-gradient(180deg,rgba(6,9,13,.9),rgba(6,9,13,.96));
+  clip-path:polygon(0 34%,34% 4%,58% 22%,74% 10%,100% 30%,100% 100%,0 100%)}
+.if-gl{display:none}
+.no-gl .stop{min-height:auto;padding-block:15vh}
+.no-gl .hero{min-height:100svh}
+.has-gl .if-gl{display:inline}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:20;height:var(--hdr);display:flex;align-items:center;gap:26px;padding-inline:var(--pad);
+  background:linear-gradient(rgba(var(--fog-rgb),.88),rgba(var(--fog-rgb),.56) 60%,rgba(var(--fog-rgb),0))}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-stretch:80%;font-size:23px;letter-spacing:.005em;white-space:nowrap}
+.brand svg{width:26px;height:20px;flex:none;color:var(--glow)}
+.status{display:flex;align-items:center;gap:8px 18px;font-size:14.5px;color:var(--quiet);flex-wrap:wrap;margin-right:auto}
+.status a{text-decoration:none;color:var(--text)}
+.status a:hover{text-decoration:underline;text-underline-offset:3px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5F6B76;margin-right:8px;vertical-align:1px}
+.dot.on{background:#71CE93;box-shadow:0 0 0 3px rgba(113,206,147,.18)}
+.demo-tag{color:var(--quiet);opacity:.9}
+.hdr .write{font-size:15px;text-decoration:none;color:var(--quiet);white-space:nowrap}
+.hdr .write:hover{color:var(--text)}
+.call{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;text-decoration:none;background:var(--glow);color:var(--glow-ink);font-weight:600;font-size:16px;line-height:1;padding:14px 20px;border-radius:3px;transition:background-color .2s}
+.call:hover{background:#FFA463}
+.call svg{width:16px;height:16px;flex:none}
+.hdr .call{padding:12px 17px;font-size:15px}
+
+/* chapters */
+main{position:relative;z-index:2;overflow-x:clip}
+.stop{position:relative;min-height:128vh;display:flex;align-items:center;padding:0 var(--pad)}
+.stop.sub{min-height:104vh}
+.stop.tall{min-height:150vh}
+.copy{position:relative;isolation:isolate;max-width:32rem}
+.copy::before{content:"";position:absolute;z-index:-1;inset:-22% -38% -22% -60%;pointer-events:none;opacity:var(--so,1);
+  background:radial-gradient(closest-side,rgba(var(--fog-rgb),.84),rgba(var(--fog-rgb),.58) 50%,rgba(var(--fog-rgb),0))}
+.copy:focus-within>*{opacity:1!important;pointer-events:auto!important}
+h1,h2{font-family:var(--display);font-weight:700;letter-spacing:-.012em;text-wrap:balance}
+h1{font-size:clamp(44px,5.9vw,94px);line-height:.94;font-stretch:72%;max-width:13ch}
+h2{font-size:clamp(33px,4.2vw,62px);line-height:.98;font-stretch:76%}
+.sub h2{font-size:clamp(29px,3.2vw,48px)}
+.copy p{margin-top:18px;color:#D3D2CE;max-width:31rem;text-wrap:pretty}
+.copy p.from{color:var(--text)}
+.copy p.from span{color:var(--quiet)}
+.lede{font-size:clamp(18px,1.32vw,21px)}
+.meta{font-size:15px;color:var(--quiet)!important}
+.meta a{color:var(--text);text-underline-offset:3px;text-decoration-color:rgba(233,231,226,.35)}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:30px}
+.more{font-weight:500;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;text-decoration-color:var(--glow)}
+.more:hover{color:var(--glow)}
+.cue{margin-top:42px!important;font-size:14px;color:var(--quiet)!important}
+.hero{min-height:100vh;min-height:100svh}
+.hero .copy{padding-top:var(--hdr)}
+
+/* the build-up: a real bottom-to-top sequence, so it is set as one — with the thickness
+   that actually decides it, not as three numbered cards */
+.layers{list-style:none;margin-top:26px;max-width:29rem;border-top:1px solid var(--line)}
+.layers li{display:flex;gap:18px;align-items:baseline;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line)}
+.layers b{font-weight:500;font-size:17.5px;color:var(--text)}
+.layers b i{font-style:normal;color:var(--quiet)}
+.layers span{font-variant-numeric:tabular-nums;font-size:15px;color:var(--quiet);white-space:nowrap}
+
+.flag{margin-top:16px;padding-left:13px;border-left:2px solid var(--glow);font-size:14.5px;line-height:1.5;color:var(--quiet)!important;max-width:30rem}
+.quote-lead{font-family:var(--display);font-weight:500;font-stretch:84%;font-size:clamp(25px,2.5vw,38px);line-height:1.12;letter-spacing:-.01em;margin-top:26px;text-wrap:balance;color:var(--text)}
+.quotes{list-style:none;margin-top:20px;display:grid;gap:14px}
+.quotes li{font-size:18.5px;line-height:1.45;color:#D3D2CE}
+.copy p.src{font-size:14px;color:var(--quiet);margin-top:18px}
+
+.hours{margin-top:24px;display:grid;grid-template-columns:auto auto;gap:6px 30px;justify-content:start;font-size:17px}
+.hours dt{color:var(--quiet)}
+.hours dd{font-variant-numeric:tabular-nums}
+.hours .today{color:var(--text);font-weight:600}
+address{font-style:normal;margin-top:22px;line-height:1.55}
+address em{font-style:normal;color:var(--quiet);font-size:15px}
+
+/* the solid end */
+.end{position:relative;z-index:2;background:var(--solid);padding:clamp(72px,9vw,128px) var(--pad) 140px}
+.end::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:38vh;pointer-events:none;background:linear-gradient(rgba(17,24,33,0),var(--solid))}
+.end-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,110px);max-width:1240px}
+.end h2{font-size:clamp(33px,3.7vw,54px)}
+.end .intro{color:#D3D2CE;margin-top:18px;max-width:30rem}
+.end .intro+.intro{color:var(--quiet);font-size:16px}
+form{display:grid;gap:26px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+label{display:grid;gap:8px;font-size:14px;color:var(--quiet)}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(233,231,226,.3);border-radius:0;padding:10px 0 12px;font-size:18px;color:var(--text);transition:border-color .2s}
+select{appearance:none;-webkit-appearance:none;background:linear-gradient(45deg,transparent 50%,var(--quiet) 50%) calc(100% - 12px) 55%/6px 6px no-repeat,linear-gradient(-45deg,transparent 50%,var(--quiet) 50%) calc(100% - 6px) 55%/6px 6px no-repeat}
+select option{background:#1b222b;color:var(--text)}
+textarea{min-height:92px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:none;border-bottom-color:var(--glow)}
+input::placeholder,textarea::placeholder{color:#697787}
+.send{justify-self:start;border:0;cursor:pointer}
+.err{color:#F19A8C;font-size:15px;min-height:1.2em}
+.sent{display:none;color:var(--text);font-size:16px;border-left:2px solid var(--glow);padding-left:14px}
+.end .foot{margin-top:clamp(64px,8vw,110px);padding-top:26px;border-top:1px solid var(--line);display:grid;gap:14px 46px;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);align-items:start;max-width:1240px;font-size:14px;line-height:1.55;color:var(--quiet)}
+.foot b{color:var(--text);font-weight:600}
+
+.dock{display:none}
+@media (max-width:860px){
+  :root{--hdr:62px;--pad:20px}
+  body{font-size:17px}
+  .status,.hdr .write{display:none}
+  .hdr{justify-content:space-between;gap:12px}
+  .brand{font-size:20px}
+  .hdr .call{padding:11px 14px;font-size:14.5px}
+  .stop{align-items:flex-end;padding-bottom:max(15vh,118px);min-height:118vh}
+  .stop.sub{min-height:100vh}
+  .hero{min-height:100svh;padding-bottom:max(11vh,100px)}
+  .hero .copy{padding-top:0}
+  .copy::before{inset:-26% -30% -22% -30%;background:radial-gradient(closest-side,rgba(var(--fog-rgb),.92),rgba(var(--fog-rgb),.76) 55%,rgba(var(--fog-rgb),0))}
+  h1{font-size:clamp(38px,10.6vw,58px)}
+  .lede{font-size:17px}
+  h2{font-size:clamp(31px,8.6vw,44px)}
+  .sub h2{font-size:clamp(27px,7.6vw,38px)}
+  .cue{margin-top:26px!important}
+  .acts .call{display:none}
+  .layers li{padding:9px 0}
+  .layers b{font-size:16.5px}
+  .end-grid,.end .foot{grid-template-columns:minmax(0,1fr)}
+  .row2{grid-template-columns:1fr}
+  .end{padding-bottom:130px}
+  .dock{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));z-index:30;padding:7px;border-radius:6px;background:rgba(19,26,35,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .dock a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:3px;text-decoration:none;font-weight:600;font-size:15.5px}
+  .dock .call{padding:14px 10px;font-size:15.5px}
+  .dock .ghost{color:var(--text);box-shadow:inset 0 0 0 1px rgba(233,231,226,.35)}
+}
+/* 320 px. Measured, not guessed: at a 320 px viewport the header's phone button ran from
+   x 177 to x 337, so the last three digits of the number were off the screen. The page
+   still reported zero horizontal overflow — nothing scrolls, the button is simply CUT —
+   which is why the overflow check never caught it. Below 360 px the header button goes
+   away: the fixed dock at the bottom carries the same tel:+15555550147link, in full, at all times on
+   this breakpoint, so no way to call is lost and nothing is left half-readable. */
+@media (max-width:359px){
+  .hdr .call{display:none}
+  .brand{font-size:19px}
+}
+@media (min-width:861px) and (max-height:820px){
+  h1{font-size:clamp(40px,min(5.9vw,8.4vh),94px)}
+  h2{font-size:clamp(30px,min(4.2vw,6.2vh),62px)}
+  .sub h2{font-size:clamp(27px,min(3.2vw,5.2vh),48px)}
+  .copy p{margin-top:12px}
+  .lede{font-size:17px}
+  .acts{margin-top:20px}
+  .cue{margin-top:22px!important}
+  .layers{margin-top:16px}.layers li{padding:8px 0}.layers b{font-size:16.5px}
+  .quote-lead{font-size:clamp(21px,3.3vh,32px);margin-top:16px}
+  .quotes{margin-top:14px;gap:8px}.quotes li{font-size:16.5px}
+  .hours{margin-top:14px}address{margin-top:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  #stage{transition:opacity .25s linear!important}
+}
+</style>
+<script>
+/* Loading state. Lives in the HTML so it is on screen before any script runs.
+   It never covers the header, the phone number or the call button (pointer-events:none),
+   it is driven by real checkpoints in build(), and it always goes away:
+   on the first rendered frame, on a scene error, with no WebGL, or on the watchdog. */
+(function(){
+  var gl=false,el,fin=0,cur=0;
+  try{var c=document.createElement("canvas");gl=!!(window.WebGLRenderingContext&&(c.getContext("webgl2")||c.getContext("webgl")));}catch(e){gl=false;}
+  if(!gl)document.documentElement.classList.add("no-gl");
+  function bar(){if(el===undefined)el=document.getElementById("load");return el;}
+  function fill(){var n=bar();return n&&n.querySelector(".fill");}
+  var L={
+    gl:gl,
+    set:function(v,ms){
+      if(fin||!gl||v<=cur)return;cur=v;
+      var f=fill();if(!f)return;
+      f.style.transitionDuration=(ms||900)+"ms";
+      f.style.transform="scaleX("+v.toFixed(3)+")";
+    },
+    done:function(){
+      if(fin)return;fin=1;
+      var n=bar();if(!n)return;
+      var f=fill();if(f){f.style.transitionDuration="240ms";f.style.transform="scaleX(1)";}
+      n.classList.add("out");
+      setTimeout(function(){if(n.parentNode)n.parentNode.removeChild(n);el=null;},700);
+    }
+  };
+  window.LOAD=L;
+  addEventListener("DOMContentLoaded",function(){gl?L.set(.12,700):L.done();});
+  addEventListener("error",function(ev){if(ev instanceof ErrorEvent)L.done();},true);
+  setTimeout(function(){L.done();},60000);
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="stage" aria-hidden="true"></div>
+<div id="load" aria-hidden="true"><div class="rail"><div class="fill"></div></div><p class="note">Setting the ladder</p></div>
+<div class="nogl-bg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr">
+  <a class="brand" href="#main" aria-label="Pitch and Gable Roofing, back to top"><svg viewBox="0 0 32 24" fill="none" aria-hidden="true"><path d="M2 16 16 3l14 13v2h-4L16 9 6 18H2z" fill="currentColor"/><rect x="2" y="20" width="28" height="2.6" rx="1.3" fill="currentColor" opacity=".45"/></svg>Pitch &amp; Gable</a>
+  <p class="status"><span><span class="dot" data-dot></span><span data-open>Mon–Fri 7 am – 6 pm</span></span><span class="demo-tag">Demo page · invented company</span></p>
+  <a class="write" href="#estimate">Describe the roof</a>
+  <a class="call" href="tel:+15555550147"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>(555) 555-0147</a>
+</header>
+
+<main id="main">
+
+<section class="stop hero" data-stop="0" aria-labelledby="h1">
+  <div class="copy">
+    <h1 id="h1">The leak is almost never where the stain is.</h1>
+    <p class="lede">Pitch &amp; Gable works on shingle roofs in and around Harrow Bend. Repairs, valleys, flashing, gutters, and full tear-offs. We put the ladder up and look before anyone talks about money.</p>
+    <p class="meta"><span class="dot" data-dot></span><span data-open>Mon–Fri 7 am – 6 pm</span> · Harrow Bend</p>
+    <div class="acts">
+      <a class="call" href="tel:+15555550147"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (555) 555-0147</a>
+      <a class="more" href="#estimate">Or write down what it's doing</a>
+    </div>
+    <p class="cue if-gl">Keep scrolling. We'll go up with you.</p>
+  </div>
+</section>
+
+<section class="stop sub" data-stop="1" aria-labelledby="lad-h">
+  <div class="copy">
+    <h2 id="lad-h">Somebody has to go up there.</h2>
+    <p>One foot out for every four up, rails on the gutter lip and a standoff arched over onto the deck so the gutter carries no weight, three points of contact all the way. It's the least interesting part of the job and the one that ends careers.</p>
+    <!-- PHOTO SLOT (client build): one vertical photo of the crew's own ladder set-up, ~250px wide,
+         <figure class="snap"> with fixed width/height so the ScrollTrigger anchors don't jump on load. -->
+  </div>
+</section>
+
+<section class="stop sub" data-stop="2" aria-labelledby="val-h">
+  <div class="copy">
+    <h2 id="val-h">First look is always the valley.</h2>
+    <p>Water from two roof planes meets in the valley and leaves everything it carried. Moss on the shaded side because it stays wet. Bare, shiny patches on the weather side where the granules have been washed off. The sunny face two shades lighter than the rest.</p>
+    <p>None of that is visible from the driveway, and all of it tells you how many winters this roof has left.</p>
+  </div>
+</section>
+
+<section class="stop sub" data-stop="3" aria-labelledby="dmg-h">
+  <div class="copy">
+    <h2 id="dmg-h">Three tabs lifted, four nails showing.</h2>
+    <p>A wind event pulls the tabs, the seal strip lets go, and the nails that held the course below are suddenly out in the rain. They rust, the rust runs, and the streak points straight at the hole.</p>
+    <!-- PHOTO SLOT (client build): the BEFORE shot — the crew's own phone photo of the lifted
+         tabs on a real job. <figure class="snap"> max 250px, fixed width/height, alt text, and
+         an entry in img/SOURCES.txt. Keep it small: the scene carries the page, not the photos. -->
+    <p class="from"><span>What that looks like inside:</span> a stain on the ceiling eight feet from here, because the water ran down the deck before it found a seam.</p>
+  </div>
+</section>
+
+<section class="stop sub" data-stop="4" aria-labelledby="bld-h">
+  <div class="copy">
+    <h2 id="bld-h">A roof is five layers. You can see one of them.</h2>
+    <p>Pulled apart, from the rafters up. The order is not decoration — each layer only works because of the one under it.</p>
+    <ol class="layers">
+      <li><b>Shingles <i>— the only layer you ever see</i></b><span>3-tab, 5″ to weather</span></li>
+      <li><b>Starter course and drip edge <i>— the edge</i></b><span>at eave and rake</span></li>
+      <li><b>Underlayment <i>— the second chance</i></b><span>synthetic, lapped 4″</span></li>
+      <li><b>Deck <i>— what everything is nailed to</i></b><span>7⁄16″ OSB</span></li>
+      <li><b>Rafters <i>— what carries the snow</i></b><span>2×8, 16″ on centre</span></li>
+    </ol>
+    <p class="meta">Layer thicknesses in the scene are exaggerated so the stack reads at this distance.</p>
+  </div>
+</section>
+
+<section class="stop sub" data-stop="5" aria-labelledby="fix-h">
+  <div class="copy">
+    <h2 id="fix-h">New courses, tucked under the old.</h2>
+    <p>Cut back to sound shingles, new underlayment, then work up: every course nailed above the seal strip and under the one above it, so the fastener is never in the weather. Done right, the repair disappears within a season.</p>
+    <!-- PHOTO SLOT (client build): the AFTER shot, same roof, same angle as the BEFORE above.
+         The pair is the single most persuasive thing a roofer owns — and it is the only place
+         on this page where two photos side by side are worth the space. -->
+    <div class="acts"><a class="more" href="tel:+15555550147">Call (555) 555-0147</a></div>
+  </div>
+</section>
+
+<section class="stop sub" data-stop="6" aria-labelledby="rain-h">
+  <div class="copy">
+    <h2 id="rain-h">Then it rains and nothing happens.</h2>
+    <p>That's the whole product. Water off the field, over the drip edge, into the gutter, down the spout and away from the wall. If you can hear it and not find it, the roof is doing its job.</p>
+  </div>
+</section>
+
+<section class="stop tall" data-stop="7" id="words" aria-labelledby="wd-h">
+  <div class="copy">
+    <h2 id="wd-h">What customers would say, if they existed.</h2>
+    <p class="flag">Sample content on a demonstration page. Pitch &amp; Gable Roofing is invented. The lines below were written for this demo — they are not reviews, nothing has been rated, and no star count is claimed anywhere on this page.</p>
+    <p class="quote-lead">“He went up before he quoted, came down with photos, and the price was for the repair — not for a new roof.”</p>
+    <ul class="quotes">
+      <li>“Two tabs and a length of valley flashing. In and out in a morning.”</li>
+      <li>“Rained hard the week after. Nothing.”</li>
+    </ul>
+    <p class="src">Example wording — no real customer said any of this.</p>
+  </div>
+</section>
+
+<section class="stop" data-stop="8" id="visit" aria-labelledby="visit-h">
+  <div class="copy">
+    <h2 id="visit-h">Call early. We start at seven.</h2>
+    <p class="meta"><span class="dot" data-dot></span><span data-open>Mon–Fri 7 am – 6 pm</span></p>
+    <dl class="hours" id="hours">
+      <dt data-d="1,2,3,4,5">Monday to Friday</dt><dd data-d="1,2,3,4,5">7 am – 6 pm</dd>
+      <dt data-d="6">Saturday</dt><dd data-d="6">8 am – 1 pm</dd>
+      <dt data-d="0">Sunday</dt><dd data-d="0">Closed</dd>
+    </dl>
+    <!-- PHOTO SLOT (client build): the truck with the lettering on it, or the owner on the
+         ladder. One photo, not a gallery. Google-Places photos carry an attribution duty —
+         photo AND photographer have to be visible on the page. -->
+    <address>Pitch &amp; Gable Roofing<br>218 Slate Row, Harrow Bend<br><em>Harrow Bend is a town we made up for this page, and so is the address. The phone number is in the 555-01xx range that exists only in fiction.</em></address>
+    <div class="acts">
+      <a class="call" href="tel:+15555550147"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (555) 555-0147</a>
+      <a class="more" href="#estimate">Describe the roof</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="end" id="estimate" aria-labelledby="est-h">
+  <div class="end-grid">
+    <div>
+      <h2 id="est-h">Describe the roof.</h2>
+      <p class="intro">Where the stain is, how old the roof is, and whether anything came off in the last storm. That's usually enough to know whether it's a morning or a week.</p>
+      <p class="intro">This form is part of the demonstration: it validates, it says thank you, and it sends nothing anywhere.</p>
+    </div>
+    <form id="estForm" novalidate>
+      <div class="row2">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      </div>
+      <label>What's the roof doing?
+        <select name="svc" id="svc">
+          <option>A leak or a ceiling stain</option>
+          <option>Storm damage</option>
+          <option>Valley or flashing</option>
+          <option>Gutters and downspouts</option>
+          <option>Tear-off and new roof</option>
+          <option>Just want it looked at</option>
+        </select>
+      </label>
+      <label>Details<textarea name="details" placeholder="Where the stain is, roughly how old the roof is, what you saw."></textarea></label>
+      <p class="err" id="err" aria-live="polite"></p>
+      <button class="call send" type="submit">Send the details</button>
+      <p class="sent" id="sent" role="status">Thanks — on a real site this would land in the office inbox. On this demo page nothing was sent and nobody will call.</p>
+    </form>
+  </div>
+  <div class="foot">
+    <span><b>Pitch &amp; Gable Roofing</b><br>218 Slate Row, Harrow Bend · <a href="tel:+15555550147">(555) 555-0147</a></span>
+    <p><b>This page is a demonstration, not a draft for a client.</b> Pitch &amp; Gable Roofing does not exist: the name, the town of Harrow Bend, the address, the 555-01xx phone number, the opening hours and the quoted lines are all invented for this page. No rating, review count or customer is real. Same build available for a real business, with that business's own facts, photos and trade.</p>
+  </div>
+<p class="gig-demo-hinweis" style="margin:0;padding:10px 16px;font:12px/1.4 system-ui,sans-serif;text-align:center;background:#111;color:#bbb;position:relative;z-index:9999">Concept demo · invented company · 555 number</p></footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a class="call" href="tel:+15555550147">Call (555) 555-0147</a>
+  <a class="ghost" href="#estimate">Describe the roof</a>
+</nav>
+
+<script src="../vendor/gsap-3.13.0/gsap.min.js" defer></script>
+<script src="../vendor/gsap-3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="../vendor/lenis-1.3.4/lenis.min.js" defer></script>
+<script>
+/* Open / closed. A real page computes this in the BUSINESS's time zone, not the visitor's.
+   Harrow Bend is invented, so the demo runs on America/New_York and says so nowhere it
+   would mislead — the hours table is the source of truth. */
+(function(){
+  const p=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+  const g=t=>(p.find(x=>x.type===t)||{}).value;
+  const d=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday"));
+  const h=(+g("hour")%24)+(+g("minute"))/60;
+  const wk=d>=1&&d<=5, sat=d===6;
+  const open=(wk&&h>=7&&h<18)||(sat&&h>=8&&h<13);
+  let txt;
+  if(open) txt=sat?"Open now, until 1 pm":"Open now, until 6 pm";
+  else if(wk&&h<7) txt="Closed, opens today at 7 am";
+  else if(sat&&h<8) txt="Closed, opens today at 8 am";
+  else if(d===6) txt="Closed, opens Monday at 7 am";
+  else if(d===0) txt="Closed, opens tomorrow at 7 am";
+  else if(d===5) txt="Closed, opens tomorrow at 8 am";
+  else txt="Closed, opens tomorrow at 7 am";
+  document.querySelectorAll("[data-open]").forEach(el=>el.textContent=txt);
+  if(open) document.querySelectorAll("[data-dot]").forEach(el=>el.classList.add("on"));
+  document.querySelectorAll("#hours [data-d]").forEach(el=>{if(el.dataset.d.split(",").includes(String(d)))el.classList.add("today");});
+})();
+/* the form is client-side only, on purpose: this page has no backend and no recipient */
+(function(){
+  const f=document.getElementById("estForm"),err=document.getElementById("err");
+  f.addEventListener("submit",e=>{
+    e.preventDefault();
+    if(!f.name.value.trim()){err.textContent="Add your name so we know who to ask for.";f.name.focus();return;}
+    if(f.phone.value.replace(/\D/g,"").length<10){err.textContent="Add a 10-digit phone number so we can call you back.";f.phone.focus();return;}
+    err.textContent="";document.getElementById("sent").style.display="block";f.querySelector("button").disabled=true;
+  });
+})();
+</script>
+
+<script type="module">
+/* =====================================================================
+   One continuous scene behind the page: a house at blue hour, seen from
+   the lawn → up the ladder → over the eave → the valley → the damage →
+   the build-up pulled apart → the repair → rain into the gutter → the curb.
+   Scroll drives a proxy t (0 … 8) that HOLDS at every chapter and moves
+   between them; camera and look target ride two CatmullRom curves.
+   Scale: 1 unit = 1 foot = 0.3048 m.  Everything textured procedurally.
+===================================================================== */
+const root=document.documentElement, stage=document.getElementById("stage");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const narrowQ=matchMedia("(max-width: 860px)");
+const G=window.gsap, ST=window.ScrollTrigger;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const sm=t=>t*t*(3-2*t);
+const smr=t=>t*t*t*(t*(t*6-15)+10);
+const hdrEl=document.querySelector(".hdr");
+
+/* ---------- smooth scroll, coupled to ScrollTrigger ---------- */
+let lenis=null;
+if(G&&ST) G.registerPlugin(ST);
+if(!reduce&&window.Lenis&&G&&ST){
+  lenis=new window.Lenis({lerp:0.1,smoothWheel:true,anchors:{offset:-70}});
+  lenis.on("scroll",ST.update);
+  G.ticker.add(t=>lenis.raf(t*1000));
+  G.ticker.lagSmoothing(0);
+}
+
+/* ---------- chapter stops → scroll anchors ---------- */
+const stopEls=[...document.querySelectorAll("[data-stop]")].sort((a,b)=>a.dataset.stop-b.dataset.stop);
+const NS=stopEls.length;
+const copies=stopEls.map(el=>el.querySelector(".copy")||el);
+let anchors=stopEls.map((_,i)=>i*1000), rest=copies.map(()=>null);
+function measure(){
+  const vh=innerHeight, line=vh*(narrowQ.matches?0.7:0.5), sy=scrollY;
+  const rects=copies.map(c=>c.getBoundingClientRect());
+  /* tall copy on short desktop screens holds with its heading clear of the header fade, not centred.
+     On a phone the same problem shows up the other way round: a chapter taller than the
+     window (the layer list, the quotes) gets centred on the 0.7 line and its last lines end
+     up under the call dock. Those chapters hold from the top instead. */
+  const dock=narrowQ.matches?92:0, hdrH=hdrEl.offsetHeight;
+  const hold=r=>{
+    if(!narrowQ.matches)return Math.max(line-r.height/2,hdrH+112);
+    const top=hdrH+16, bot=vh-dock-10-r.height;
+    return Math.min(Math.max(line-r.height/2,top),Math.max(top,bot));
+  };
+  anchors=rects.map(r=>r.top+sy-hold(r));
+  anchors[0]=Math.min(anchors[0],0);
+  for(let i=1;i<NS;i++)anchors[i]=Math.max(anchors[i],anchors[i-1]+1);
+  rest=rects.map((r,i)=>r.top+sy-Math.max(0,anchors[i]));
+  fadeText();
+}
+const HOLD=0.24;
+function tFromScroll(y){
+  if(y<=anchors[0])return 0;
+  if(y>=anchors[NS-1])return NS-1;
+  let k=0;while(k<NS-2&&y>=anchors[k+1])k++;
+  const f=(y-anchors[k])/(anchors[k+1]-anchors[k]);
+  const hd=narrowQ.matches?0.17:HOLD, h0=k===0?0.03:hd;
+  return k+smr(clamp((f-h0)/(1-h0-hd)));
+}
+
+/* ---------- chapter text never slides under the header, and on phones it is
+   gone before it rises into the part of the frame the camera composes ---------- */
+const parts=copies.map(c=>[...c.children]);
+let fadeQueued=0;
+function fadeText(){
+  fadeQueued=0;
+  const hdr=hdrEl.offsetHeight, vh=innerHeight, narrow=narrowQ.matches;
+  const band=narrow?64:90;
+  const tops=parts.map(ps=>ps.map(p=>p.getBoundingClientRect().top));
+  copies.forEach((c,i)=>{
+    let line=hdr+12;
+    if(narrow&&rest[i]!=null)line=Math.max(hdr+12,Math.min(vh*0.46,rest[i]-band-10));
+    else if(i===0&&rest[0]!=null)line=Math.max(hdr-band,Math.min(line,rest[0]-band-10));
+    let best=0;
+    parts[i].forEach((p,j)=>{
+      const o=clamp((tops[i][j]-line)/band);best=Math.max(best,o);
+      const v=o>=1?"":o.toFixed(3);if(p.style.opacity!==v)p.style.opacity=v;
+      const pe=o<0.25?"none":"";if(p.style.pointerEvents!==pe)p.style.pointerEvents=pe;
+    });
+    c.style.setProperty("--so",best.toFixed(3));
+  });
+}
+function queueFade(){if(!fadeQueued)fadeQueued=requestAnimationFrame(fadeText);}
+addEventListener("scroll",queueFade,{passive:true});
+addEventListener("resize",queueFade);
+
+let refreshQueued=0;
+function refresh(){cancelAnimationFrame(refreshQueued);refreshQueued=requestAnimationFrame(()=>{if(ST)ST.refresh();else measure();});}
+if(ST){ST.addEventListener("refresh",measure);ST.create({trigger:"main",start:"top top",end:"bottom bottom"});}
+measure();
+new ResizeObserver(refresh).observe(document.body);
+document.querySelectorAll("img").forEach(img=>{if(!img.complete)img.addEventListener("load",refresh,{once:true});});
+addEventListener("load",refresh);
+if(document.fonts)document.fonts.ready.then(refresh);
+
+/* ---------- WebGL or not ---------- */
+function glOK(){try{const c=document.createElement("canvas");return !!(window.WebGLRenderingContext&&(c.getContext("webgl2")||c.getContext("webgl")));}catch(e){return false;}}
+if(!glOK()){LOAD.done();root.classList.add("no-gl");}
+else { root.classList.add("has-gl"); build().catch(e=>{LOAD.done();console.warn("Scene skipped:",e);root.classList.remove("has-gl");root.classList.add("no-gl");stage.innerHTML="";}); }
+
+/* =====================================================================
+   Procedural material generator: one fragment shader, rendered once per
+   material into two tiling render targets (colour, and height/rough/metal).
+   Nothing is loaded from disk or from the network.
+===================================================================== */
+const GENFS=`precision highp float;
+varying vec2 vUv;
+uniform int uKind;uniform int uPass;uniform vec3 uA;uniform vec3 uC;uniform vec4 uB;uniform vec4 uD;uniform float uSeed;
+float h1(vec2 p){vec3 p3=fract(vec3(p.xyx+uSeed*1.618)*.1031);p3+=dot(p3,p3.yzx+33.33);return fract((p3.x+p3.y)*p3.z);}
+vec2 h2(vec2 p){vec3 p3=fract(vec3(p.xyx+uSeed*1.618)*vec3(.1031,.1030,.0973));p3+=dot(p3,p3.yzx+33.33);return fract((p3.xx+p3.yz)*p3.zy);}
+float vn(vec2 p,vec2 per){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.-2.*f);
+ return mix(mix(h1(mod(i,per)),h1(mod(i+vec2(1.,0.),per)),u.x),mix(h1(mod(i+vec2(0.,1.),per)),h1(mod(i+vec2(1.,1.),per)),u.x),u.y);}
+float nz(vec2 uv,vec2 per){return vn(uv*per,per);}
+float fbm(vec2 uv,vec2 per,int oct){float s=0.,a=.5,n=0.;for(int i=0;i<6;i++){if(i>=oct)break;s+=a*vn(uv*per,per);n+=a;per*=2.;a*=.5;}return s/n;}
+vec3 vor(vec2 uv,vec2 per){vec2 p=uv*per,i=floor(p),f=fract(p);float d1=9.,d2=9.;vec2 id=vec2(0.);
+ for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++){vec2 g=vec2(float(x),float(y));vec2 c=mod(i+g,per);vec2 r=g+h2(c)-f;float d=dot(r,r);if(d<d1){d2=d1;d1=d;id=c;}else if(d<d2)d2=d;}
+ return vec3(sqrt(d1),sqrt(d2)-sqrt(d1),h1(id+11.));}
+void main(){
+ vec2 uv=vUv;vec3 col=uA;float ht=.5,ro=uB.x,me=0.;
+ if(uKind==0){ /* paint: orange peel, roller mottling, optional embossed grain */
+  float peel=fbm(uv,vec2(uB.y),4);float mo=fbm(uv+.37,vec2(3.),4);
+  col=uA*(.95+.08*mo);ht=.5+(peel-.5)*1.4;ro=uB.x+(peel-.5)*.1+(mo-.5)*uB.z;
+  if(uD.y>0.){float g=fbm(uv,vec2(2.,64.),4);ht+=(g-.5)*uD.y*3.;col*=1.+(g-.5)*.05;}
+ }else if(uKind==2){ /* sawn SPF lumber: flat-sawn rings, fibres, knots, planer marks */
+  float wa=fbm(uv,vec2(2.,3.),4);
+  float w=uv.x*uB.y+wa*2.2+.25*sin(uv.y*6.2832*2.+wa*4.);
+  float kn=0.;
+  for(int k=0;k<3;k++){vec2 kc=h2(vec2(float(k)*7.3,3.1));vec2 dv=uv-kc;dv-=floor(dv+.5);dv.y*=uB.z;float d=length(dv);
+   float sz=.03+.04*h1(vec2(float(k),9.));w+=.9*exp(-d/sz*1.2);kn=max(kn,smoothstep(sz*.8,sz*.35,d));}
+  float r=fract(w);float late=smoothstep(.5,.72,r)*smoothstep(1.,.86,r);
+  float fib=nz(uv,vec2(180.,4.))*.6+nz(uv,vec2(420.,9.))*.4;
+  float tone=fbm(uv+.2,vec2(1.,2.),3);
+  col=mix(uA,uC,late*.75+fib*.12)*(.88+.2*tone);
+  col=mix(col,uC*.5,kn*.85);
+  col*=1.-.03*(.5+.5*sin(uv.y*uB.w*6.2832));
+  ht=.5+late*.25-fib*.15+kn*.1;ro=.74+fib*.08-late*.04;
+ }else if(uKind==4){ /* OSB strands: the deck you only see when the shingles are off */
+  vec3 a=vor(uv,vec2(28.,7.)),b=vor(uv+.5,vec2(7.,28.));float m=step(.5,nz(uv,vec2(12.)));
+  vec3 s=mix(a,b,m);float edge=smoothstep(.06,.0,s.y);
+  col=uA*(.72+.5*s.z)*(1.-edge*.35);ht=s.z*.6+(1.-edge)*.3;ro=.82;
+ }else if(uKind==5){ /* concrete: float swirl, three noise sizes, stains WITH a halo,
+                        joints that meander and chip (the lip at a joint is LIGHTER than
+                        the field, because the aggregate is exposed there) */
+  float m1=fbm(uv,vec2(3.),5),m2=fbm(uv+.3,vec2(11.),4),m3=nz(uv,vec2(46.));
+  float sw=0.;
+  for(int k=0;k<2;k++){vec2 c=h2(vec2(float(k)*3.7,2.1));vec2 dd=uv-c;dd-=floor(dd+.5);
+   sw+=sin((length(dd)*(24.+16.*float(k))+m1*3.4)*6.2832);}
+  sw*=.5;
+  float sf=fbm(uv+1.7,vec2(2.5),5);
+  float st=smoothstep(.50,.63,sf);
+  float halo=smoothstep(.455,.505,sf)*(1.-smoothstep(.515,.585,sf));
+  vec3 pv=vor(uv,vec2(uB.y));float pore=smoothstep(.12,.03,pv.x)*step(.72,pv.z);
+  float sp=nz(uv,vec2(700.));
+  col=uA*(.80+.30*m1)*(.95+.10*m2)*(1.-st*uB.z-halo*uB.z*.75)*(1.-pore*.4)*(.94+.1*sp)*(1.+.020*sw);
+  ht=.5+(m2-.5)*.42+(m3-.5)*.22-pore*.6+(sp-.5)*.1;
+  ro=uB.x+(m1-.5)*.12+(m3-.5)*.07-st*.16+halo*.05+sw*.085;
+  if(uD.x>0.){
+   float jn=(nz(uv,vec2(3.,60.))-.5)*uD.x*1.1;
+   float jd=min(uv.x,1.-uv.x)+jn;if(uD.z>0.)jd=min(jd,min(uv.y,1.-uv.y)+jn);
+   float chip=nz(uv,vec2(90.,90.));
+   float jw=uD.x*(1.+1.5*smoothstep(.55,.86,chip));
+   float j=smoothstep(jw,jw*.25,jd);
+   float lip=smoothstep(jw*2.8,jw*1.15,jd)*(1.-j);
+   col*=1.-j*.62;col*=1.+lip*.13;
+   ht-=j*.85-lip*.1;ro+=j*.12+lip*.20;
+  }
+ }else if(uKind==7){ /* brushed / rolled sheet metal: drip edge, flashing, ladder rails */
+  float s=nz(uv,vec2(3.,380.))*.55+nz(uv,vec2(7.,900.))*.45;float sc=fbm(uv,vec2(5.),3);
+  col=uA*(.9+.14*s);ro=uB.x+s*.1+(sc-.5)*.06;me=1.;ht=.5+s*.1;
+ }else if(uKind==9){ /* Dutch-lap vinyl siding: cove, hard butt line, oil-canning,
+                        staggered seams, chalking film in the cove */
+  float yy=uv.y*uB.y;float crs=floor(yy);float y=fract(yy);
+  float tone=.94+.10*h1(vec2(0.,mod(crs,4.))+3.);
+  float oc=sin(uv.x*12.6+crs*2.1)*.5+sin(uv.x*29.3+crs*5.3)*.24+(fbm(uv,vec2(3.,1.),3)-.5)*1.1;
+  float g=nz(uv,vec2(6.,140.))*.48+nz(uv,vec2(14.,320.))*.30+nz(uv,vec2(58.,880.))*.22;
+  float cove=smoothstep(.0,.14,y)*smoothstep(.34,.18,y);
+  float butt=smoothstep(.055,.0,y);
+  float seam=smoothstep(.006,.0,abs(fract(uv.x*.5+h1(vec2(mod(crs,4.),8.)))-.5));
+  ht=(1.-y)*.55+.28-cove*.26+oc*.055+(g-.5)*.07-butt*.45-seam*.3;
+  col=uA*tone*(.95+.07*g)*(1.-.52*butt)*(1.-.10*cove)*(1.+.035*oc)*(1.-seam*.22);
+  col*=1.-smoothstep(.10,.32,y)*.065;
+  ro=uB.x+(g-.5)*.10+cove*.10+butt*.12-oc*.03;
+ }else if(uKind==10){ /* 3-tab asphalt shingle. The four things that make it read as a
+                         shingle and not as grey felt: the granule is COARSE and very high
+                         contrast (white to black across one pixel); the butt edges do NOT
+                         line up; under every butt edge sits the hardest dark line on the
+                         whole roof; and the tone differs from tab to tab by ~30%, not 8%.
+                         uD.x = weathering (0 fresh bundle … 1 twenty years up there). */
+  float wx=uD.x;
+  float yy=uv.y*uB.y;float c=floor(yy);float fy=fract(yy);
+  float xx=uv.x*uB.z+mod(c,2.)*.5;
+  float tb=floor(xx);
+  vec2 tid2=vec2(mod(tb,uB.z),mod(c,uB.y));
+  float tid=h1(tid2+5.);
+  float jl=(h1(tid2+21.)-.5)*.04;                    /* side offset per tab, ~1 cm */
+  float jv=(tid-.5)*.06+(h1(vec2(0.,mod(c,uB.y))+13.)-.5)*.025;
+  float fyj=clamp(fy+jv,0.,1.);
+  float fx=fract(xx+jl);
+  float g1=h1(floor(uv*vec2(820.,900.)));
+  float g2=nz(uv,vec2(300.))*.55+nz(uv,vec2(640.))*.45;
+  float gran=g1*.52+g2*.48;
+  float kx=min(fx,1.-fx)+(nz(uv,vec2(6.,140.))-.5)*.022;
+  float slot=smoothstep(.022,.004,kx)*step(fyj,.58);
+  float lip=smoothstep(.070,.004,fyj);
+  /* the hardest line on the whole roof. It was a 10 % ramp, which is a soft gradient once
+     the tile is mipped even once, and the field lost the one edge that says "shingle". */
+  float shd=smoothstep(.94,1.,fyj);
+  float streak=smoothstep(.56,.92,nz(uv,vec2(20.,1.5)))*smoothstep(.32,.7,fbm(uv,vec2(3.),4));
+  /* granule loss: bald patches where the mat shows through. Only on a weathered roof. */
+  float bald=smoothstep(.62,.86,fbm(uv+3.3,vec2(7.),4))*wx;
+  col=uA*(.46+1.02*gran)*(.72+.52*tid*(.45+.55*wx));
+  col*=1.-shd*.74-slot*.78;
+  col*=1.+lip*.26;
+  col*=1.-.26*smoothstep(.70,1.,fyj);
+  col=mix(col,col*vec3(.80,.85,.78),streak*.55*wx);
+  col=mix(col,uC,bald*.75);                          /* uC = the bare asphalt mat underneath */
+  ht=(1.-fyj)*.42+gran*.34-slot*.5-shd*.38+lip*.16+(tid-.5)*.10-bald*.18;
+  ro=.88+gran*.10-streak*.05*wx+slot*.06-bald*.30;   /* bare mat is SMOOTHER than granule */
+ }else if(uKind==11){ /* lawn: blades, clumps, bare spots, mow stripes — three sizes, not one */
+  float bl=nz(uv,vec2(300.,120.))*.42+nz(uv,vec2(90.,260.))*.30+nz(uv,vec2(680.,680.))*.28;
+  float cl=fbm(uv,vec2(5.),4),cl2=fbm(uv+.7,vec2(17.),3);
+  float so=smoothstep(.60,.75,fbm(uv+.5,vec2(4.),4));
+  float mow=.5+.5*sin(uv.x*6.2832*3.);
+  col=mix(uA*(.50+.85*bl)*(.72+.52*cl)*(.88+.18*cl2),uC*(.8+.4*bl),so);
+  col*=1.+mow*.05;
+  ht=bl*.58+cl*.26+cl2*.16;ro=.92-mow*.04;
+ }else if(uKind==14){ /* synthetic underlayment: woven scrim, printed lap lines, walk grip */
+  float w1=nz(uv,vec2(240.,6.)),w2=nz(uv,vec2(6.,240.));
+  float weave=max(w1,w2)*.5+nz(uv,vec2(120.))*.5;
+  float cr=fbm(uv,vec2(3.,8.),4);
+  float lap=smoothstep(.012,.0,abs(fract(uv.y*uB.y)-.5));   /* printed lap line */
+  col=uA*(.88+.18*weave)*(.96+.06*cr);
+  col=mix(col,uC,lap*.8);
+  ht=weave*.55+cr*.35;ro=.90-weave*.06;
+ }else if(uKind==15){ /* moulded plastic */
+  float n=fbm(uv,vec2(40.),4);col=uA*(.97+.05*n);ht=nz(uv,vec2(160.))*.4+n*.2;ro=uB.x+(n-.5)*.06;
+ }else if(uKind==16){ /* galvanised spangle: facets, each one a different brightness */
+  vec3 v=vor(uv,vec2(9.));col=uA*(.82+.28*v.z);me=1.;ro=.3+.22*v.z;ht=v.z*.2;
+ }else if(uKind==17){ /* woven fabric: tarp, bundle wrap */
+  float w=sin(uv.x*uB.y*6.2832)*sin(uv.y*uB.y*6.2832);float n=fbm(uv,vec2(8.),4);
+  col=uA*(.86+.12*w+.12*n);ht=.5+.3*w;ro=.95;
+ }
+ if(uPass==0)gl_FragColor=vec4(max(col,vec3(0.)),1.);else gl_FragColor=vec4(clamp(ht,0.,1.),clamp(ro,.03,1.),me,1.);
+}`;
+
+async function build(){
+  const THREE=await import("three");
+  const [{RoundedBoxGeometry},{EffectComposer},{RenderPass},{UnrealBloomPass},{ShaderPass},{OutputPass},{mergeGeometries}]=await Promise.all([
+    import("three/addons/geometries/RoundedBoxGeometry.js"),
+    import("three/addons/postprocessing/EffectComposer.js"),
+    import("three/addons/postprocessing/RenderPass.js"),
+    import("three/addons/postprocessing/UnrealBloomPass.js"),
+    import("three/addons/postprocessing/ShaderPass.js"),
+    import("three/addons/postprocessing/OutputPass.js"),
+    import("three/addons/utils/BufferGeometryUtils.js")
+  ]);
+  LOAD.set(.30,450);
+  try{await Promise.race([Promise.all([document.fonts.ready,document.fonts.load('700 64px "Archivo"'),document.fonts.load('500 18px "IBM Plex Sans"')]),new Promise(r=>setTimeout(r,2500))]);}catch(e){}
+  LOAD.set(.58,5200);
+
+  let small=narrowQ.matches;
+  const lite=small||matchMedia("(pointer: coarse)").matches;
+  const Q=lite?{rad:5,dpr:1.5,bloomScale:.5,tex:512,texHi:512,texLo:256,sh:1024,rain:420,msaa:0}
+              :{rad:8,dpr:1.25,bloomScale:.6,tex:512,texHi:1024,texLo:256,sh:2048,rain:1100,msaa:0};
+  const GLOW=0xFF8A3C;
+  if(!THREE.ShaderChunk.opaque_fragment.includes("pgClamp"))THREE.ShaderChunk.opaque_fragment="/*pgClamp*/outgoingLight=clamp(outgoingLight,0.0,400.0);if(any(isnan(outgoingLight)))outgoingLight=vec3(0.0);\n"+THREE.ShaderChunk.opaque_fragment;
+
+  /* renderer */
+  const renderer=new THREE.WebGLRenderer({antialias:false,powerPreference:"high-performance",stencil:false});
+  /* 1.25 on the desktop, not 1.5: the scene is fragment-bound — measured, halving the
+     pixel ratio at a close station cut the frame from 30 ms to 10 ms — and the grade pass
+     already carries FXAA, so the crispness lost is small next to the frames won. */
+  let dpr=Math.min(window.devicePixelRatio||1,Q.dpr);
+  renderer.setPixelRatio(dpr);
+  /* 1.14, not 1.02. Measured on the nine desktop stations, p1/p50/p99 of the frame area
+     right of the copy column: the three roof stations came out at 4/33/52, 1/33/85 and
+     2/31/90 — i.e. station 2 put the ENTIRE image into 48 of 255 levels and nothing in it
+     was brighter than 20 % grey. That is not a moody blue hour, that is underexposure, and
+     it is the single measurable reason the page looked muddy next to its sister pages
+     (reference-a 1.25, reference-b 1.3). Not pushed to 1.3 here: the hero and the visit
+     station already reach p99 236 and 221, and AgX only rolls those off so far. */
+  renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1.14;
+  renderer.outputColorSpace=THREE.SRGBColorSpace;
+  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.shadowMap.autoUpdate=false;
+  renderer.setClearColor(0x0c121a,1);
+  stage.appendChild(renderer.domElement);
+  const ANISO=Math.min(8,renderer.capabilities.getMaxAnisotropy());
+
+  /* ---------- procedural textures ---------- */
+  const genRTs=[];
+  const gen=(()=>{
+    const cam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+    const mat=new THREE.ShaderMaterial({uniforms:{uKind:{value:0},uPass:{value:0},uA:{value:new THREE.Color()},uC:{value:new THREE.Color()},uB:{value:new THREE.Vector4()},uD:{value:new THREE.Vector4()},uSeed:{value:0}},
+      vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}",fragmentShader:GENFS,depthTest:false,depthWrite:false});
+    const quad=new THREE.Mesh(new THREE.PlaneGeometry(2,2),mat);const sc=new THREE.Scene();sc.add(quad);
+    return {mat,quad,sc,cam};
+  })();
+  function tex(kind,size,A="#fff",B=[.8,0,0,0],C="#000",D=[0,0,0,0],seed=1){
+    const base={generateMipmaps:true,minFilter:THREE.LinearMipmapLinearFilter,magFilter:THREE.LinearFilter,wrapS:THREE.RepeatWrapping,wrapT:THREE.RepeatWrapping,depthBuffer:false,anisotropy:ANISO};
+    const col=new THREE.WebGLRenderTarget(size,size,Object.assign({colorSpace:THREE.SRGBColorSpace},base));
+    const dat=new THREE.WebGLRenderTarget(size,size,base);
+    const u=gen.mat.uniforms;u.uKind.value=kind;u.uA.value.set(A);u.uC.value.set(C);u.uB.value.set(...B);u.uD.value.set(...D);u.uSeed.value=seed;
+    [col,dat].forEach((rt,i)=>{u.uPass.value=i;renderer.setRenderTarget(rt);renderer.render(gen.sc,gen.cam);});
+    renderer.setRenderTarget(null);genRTs.push(col,dat);
+    return {map:col.texture,data:dat.texture};
+  }
+  const T={
+    satin:tex(0,Q.tex,"#fff",[.40,128,.03,0],"#000",[0,0,0,0],2),
+    grain:tex(0,Q.tex,"#fff",[.5,48,.04,0],"#000",[0,.3,0,0],3),
+    wood:tex(2,Q.texHi,"#B99C72",[.74,7,6.67,26],"#ae835a",[0,0,0,0],4),
+    osb:tex(4,Q.tex,"#9C7648",[.82,0,0,0],"#000",[0,0,0,0],6),
+    conc:tex(5,Q.texHi,"#8d8b85",[.84,90,.28,0],"#000",[.0030,0,1,0],5),
+    concW:tex(5,Q.tex,"#7c7b77",[.9,60,.12,0],"#000",[0,0,0,0],8),
+    steel:tex(7,Q.tex,"#c9ced1",[.28,0,0,0]),
+    siding:tex(9,Q.tex,"#fff",[.55,2,0,0],"#000",[0,0,0,0],17),
+    shOld:tex(10,Q.texHi,"#3E3A33",[.9,3,3,0],"#1d1b19",[1,0,0,0],21),
+    shNew:tex(10,Q.texHi,"#34302A",[.9,3,3,0],"#232019",[.10,0,0,0],23),
+    grass:tex(11,Q.tex,"#2c4626",[.9,0,0,0],"#3a3022",[0,0,0,0],1),
+    felt:tex(14,Q.tex,"#15181C",[.94,4,0,0],"#20272C",[0,0,0,0],25),
+    plastic:tex(15,Q.texLo,"#fff",[.45,0,0,0]),
+    galv:tex(16,Q.texLo,"#c6cacc"),
+    fabric:tex(17,Q.texLo,"#fff",[.95,60,0,0],"#000",[0,0,0,0],27)
+  };
+
+  /* one exterior zone: at this hour every light in the scene can reach every surface */
+  const SX=new THREE.Scene(),ZONES=[SX];
+  let scene=SX;
+  const FOG_C=new THREE.Color(0x0c121a);
+  const fog=new THREE.FogExp2(FOG_C.clone(),0.0018);SX.fog=fog;
+
+  /* environment for reflections: the blue-hour dome itself, cool above, a warm band
+     low on the west side where the sun went down */
+  const pmrem=new THREE.PMREMGenerator(renderer);
+  const envRT=(()=>{
+    const es=new THREE.Scene();const bm=c=>new THREE.MeshBasicMaterial({color:c,side:THREE.BackSide});
+    es.add(new THREE.Mesh(new THREE.SphereGeometry(30,12,8),bm(new THREE.Color(0.020,0.031,0.056))));
+    const pan=(w,h,c,p,r)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:c,side:THREE.DoubleSide}));m.position.set(...p);m.rotation.set(...r);es.add(m);};
+    pan(46,9,new THREE.Color(.20,.13,.07),[-24,2,0],[0,Math.PI/2,0]);          /* the warm afterglow */
+    pan(46,14,new THREE.Color(.035,.055,.10),[0,10,-24],[0,0,0]);
+    pan(60,60,new THREE.Color(.012,.013,.011),[0,-6,0],[-Math.PI/2,0,0]);      /* dark ground */
+    const rt=pmrem.fromScene(es,0.04);es.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)o.material.dispose();});return rt;
+  })();
+  /* 0.66, not 0.46. On an interior the environment map is a convenience; on an EXTERIOR at
+     blue hour it is the sky, and the sky is the only thing that models a roof plane at all
+     — every shingle faces it. At 0.46 the slate, the galvanised sheet and the glass had no
+     source, which is why the big planes read as flat paper. reference-a sits at 0.7 for a
+     scene that is mostly indoors; an exterior has no business being below it. */
+  SX.environment=envRT.texture;SX.environmentIntensity=0.66;
+  pmrem.dispose();
+  const camera=new THREE.PerspectiveCamera(32,1,0.1,4000);
+
+  /* post: bloom on emissives → AgX tone map → grade (display space) with grain and vignette */
+  const rt=new THREE.WebGLRenderTarget(2,2,{type:THREE.HalfFloatType,samples:Q.msaa});
+  const composer=new EffectComposer(renderer,rt);
+  let shadowDirty=true;
+  const zonePass=new RenderPass(SX,camera);
+  zonePass.render=function(r,w,read){
+    const ac=r.autoClear;r.autoClear=false;r.setRenderTarget(this.renderToScreen?null:read);r.clear();
+    if(shadowDirty){r.shadowMap.needsUpdate=true;shadowDirty=false;}
+    ZONES.forEach(z=>r.render(z,camera));
+    r.autoClear=ac;
+  };
+  composer.addPass(zonePass);
+  const bloom=new UnrealBloomPass(new THREE.Vector2(256,256),0.52,0.62,1.05);
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
+  const grade=new ShaderPass({
+    uniforms:{tDiffuse:{value:null},uTime:{value:0},uAmt:{value:0.035},uVig:{value:0.36},uAsp:{value:1},uWarm:{value:0},uTexel:{value:new THREE.Vector2(1,1)},uDof:{value:0},uFoc:{value:new THREE.Vector2(.5,.5)}},
+    vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+    fragmentShader:`uniform sampler2D tDiffuse;uniform float uTime;uniform float uAmt;uniform float uVig;uniform float uAsp;uniform float uWarm;uniform vec2 uTexel;uniform float uDof;uniform vec2 uFoc;varying vec2 vUv;
+      float lu(vec3 c){return dot(c,vec3(.299,.587,.114));}
+      vec3 fxaa(vec2 uv){vec3 cM=texture2D(tDiffuse,uv).rgb;vec3 cNW=texture2D(tDiffuse,uv+vec2(-1.,-1.)*uTexel).rgb,cNE=texture2D(tDiffuse,uv+vec2(1.,-1.)*uTexel).rgb,cSW=texture2D(tDiffuse,uv+vec2(-1.,1.)*uTexel).rgb,cSE=texture2D(tDiffuse,uv+vec2(1.,1.)*uTexel).rgb;
+        float lM=lu(cM),lNW=lu(cNW),lNE=lu(cNE),lSW=lu(cSW),lSE=lu(cSE);float mn=min(lM,min(min(lNW,lNE),min(lSW,lSE))),mx=max(lM,max(max(lNW,lNE),max(lSW,lSE)));
+        if(mx-mn<max(.03,mx*.12))return cM;
+        vec2 d=vec2(-((lNW+lNE)-(lSW+lSE)),((lNW+lSW)-(lNE+lSE)));float r=1./(min(abs(d.x),abs(d.y))+max((lNW+lNE+lSW+lSE)*.03125,.0078));d=clamp(d*r,-8.,8.)*uTexel;
+        vec3 a=.5*(texture2D(tDiffuse,uv+d*(1./3.-.5)).rgb+texture2D(tDiffuse,uv+d*(2./3.-.5)).rgb);vec3 b=a*.5+.25*(texture2D(tDiffuse,uv-d*.5).rgb+texture2D(tDiffuse,uv+d*.5).rgb);
+        float lb=lu(b);return (lb<mn||lb>mx)?a:b;}
+      float h(vec2 p){p=fract(p*vec2(443.897,441.423));p+=dot(p,p.yx+19.19);return fract((p.x+p.y)*p.x);}
+      void main(){vec3 c=fxaa(vUv);
+        /* macro hold only: sharp at the lifted tab, softening away from it */
+        /* the sharp zone has to be wide enough to hold the whole tear, or the station
+           turns into a uniform mush and there is nothing left to look at */
+        if(uDof>0.002){vec2 dd=(vUv-uFoc)*vec2(uAsp,1.);float r=smoothstep(.36,1.05,length(dd*vec2(.8,1.)))*uDof;
+          if(r>0.02){vec3 acc=c;for(int i=0;i<7;i++){float fi=float(i);float an=fi*2.39996;vec2 o=vec2(cos(an),sin(an))*sqrt((fi+.5)/7.)*r*9.*uTexel;acc+=texture2D(tDiffuse,vUv+o).rgb;}c=acc/8.;}}
+        float l=dot(c,vec3(.2126,.7152,.0722));
+        c+=vec3(-.014,.002,.020)*(1.-smoothstep(0.,.42,l));
+        c+=vec3(.020,.007,-.014)*smoothstep(.4,1.,l)*(1.+uWarm);
+        /* .30 was tried here first and MEASURED as a mistake: smoothstep pivots at 0.5, and
+           the three roof stations sit at a median of 0.13, so a steeper S-curve pulled them
+           further DOWN — station 2 moved 48 → 50 levels, i.e. nothing. A curve cannot invent
+           range that the lighting never put there. The range is bought in sceneState() now;
+           this stays mild, and the gamma leg lifts instead of crushing (was 1.03). */
+        c=mix(c,c*c*(3.-2.*c),.20);
+        c=pow(max(c*1.015+.003,0.),vec3(0.96));
+        vec2 q=(vUv-.5)*vec2(uAsp,1.)/max(uAsp,1.);float v=smoothstep(.8,.2,length(q));c*=mix(1.-uVig,1.,v);
+        float n=h(vUv*vec2(1731.,977.)+fract(uTime*7.31))-.5;c+=n*uAmt*(.03+c*.5);
+        gl_FragColor=vec4(max(c,0.),1.);}`
+  });
+  composer.addPass(grade);
+
+  /* ---------------- helpers ---------------- */
+  const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+  const IN=1/12;
+  const RB=(w,h,d,r=0.02,s=1)=>new RoundedBoxGeometry(w,h,d,s,Math.max(1e-4,Math.min(r,Math.min(w,h,d)*0.5-1e-4)));
+  const rnd=(()=>{let a=7;return()=>{a=(a*16807)%2147483647;return a/2147483647;};})();
+  const _q=new THREE.Quaternion(),_e=new THREE.Euler(),_s=new THREE.Vector3();
+  function mtx(pos,rot,scl){_e.set(rot?rot[0]:0,rot?rot[1]:0,rot?rot[2]:0);_q.setFromEuler(_e);return new THREE.Matrix4().compose(pos||V(0,0,0),_q,scl?_s.set(scl[0],scl[1],scl[2]):_s.set(1,1,1));}
+  /* world-space UVs: every surface tiles at the material's real-world size;
+     `grain` names the axis that runs along v */
+  function worldUV(g,tile,o){
+    const p=g.attributes.position,n=g.attributes.normal,uv=new Float32Array(p.count*2),su=1/tile[0],sv=1/tile[1],ax=o.grain;
+    for(let i=0;i<p.count;i++){
+      const nx=Math.abs(n.getX(i)),ny=Math.abs(n.getY(i)),nz=Math.abs(n.getZ(i)),x=p.getX(i),y=p.getY(i),z=p.getZ(i);let a,b;
+      if(nx>=ny&&nx>=nz){a=z;b=y;if(ax==="z"){a=y;b=z;}}
+      else if(ny>=nz){a=x;b=z;if(ax==="x"){a=z;b=x;}}
+      else{a=x;b=y;if(ax==="x"){a=y;b=x;}}
+      if(o.flipV)b=-b;
+      uv[2*i]=a*su+(o.ou||0);uv[2*i+1]=b*sv+(o.ov||0);
+    }
+    g.setAttribute("uv",new THREE.BufferAttribute(uv,2));
+  }
+  const buckets=new Map();
+  function put(geo,mat,pos,rot,o={}){
+    let g=geo.index?geo.toNonIndexed():geo.clone();geo.dispose();
+    g.applyMatrix4(o.m||mtx(pos,rot,o.s));
+    if(o.parent)g.applyMatrix4(o.parent);
+    if(!o.keepUV&&mat.userData.tile)worldUV(g,mat.userData.tile,o);
+    for(const k of Object.keys(g.attributes))if(k!=="position"&&k!=="normal"&&k!=="uv")g.deleteAttribute(k);
+    if(!g.attributes.uv)g.setAttribute("uv",new THREE.BufferAttribute(new Float32Array(g.attributes.position.count*2),2));
+    g.clearGroups();g.morphAttributes={};
+    if(!buckets.has(mat))buckets.set(mat,[]);buckets.get(mat).push(g);
+  }
+  function flush(target){
+    for(const [mat,list] of buckets){
+      const g=mergeGeometries(list,false);list.forEach(x=>x.dispose());if(!g)continue;
+      const m=new THREE.Mesh(g,mat);m.castShadow=mat.userData.cast!==false&&!mat.transparent;m.receiveShadow=mat.userData.recv!==false;
+      m.matrixAutoUpdate=false;m.updateMatrix();if(mat.userData.order)m.renderOrder=mat.userData.order;
+      (target||scene).add(m);
+    }
+    buckets.clear();
+  }
+  function mesh(geo,mat,pos,parent=scene){const m=new THREE.Mesh(geo,mat);if(pos)m.position.copy(pos);parent.add(m);return m;}
+  function box(x0,x1,y0,y1,z0,z1,mat,o={}){
+    const w=x1-x0,h=y1-y0,d=z1-z0;
+    put(o.r?RB(w,h,d,o.r,o.seg||1):new THREE.BoxGeometry(w,h,d),mat,V((x0+x1)/2,(y0+y1)/2,(z0+z1)/2),o.rot,o);
+  }
+  function S(t,tile,color="#fff",o={},Phys=false){
+    const p=Object.assign({map:t.map,roughnessMap:t.data,bumpMap:t.data,bumpScale:1,roughness:1,color},o);
+    const metal=p.metal;delete p.metal;
+    const m=Phys?new THREE.MeshPhysicalMaterial(p):new THREE.MeshStandardMaterial(p);
+    if(metal){m.metalnessMap=t.data;m.metalness=1;}
+    m.userData.tile=tile;return m;
+  }
+  const plain=(c,r=.6,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:r},o));
+  const phys=o=>new THREE.MeshPhysicalMaterial(o);
+
+  /* ================== WEAR — ageing where it actually sits ==================
+     The recipe comes from measured scan maps (see ABNUTZUNG.md): AO is purely
+     geometric, grime lives almost entirely in ROUGHNESS (diffuse/rough corr -0.28),
+     metalness only rises where paint is genuinely gone. So nothing is painted on:
+     every mask is generated from OUR geometry and world position —
+       curvature  from the derivatives of the world normal (trace of the shape operator),
+       dust       from n.y (up-facing only),
+       runners    gravity under real fastening points (the exposed nails),
+       contact    a sphere where hands actually grab (the ladder rungs).
+     Mode 8 is new for this page: a weathering roof plane. */
+  const WMPU=0.3048;                        /* metres per world unit — 1 unit = 1 ft */
+  const WM=WMPU.toFixed(6);
+  /* eight drip sources. Six was tried to buy frame time on the two stations that fill
+     the frame with roof; the gain drowned in measurement noise and the valley lost its
+     rust runners, so it stayed at eight. */
+  const WSRCN=8;
+  const wsrcU={value:Array.from({length:WSRCN},()=>new THREE.Vector4(0,-9e3,0,0))};
+  const wsrcQ=[];
+  function wsrc(o,r=0.055,pri=0){wsrcQ.push({o,r,pri});}
+  function wsrcFlush(){
+    const tmp=new THREE.Vector3();
+    ZONES.forEach(z=>z.updateMatrixWorld(true));
+    wsrcQ.sort((a,b)=>b.pri-a.pri);
+    for(let i=0;i<WSRCN;i++){
+      const s=wsrcQ[i];
+      if(!s){wsrcU.value[i].set(0,-9e3,0,0);continue;}
+      const p=s.o.isVector3?tmp.copy(s.o):s.o.getWorldPosition(tmp);
+      wsrcU.value[i].set(p.x*WMPU,p.y*WMPU,p.z*WMPU,s.r);
+    }
+  }
+  const WEAR_PARS=`
+uniform int uwMode;uniform float uwAmt,uwEdge,uwGrime,uwDust,uwStreak,uwRough,uwBump,uwSeed,uwWet;
+uniform vec3 uwBare,uwRust;uniform vec4 uwPolish,uwBand;
+#if WEAR_LVL>1
+uniform vec4 uwSrc[${WSRCN}];
+#endif
+varying vec3 vWP;varying vec3 vWN;
+vec2 wProj(vec3 p,vec3 n){vec3 a=abs(n);return (a.x>=a.y&&a.x>=a.z)?p.zy:((a.y>=a.z)?p.xz:p.xy);}
+float wHash(vec2 p){p=fract(p*vec2(0.1031,0.1030)+uwSeed);p+=dot(p,p.yx+33.33);return fract((p.x+p.y)*p.x);}
+float wNoi(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*f*(f*(f*6.0-15.0)+10.0);
+  return mix(mix(wHash(i),wHash(i+vec2(1,0)),f.x),mix(wHash(i+vec2(0,1)),wHash(i+vec2(1,1)),f.x),f.y);}
+/* two octaves with a crooked factor: ONE octave of value noise carries an axis-aligned
+   lattice, and taking its derivative for the micro relief turns that lattice into
+   crocodile skin over the whole surface. */
+float wNoi2(vec2 p){return wNoi(p)*0.66+wNoi(p*2.17+11.3)*0.34;}
+float wRough_,wMetal_,wChip_,wDirt_,wDust_,wNA_,wNB_,wCoat_;`;
+  const WEAR_MAIN=`
+{
+  vec3 wP=vWP*${WM};vec3 wN=normalize(vWN);
+#if WEAR_LVL>0
+  vec3 dpx=dFdx(wP),dpy=dFdy(wP),dnx=dFdx(wN),dny=dFdy(wN);
+  float wCv=(dot(dnx,dpx)+dot(dny,dpy))/max(dot(dpx,dpx)+dot(dpy,dpy),1e-9);
+#else
+  float wCv=0.0;
+#endif
+  /* in 1/m, so the two thresholds below are physical radii, not taste */
+  float wCx=clamp(wCv*0.020,0.0,1.0);          /* convex edge: coating thin, substrate showing */
+  float wCc=clamp(-wCv*0.016,0.0,1.0);         /* concave throat: everything collects here */
+  vec2 wPP=wProj(wP,wN);
+  /* ⭐ The conversion that once stood here wrong and cost a day of hunting: wP is built
+     two lines above from vWP with the factor WM, and WM is WMPU — METRES PER WORLD UNIT.
+     So wP, and with it wPP, is in METRES, and period_cm = 100/factor, NOT (100*WMPU)/factor.
+     That holds on every page whatever world scale it uses — and centimetres are the only
+     figure that compares across the seven pages (six different world scales, factor 100
+     between the extremes). A 18 cm field is right for dirt, dust and roughness (the scan
+     measures sigma 0.096 on roughness). It is wrong for the NORMAL relief: see
+     <normal_fragment_maps>. */
+  wNA_=wNoi2(wPP*5.5);
+#if WEAR_LVL>0
+  wNB_=wNoi2(wPP*27.0+11.3);
+  float wNS=wNoi(vec2(wPP.x*30.0,wPP.y*3.4)+4.7);
+#else
+  wNB_=wNA_;float wNS=wNA_;
+#endif
+  float wUp=max(wN.y,0.0),wVert=1.0-abs(wN.y);
+  float wStr=0.0;
+#if WEAR_LVL>1
+  /* branch-free and without transcendentals: exp() eight times per fragment was the
+     single most expensive item in this layer (measured). Two quadratic falloffs look the same. */
+  vec2 wJit=vec2(wNS-0.5,0.0)*1.3;
+  for(int i=0;i<${WSRCN};i++){
+    vec4 s=uwSrc[i];
+    vec3 d=wP-s.xyz;float below=-d.y;
+    float lat2=dot(d.xz+wJit*s.w,d.xz+wJit*s.w)/max(s.w*s.w,1e-8);
+    float fl=max(0.0,1.0-lat2*0.30);fl*=fl;
+    float fv=max(0.0,1.0-max(below,0.0)*0.85);fv*=fv;
+    wStr=max(wStr,step(-0.02,below)*step(0.0001,s.w)*fl*fv*(0.42+1.05*wNS));
+  }
+  float wSrcStr=wStr;   /* kept apart from the generic streak below: only THIS one is rust */
+#else
+  float wSrcStr=0.0;
+#endif
+#if WEAR_LVL>0
+  wStr=max(wStr,uwStreak*smoothstep(0.52,0.98,wNS)*(0.5+0.5*wNA_));
+#endif
+  /* a roof plane is not vertical, but the water still runs down it — so the runner
+     must survive on a 6/12 pitch, not be cancelled by wVert */
+  wStr*=mix(wVert,1.0,float(uwMode==8)*0.85)*uwAmt;
+  wDust_=uwDust*wUp*wUp*(0.40+0.60*wNA_);
+  wDirt_=clamp(uwGrime*(wCc*1.25+0.30*wNA_+0.14*wNB_)+wStr*1.10,0.0,1.0);
+  /* near the ground: splash from below, and nobody ever wipes down there */
+  float wLow=clamp(1.0-max(wP.y-uwBand.x,0.0)*uwBand.y,0.0,1.0);
+  wLow=wLow*wLow*uwBand.z*(0.35+0.85*wNA_)*(0.50+0.50*wVert);
+  wDirt_=clamp(wDirt_+wLow,0.0,1.0);
+  diffuseColor.rgb=mix(diffuseColor.rgb,uwRust,wLow*uwBand.w);
+  wChip_=0.0;wMetal_=0.0;
+  if(uwMode==0){                               /* painted steel: edge -> primer -> bare sheet */
+    float e=wCx*uwEdge*(0.34+0.95*wNB_)+wStr*uwEdge*0.22;
+    wChip_=smoothstep(0.30,0.72,e);
+    float prim=max(smoothstep(0.14,0.40,e)-wChip_,0.0);
+    diffuseColor.rgb=mix(diffuseColor.rgb,vec3(0.28,0.24,0.21),prim);
+    diffuseColor.rgb=mix(diffuseColor.rgb,uwBare,wChip_);
+    wMetal_=wChip_*0.85;
+  }else if(uwMode==1){                         /* galvanised: spangle + white oxide bloom in the throats */
+    float fac=floor(wNB_*6.0)/6.0-0.42;
+    diffuseColor.rgb*=1.0+fac*0.34*uwEdge;
+    diffuseColor.rgb=mix(diffuseColor.rgb,vec3(0.80,0.81,0.79),clamp(wCc*uwGrime*0.7+wStr*0.25,0.0,0.85)*wNA_);
+  }else if(uwMode==2){                         /* steel with no coating left: rust bleeds downwards */
+    float r=clamp(uwEdge*(0.40*wNA_+0.95*wStr+0.85*wUp*wNA_)+wCc*0.45+wCx*0.25*wNB_,0.0,1.0);
+    wChip_=smoothstep(0.18,0.98,r)*uwAmt;
+    diffuseColor.rgb=mix(diffuseColor.rgb,uwRust,wChip_*0.86);
+    wMetal_=-wChip_*0.75;                      /* rust is not a metal any more */
+  }else if(uwMode==4){                         /* plastic: yellows, scuffs on the edges */
+    diffuseColor.rgb*=mix(vec3(1.0),vec3(1.05,0.985,0.885),uwEdge*(0.35+0.65*wNA_));
+    wChip_=wCx*uwEdge*0.9;
+    diffuseColor.rgb=mix(diffuseColor.rgb,uwBare,wChip_*0.45);
+  }else if(uwMode==8){
+    /* ---- a weathering roof plane. Three things, each tied to a PLACE on the roof:
+       1  moss and algae in the shaded valley, because the throat stays wet for days.
+          uwBand.w carries which side is the shaded one (-1 = -x, +1 = +x).
+       2  granule loss on the weather side, where sixty storms have scoured the field:
+          the bare mat is DARKER and SMOOTHER than the granule around it.
+       3  bleaching on the sun side, two shades up and desaturated.
+       Without 3 the roof reads as one flat grey slab, which is the CAD look. ---- */
+    float side=uwBand.w;                        /* +1 sunny is +x, shaded is -x */
+    float shade=clamp(0.5-0.5*wN.x*side,0.0,1.0);
+    float moss=clamp(wCc*2.2+uwGrime*0.25,0.0,1.0)*shade*(0.25+0.95*wNA_);
+    moss*=smoothstep(0.24,0.74,wNA_)*uwAmt;
+    diffuseColor.rgb=mix(diffuseColor.rgb,uwRust,moss*0.82);
+    float sun=clamp(0.5+0.5*wN.x*side,0.0,1.0)*wUp;
+    float bleach=sun*sun*uwEdge*(0.45+0.55*wNB_);
+    diffuseColor.rgb=mix(diffuseColor.rgb,vec3(dot(diffuseColor.rgb,vec3(0.33))*1.34),bleach*0.55);
+    float bald=smoothstep(0.54,0.86,wNA_*0.45+wNB_*0.55)*sun*uwEdge;
+    diffuseColor.rgb=mix(diffuseColor.rgb,uwBare,bald*0.55);
+    wRough_=-bald*0.30;                         /* bare mat is smoother, that is how you spot it */
+    wDirt_=clamp(wDirt_+moss*0.5,0.0,1.0);
+    /* ---- a second, coarser course of the same roof, computed instead of sampled ----
+       A 1024-px tile over 3 ft does not survive being looked at from three metres. The
+       granule mips into felt first and the butt lines follow, and the two stations that
+       are nothing BUT roof are exactly the ones that lose it. So the structures that have
+       to carry at that distance are built here out of world position, where no mip level
+       reaches them, and they are faded IN with the screen footprint (fwidth) so that up
+       close they never double the lines the texture is already drawing.
+       The course phase is read off the HEIGHT, not off z: a 6/12 plane turns 5" of
+       exposure into 2.5" of height whichever way the plane is turned, so one line works
+       on the main slope and on the wing without knowing which is which.
+       No branch around this: fwidth inside non-uniform control flow is undefined, and
+       roofish does the same job as a multiplier. */
+    float roofish=smoothstep(0.30,0.72,wN.y);
+    vec2 runD=normalize(vec2(-wN.z,wN.x)+vec2(1e-5));   /* along the course, horizontal */
+    float across=dot(wP.xz,runD);
+    float fp=fwidth(across);                            /* metres of roof per screen pixel */
+    /* Why the granule could never work as a texture at all: the tile is 1024 px over
+       3 ft, so one texel is 0.9 mm — and a real granule is 1 to 3 mm. The grain in the
+       tile therefore sits AT the tile's own Nyquist limit and the very first mip level
+       destroys it. That is why the field read as felt at every distance, not only far
+       away. It has to be built here, in world units, with its own level of detail:
+         fine  the grain itself, ~4 mm, faded OUT before it can alias
+         clump the patchiness a metre of roof has, which is what is left at five metres
+         tone  tab against tab, which survives to any distance at all */
+    float gf=wNoi(wPP*430.0+19.7);
+    gf=clamp((gf-0.5)*2.1,-0.5,0.5);                    /* the grain is white to black, not a soft cloud */
+    float fFine=1.0-smoothstep(0.0007,0.0021,fp);
+    float cy=wP.y*17.606;                               /* 5" to weather on a 6/12 plane, read off the HEIGHT */
+    float cw=floor(cy),cf=fract(cy);
+    float tx=across*3.2808+0.5*mod(cw,2.0);             /* 12" tabs, every other course offset */
+    float tone=wHash(vec2(floor(tx),cw)*1.37+7.1);
+    diffuseColor.rgb*=1.0+gf*0.78*roofish*fFine;
+    diffuseColor.rgb*=1.0+(wNB_-0.5)*0.52*roofish;      /* the clumping, which is what is left at five metres */
+    diffuseColor.rgb*=1.0+(tone-0.5)*0.30*roofish;      /* 30 % tab to tab, not 8 % */
+    wRough_+=(gf*0.24*fFine+(wNB_-0.5)*0.16)*roofish;
+    /* And the two hard lines, but only once the tile has genuinely given them up. Below
+       that footprint the texture still draws them, and a second set at a slightly
+       different phase would read as a beat rather than as a roof. */
+    float fB=smoothstep(0.0075,0.0190,fp);
+    float butt=smoothstep(0.12,0.0,cf);
+    float lipw=smoothstep(0.12,0.26,cf)*(1.0-smoothstep(0.26,0.48,cf));
+    float slotw=smoothstep(0.055,0.012,abs(fract(tx)-0.5))*step(0.17,cf);
+    diffuseColor.rgb*=1.0-(butt*0.55+slotw*0.38)*roofish*fB;
+    diffuseColor.rgb*=1.0+lipw*0.14*roofish*fB;
+    /* A runner under an exposed fastener on a roof is not dirt, it is RUST, and the copy
+       at that station says so in as many words ("they rust, the rust runs, and the streak
+       points straight at the hole"). Only the drip SOURCES get it — the generic streak
+       that runs over the whole field would turn the roof orange. */
+    /* …and it is a STREAK, not a coat of paint. Two things had to be reined in: it must
+       never brighten (a red factor of 1.5 turned every lit bevel inside the runner into
+       orange piping along the tab edges), and it must only take the cores of the runner.
+       wSrcStr carries a 0.42 floor wherever a source reaches at all, so taken straight it
+       washes the whole tear — the lifted tabs came out looking like fresh cedar. */
+    float rust=smoothstep(0.34,0.92,wSrcStr)*0.46;
+    diffuseColor.rgb*=mix(vec3(1.0),vec3(1.06,0.70,0.48),rust);
+  }
+  /* grime mostly in roughness, only a little in albedo (measured corr -0.28).
+     The runner gets more: on the scan the streaks under the fasteners are
+     clearly visible in the diffuse too. */
+  diffuseColor.rgb*=1.0-0.24*wDirt_-0.26*wStr;
+  diffuseColor.rgb=mix(diffuseColor.rgb,vec3(0.40,0.385,0.355),wDust_*0.6);
+  wRough_+=(wNA_-0.5)*uwRough*2.0+(wNB_-0.5)*uwRough*0.7+wDirt_*0.34+wDust_*0.40+wStr*0.16+abs(wChip_)*0.22;
+  /* rain: a wet surface is darker and much smoother, and it holds in the throats first */
+  float wet=uwWet*(0.55+0.45*wCc+0.30*wUp);
+  diffuseColor.rgb*=1.0-0.34*clamp(wet,0.0,1.0);
+  wRough_-=clamp(wet,0.0,1.0)*0.42;
+  /* only ONE value survives past the lighting block — a second live register there
+     costs occupancy and measurably costs frame rate (measured: two values = -15 %) */
+  wCoat_=clamp(wChip_+wDirt_*0.6+wDust_*0.5,0.0,1.0);
+  if(uwPolish.w>0.0){                          /* where hands grab, it goes smooth and bright */
+    vec3 d=wP-uwPolish.xyz;float pol=exp(-dot(d,d)/(uwPolish.w*uwPolish.w))*(0.5+0.5*wCx);
+    wRough_-=pol*0.34;wDirt_*=1.0-pol*0.8;
+    diffuseColor.rgb*=1.0+pol*0.12;
+  }
+}`;
+  const wearMats=[];
+  const wetU={value:0};
+  function wear(m,o){
+    o=o||{};
+    const lvl=o.lvl===undefined?1:o.lvl;   /* 0 big surfaces, 1 parts, 2 with drip sources */
+    const bump=lite?0:(o.bump||0);
+    const u={
+      uwMode:{value:o.mode|0},uwAmt:{value:o.amt===undefined?1:o.amt},
+      uwEdge:{value:o.edge||0},uwGrime:{value:o.grime||0},uwDust:{value:o.dust||0},
+      uwStreak:{value:o.streak||0},uwRough:{value:o.rough===undefined?0.08:o.rough},
+      uwBump:{value:bump},uwSeed:{value:o.seed||1},
+      uwWet:{value:0},
+      uwBare:{value:new THREE.Color(o.bare||"#8b8d8e")},
+      uwRust:{value:new THREE.Color(o.rust||"#7c4524")},
+      uwPolish:{value:o.polish?new THREE.Vector4(o.polish[0]*WMPU,o.polish[1]*WMPU,o.polish[2]*WMPU,o.polish[3]*WMPU):new THREE.Vector4(0,-9e3,0,0)},
+      /* band: [top of the band in METRES, height in metres, strength, rust share
+                — or, in mode 8, which side the sun is on] */
+      uwBand:{value:o.band?new THREE.Vector4(o.band[0],1/Math.max(o.band[1],1e-3),o.band[2],o.band[3]||0):new THREE.Vector4(0,0,0,o.sun||0)}
+    };
+    m.onBeforeCompile=sh=>{
+      Object.assign(sh.uniforms,u);
+      if(lvl>1)sh.uniforms.uwSrc=wsrcU;
+      if(o.wet)sh.uniforms.uwWet=wetU;
+      const head="#define WEAR_LVL "+lvl+"\n";
+      sh.vertexShader=head+"varying vec3 vWP;varying vec3 vWN;\n"+sh.vertexShader
+        .replace("#include <beginnormal_vertex>","#include <beginnormal_vertex>\n  vec3 wwn=objectNormal;\n  #ifdef USE_INSTANCING\n    wwn=mat3(instanceMatrix)*wwn;\n  #endif\n  vWN=normalize(mat3(modelMatrix)*wwn);")
+        .replace("#include <begin_vertex>","#include <begin_vertex>\n  vec4 wwp=vec4(transformed,1.0);\n  #ifdef USE_INSTANCING\n    wwp=instanceMatrix*wwp;\n  #endif\n  vWP=(modelMatrix*wwp).xyz;");
+      sh.fragmentShader=head+WEAR_PARS+"\n"+sh.fragmentShader
+        .replace("#include <map_fragment>","#include <map_fragment>\n"+WEAR_MAIN)
+        .replace("#include <roughnessmap_fragment>","#include <roughnessmap_fragment>\n  roughnessFactor=clamp(roughnessFactor+wRough_,0.035,1.0);")
+        .replace("#include <metalnessmap_fragment>","#include <metalnessmap_fragment>\n  metalnessFactor=clamp(metalnessFactor+wMetal_,0.0,1.0);")
+        .replace("#include <lights_physical_fragment>","#include <lights_physical_fragment>\n  #ifdef USE_CLEARCOAT\n    material.clearcoat*=1.0-wCoat_;\n    material.clearcoatRoughness=clamp(material.clearcoatRoughness+wCoat_*0.30,0.0,1.0);\n  #endif");
+      /* ⭐ 2026-09-22 — the micro relief now has a FIELD OF ITS OWN. It used to bend the
+         normal from `wNA_*0.55+wNB_*0.45`, i.e. from the DIRT fields. Why that is wrong
+         is spelled out at `wPP` above: wP = vWP*WM and WM is METRES PER WORLD UNIT, so
+         wPP is in metres and period_cm = 100/factor. wNA_ (*5.5) is 18.2 cm, wNB_ (*27)
+         is 3.7 cm — cloud sizes. Two periods across a 36.5 cm sheet door, and under a
+         clear coat every one of those dents walks through the reflection as a soft pale
+         patch. Those were the limp clouds found on reference-a (ABNUTZUNG.md §5.4).
+         Now: an own field at 0.25 cm period — orange peel on painted sheet — faded out
+         BY PIXEL FOOTPRINT: gone below ~1.5 samples per period, fully there from ~5.
+         Without that fade the fine field would only be noise at distance. Amplitude
+         0.0375 keeps the slope where it was, so every `bump:` value keeps its meaning.
+
+         ⚠️ MEASURED ON THIS PAGE — read this before touching the numbers.
+         Cloud band-pass (difference of two Gaussians, sigma 9 px and 61 px, then the
+         standard deviation over the surface), relief toggled inside ONE browser run:
+           Gutter at the eave, station 6 (700,130,420x80):
+             old field  relief on 27.573 vs off 27.344  (spread 0.061)  -> +0.23
+             new field  relief on 27.269 vs off 27.372  (spread 0.145)  -> nothing left
+         ⚠️ AND THE NUMBER UNDER-REPORTS WHAT THE EYE SEES. 0.23 is only 0.8 % of a
+           sigma the eave's own folds, seams and shingle edges carry — but a crop of the
+           gutter FACE alone, toggled in one run and looked at at 4x, is unambiguous:
+           with the old field the face is covered in soft bright blotches that wander;
+           with `uwBump` at 0, and with the new field, it is an even sheet-metal face.
+           Whoever trusts the aggregate number here concludes "no finding" and is wrong.
+           Name the surface, crop it, look at it — PRUEFEN.md section E.
+         ⚠️ WHAT THE CHANGE COSTS HERE, measured the same way:
+           Valley flashing, station 2 (880,380,160x200), FINE band sigma 1..5 px:
+             old field  relief on 6.577 vs off 5.114  (spread 0.012)  -> +1.46
+             new field  relief on 5.107 vs off 5.112                  -> 0.00
+           The valley sits at about 2.4 mm of surface per screen pixel, so a 0.25 cm
+           period gets roughly ONE sample — `kb` switches the field off, correctly and
+           by design. The consequence is real: the wet valley loses the glitter the old
+           dent field gave it, and no camera on this page ever gets close enough to
+           bring the new field back. In other words `bump:` is now inert on this page.
+           That is a DECISION, not a bug — a page-specific period would be a new number,
+           and new numbers are not invented in a bug fix. Left open on purpose. */
+      if(bump>0)sh.fragmentShader=sh.fragmentShader
+        .replace("#include <normal_fragment_maps>","#include <normal_fragment_maps>\n  {vec3 bP=vWP*"+WM+";vec3 sx=dFdx(bP),sy=dFdy(bP);float fp=max(length(sx),length(sy));float kb=smoothstep(1.5,5.0,(1.0/400.0)/max(fp,1e-7));float hgt=kb>0.0?wNoi2(wProj(bP,normalize(vWN))*400.0+5.1)*0.0375*kb:0.0;float dbx=dFdx(hgt),dby=dFdy(hgt);vec3 r1=cross(sy,normal),r2=cross(normal,sx);float det=dot(sx,r1);vec3 gr=sign(det)*(dbx*r1+dby*r2);normal=normalize(abs(det)*normal-gr*uwBump);}");
+    };
+    m.customProgramCacheKey=()=>"w"+lvl+(bump>0?"b":"")+(o.wet?"t":"")+(m.isMeshPhysicalMaterial?"p":"s");
+    m.userData.wearOn=1;m.needsUpdate=true;wearMats.push(m);
+    return m;
+  }
+
+  /* soft contact shadow, drawn once into a canvas */
+  const shTex=(()=>{
+    const S=256,c=document.createElement("canvas");c.width=c.height=S;const x=c.getContext("2d");
+    x.shadowColor="#000";x.shadowBlur=30;x.fillStyle="#000";x.shadowOffsetX=4000;
+    x.beginPath();x.rect(S*0.2-4000,S*0.2,S*0.6,S*0.6);x.fill();
+    return new THREE.CanvasTexture(c);
+  })();
+  const aoMats={};
+  function contact(w,h,pos,op,rot=null){
+    const mat=aoMats[op]||(aoMats[op]=new THREE.MeshBasicMaterial({map:shTex,color:0x000000,transparent:true,opacity:op,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1}));
+    const m=mesh(new THREE.PlaneGeometry(w/0.6,h/0.6),mat,pos);if(rot)m.rotation.set(...rot);m.renderOrder=1;return m;
+  }
+  const haloTex=(()=>{const c=document.createElement("canvas");c.width=c.height=128;const x=c.getContext("2d");const g=x.createRadialGradient(64,64,0,64,64,64);g.addColorStop(0,"rgba(255,255,255,1)");g.addColorStop(.3,"rgba(255,255,255,.28)");g.addColorStop(1,"rgba(255,255,255,0)");x.fillStyle=g;x.fillRect(0,0,128,128);return new THREE.CanvasTexture(c);})();
+  function halo(pos,size,col=GLOW,op=0){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:haloTex,color:col,transparent:true,opacity:op,depthWrite:false,blending:THREE.AdditiveBlending,fog:false}));s.position.copy(pos);s.scale.set(size,size,1);s.renderOrder=3;scene.add(s);return s.material;}
+
+  /* ---------------- the house, in feet ----------------
+     ONE body, and every number below follows from four of them.
+
+     main mass   footprint x -16…16, z -24…0  (32 x 24 ft)
+                 eave 11 ft all round, ridge 17 ft running in x at z -12,
+                 6/12 pitch (PITCH .5) on BOTH slopes — one pitch in the whole house
+     front wing  footprint x -11…-1, z -5…+8, same 6/12 pitch, ridge in z at x -6,
+                 ridge height 13.5. The wing ridge is BELOW the main ridge, so it dies
+                 into the main front slope: 13.5 = surfY(z) gives z = -5, and that is
+                 exactly where the wing stops (WZ0). It is an attached gable, not a
+                 second building parked next to this one.
+     The two wing slopes therefore meet the main front slope in two real valleys:
+       left  x+z = WXR+WZ0 = -11   (the shaded one — this is where the moss is)
+       right z-x = WZ0-WXR =   1
+     The wing sits 5 ft in from the left corner so the main wall keeps a shoulder.
+     Earlier it started 2 ft from the corner and its eave landed within 4 inches of
+     the corner board: from the left the two roofs read as one collision.
+  */
+  const EAVE=11, RIDGE=17, RZ=-12, PITCH=0.5, OH=1.5;
+  const HX0=-16,HX1=16,HZ0=-24;
+  const WXR=-6, WX0=-11, WX1=-1, WR=13.5, WZ1=8, WZ0=-5;
+  const VL=WXR+WZ0, VR=WZ0-WXR;                 /* the two valley lines, see above */
+  const PA=Math.atan(PITCH), SEC=Math.sqrt(1+PITCH*PITCH), NY=1/SEC, NZ=PITCH/SEC;
+  const surfY=z=>RIDGE-PITCH*(z-RZ);            /* main front slope, top of deck reference */
+  const wingY=x=>WR-PITCH*Math.abs(x-WXR);
+  /* a slab lying in the main front roof plane. off = distance of the slab CENTRE from
+     the reference plane, measured along the normal. */
+  function mSlab(x0,x1,z0,z1,off,th,mat,o={}){
+    const xm=(x0+x1)/2, zm=(z0+z1)/2;
+    const g=o.r?RB(x1-x0,th,(z1-z0)*SEC,o.r,o.seg||1):new THREE.BoxGeometry(x1-x0,th,(z1-z0)*SEC);
+    put(g,mat,V(xm,surfY(zm)+off*NY,zm+off*NZ),[PA,0,0],o);
+    return V(xm,surfY(zm)+off*NY,zm+off*NZ);
+  }
+  /* the same, for the back slope of the main roof (mirrored about the ridge) */
+  function bSlab(x0,x1,z0,z1,off,th,mat,o={}){
+    const xm=(x0+x1)/2, zm=(z0+z1)/2, y=RIDGE+PITCH*(zm-RZ);
+    const g=new THREE.BoxGeometry(x1-x0,th,(z1-z0)*SEC);
+    put(g,mat,V(xm,y+off*NY,zm-off*NZ),[-PA,0,0],o);
+  }
+  /* s = -1 left wing slope, +1 right */
+  function wSlab(s,x0,x1,z0,z1,off,th,mat,o={}){
+    const xm=(x0+x1)/2, zm=(z0+z1)/2;
+    const g=new THREE.BoxGeometry((x1-x0)*SEC,th,z1-z0);
+    put(g,mat,V(xm+off*s*NZ,wingY(xm)+off*NY,zm),[0,0,-s*PA],o);
+  }
+
+  /* ---------------- materials ---------------- */
+  const M={
+    /* the old field: twenty years up there. Mode 8 puts the moss in the shaded valley,
+       the bald patches on the weather side and the bleach on the sun side — all from
+       world position and surface normal, never from a tiling grunge map. */
+    shOld:wear(S(T.shOld,[3,1.118],"#fff",{bumpScale:0.85}),
+      {lvl:2,mode:8,edge:.62,grime:.40,dust:.34,streak:.34,rough:.09,rust:"#2A3A28",bare:"#221F1C",sun:1,wet:1,seed:5}),
+    /* the new courses out of the bundle: same recipe, almost nothing dialled in yet */
+    shNew:wear(S(T.shNew,[3,1.118],"#fff",{bumpScale:0.80}),
+      {lvl:1,mode:8,edge:.10,grime:.08,dust:.08,streak:.04,rough:.07,rust:"#2A3A28",bare:"#221F1C",sun:1,wet:1,seed:7}),
+    deck:wear(S(T.osb,[4,4],"#fff",{bumpScale:.7}),{lvl:2,mode:5,grime:.42,dust:.45,streak:.34,rough:.10,wet:1,seed:9}),
+    /* the deck under the tear. Fresh OSB colour there reads as a sheet of cardboard
+       dropped on the roof — the board that has been taking water is dark and blotchy. */
+    deckWet:wear(S(T.osb,[4,4],"#241D17",{bumpScale:.8}),{lvl:2,mode:5,grime:.95,dust:.10,streak:.85,rough:.16,wet:1,seed:33}),
+    felt:wear(S(T.felt,[3,2.4],"#fff",{bumpScale:.45}),{lvl:2,mode:5,grime:.80,dust:.22,streak:.66,rough:.10,wet:1,seed:11}),
+    wood:S(T.wood,[1.2,8],"#fff",{bumpScale:.9}),
+    /* drip edge and valley flashing: galvanised sheet, folded. The fold is where the
+       white oxide bloom sits, and it only exists because the fold is really modelled. */
+    flash:wear(S(T.galv,[.30,.30],"#c8cdcf",{bumpScale:.12,metal:true,roughness:.5,envMapIntensity:1.2}),
+      {lvl:2,mode:1,edge:.95,grime:.55,dust:.40,streak:.28,rough:.11,wet:1,bump:.008,seed:13}),
+    gutter:wear(S(T.satin,[3,3],"#C2BFB8",{bumpScale:.10,clearcoat:.30,clearcoatRoughness:.45,envMapIntensity:.9},true),
+      {lvl:2,mode:0,edge:.42,grime:.55,dust:.60,streak:.42,rough:.09,bare:"#98A0A4",wet:1,bump:.006,seed:15}),
+    spout:wear(S(T.satin,[3,3],"#BDBAB3",{bumpScale:.10,clearcoat:.25,clearcoatRoughness:.45},true),
+      {lvl:1,mode:0,edge:.38,grime:.5,dust:.3,streak:.30,rough:.09,bare:"#98A0A4",band:[0.9,0.7,0.5,0.35],rust:"#4A3F36",wet:1,seed:16}),
+    siding:wear(S(T.siding,[8,1.333],"#4E5A63",{bumpScale:2.2}),
+      {lvl:0,mode:5,grime:.26,dust:.30,streak:.26,rough:.07,band:[0.85,0.6,0.42,0.3],rust:"#3E3B33",wet:1,seed:17}),
+    trim:wear(S(T.satin,[4,4],"#BEBBB3",{bumpScale:.05}),{lvl:1,mode:0,edge:.3,grime:.35,dust:.4,streak:.2,rough:.07,bare:"#9AA0A4",wet:1,seed:19}),
+    fascia:wear(S(T.satin,[4,4],"#B6B3AB",{bumpScale:.06}),{lvl:2,mode:0,edge:.4,grime:.45,dust:.3,streak:.32,rough:.08,bare:"#98A0A4",wet:1,seed:20}),
+    door:S(T.satin,[4,4],"#2E4A46",{bumpScale:.06,clearcoat:.5,clearcoatRoughness:.3},true),
+    /* aluminium extension ladder: spangled, and POLISHED where two hands a day go */
+    ladder:wear(S(T.steel,[1.4,1.4],"#B6BBBF",{bumpScale:.12,metal:true,roughness:.42}),
+      {lvl:1,mode:1,edge:.85,grime:.45,dust:.28,rough:.12,polish:[7,6,4.2,1.6],wet:1,seed:21}),
+    /* the exposed nails: no coating left, so they bleed down the shingle below them */
+    nail:wear(phys({color:0x8D8E8C,metalness:1,roughness:.5}),
+      {lvl:1,mode:2,edge:.95,grime:.6,dust:.3,rough:.12,rust:"#7E4524",seed:23}),
+    conc:wear(S(T.conc,[12,12],"#fff",{bumpScale:.5}),{lvl:0,mode:5,grime:.34,dust:.40,rough:.09,wet:1,seed:25}),
+    curb:wear(S(T.concW,[8,8],"#fff",{bumpScale:.6}),{lvl:0,mode:5,grime:.40,dust:.36,rough:.09,wet:1,seed:27}),
+    asphalt:wear(S(T.concW,[14,14],"#45454A",{bumpScale:.4}),{lvl:0,mode:5,grime:.44,dust:.22,rough:.10,wet:1,seed:28}),
+    grass:S(T.grass,[10,10],"#fff",{bumpScale:1}),
+    tarp:S(T.fabric,[2.6,2.6],"#35483B",{bumpScale:.8,side:THREE.DoubleSide}),
+    wrap:wear(S(T.plastic,[1.4,1.4],"#1E2428",{bumpScale:.25,clearcoat:.5,clearcoatRoughness:.35},true),
+      {mode:4,edge:.4,grime:.3,dust:.4,rough:.08,seed:29}),
+    tool:wear(phys({color:0x2A2B2D,metalness:.6,roughness:.45}),{mode:2,edge:.7,grime:.5,rough:.11,rust:"#6E4326",amt:.5,seed:31}),
+    lampBody:wear(phys({color:0x24262A,metalness:.5,roughness:.42}),{mode:0,edge:.5,grime:.4,dust:.5,rough:.09,bare:"#8b8d8e",seed:33}),
+    rubber:plain(0x0D0E10,.88),
+    black:phys({color:0x131417,roughness:.42})
+  };
+  /* name every material after its key: everything in this scene is merged per material,
+     so a raycast into a suspicious shape can only say what it is if the material knows */
+  for(const k in M)if(M[k]&&M[k].isMaterial)M[k].name=k;
+  /* draw order inside the opaque pass. The roof is five slabs lying on top of each other,
+     all with the same bounding-sphere centre, so three's front-to-back sort cannot tell
+     them apart and the deck underneath was being shaded through the shingles above it.
+     Top layer first means early-Z throws the hidden ones away. */
+  M.shOld.userData.order=-40;M.shNew.userData.order=-39;M.felt.userData.order=-38;
+  M.deckWet.userData.order=-37;M.deck.userData.order=-36;M.wood.userData.order=-35;
+  const emit=(c,i)=>new THREE.MeshStandardMaterial({color:0x0a0a0a,emissive:new THREE.Color(c),emissiveIntensity:i,roughness:.4});
+  const lampGlass=emit(GLOW,0);
+  const winGlass=new THREE.MeshStandardMaterial({color:0x0A1018,roughness:.05,metalness:0,transparent:true,opacity:.55,depthWrite:false,envMapIntensity:1.6,emissive:new THREE.Color(0xFFC78A),emissiveIntensity:.0});
+  winGlass.userData.cast=false;
+  const porchGlass=emit(0xFFC07A,0);
+  const streetGlass=emit(0xBFD4E8,0);
+
+  /* ---------------- the sky: blue hour, warm band low in the west ---------------- */
+  const skyMat=new THREE.ShaderMaterial({
+    /* The sky is what the roof is read AGAINST. At the old values the band just above the
+       ridge was darker than the roof, so the gable had no edge at all and the hero read as
+       one black field. Lifting the two lower bands — not the zenith, which keeps the hour —
+       gives the roofline something to stand against, and costs the blue hour nothing. */
+    uniforms:{uTop:{value:new THREE.Color(0x06090F)},uMid:{value:new THREE.Color(0x172942)},uLow:{value:new THREE.Color(0x33404F)},uWest:{value:new THREE.Color(0x5E3A1E)}},
+    vertexShader:"varying vec3 vD;void main(){vD=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+    fragmentShader:`uniform vec3 uTop,uMid,uLow,uWest;varying vec3 vD;
+      float h(vec2 p){p=fract(p*vec2(443.897,441.423));p+=dot(p,p.yx+19.19);return fract((p.x+p.y)*p.x);}
+      void main(){vec3 d=normalize(vD);
+        float y=clamp(d.y*1.35+0.06,-1.0,1.0);
+        vec3 c=mix(uMid,uTop,clamp(y,0.0,1.0));
+        c=mix(c,uLow,clamp(-y*2.4,0.0,1.0));
+        /* the afterglow sits low and only on one side; it must not become a blob */
+        float west=clamp(-d.x,0.0,1.0);
+        c+=uWest*pow(west,2.2)*pow(clamp(1.0-abs(y)*2.6,0.0,1.0),1.7);
+        /* a handful of stars, high only, and never a regular grid */
+        vec2 sp=floor(d.xz*260.0/max(abs(d.y),0.25));
+        float s=step(0.9985,h(sp))*clamp(y*2.2-0.5,0.0,1.0);
+        c+=vec3(0.7,0.76,0.9)*s*0.55;
+        gl_FragColor=vec4(c,1.0);}`,
+    side:THREE.BackSide,depthWrite:false,fog:false});
+  /* the dome draws LAST, not first. It writes no depth, so drawn first it simply shades
+     every pixel of the frame and the roof shades them all again on top; drawn last the
+     depth test throws away everything the roof already covers. */
+  const sky=new THREE.Mesh(new THREE.SphereGeometry(1400,24,16),skyMat);sky.renderOrder=900;sky.frustumCulled=false;SX.add(sky);
+
+  /* ---------------- ground ---------------- */
+  LOAD.set(.64,900);
+  box(-120,120,-0.30,0,-90,150,M.grass);
+  box(-120,120,-0.02,0.01,46,52,M.conc);                  /* sidewalk */
+  box(-120,120,-0.02,0.30,52,53.2,M.curb,{r:.06});        /* curb */
+  box(-120,120,-0.28,0.02,53.2,110,M.asphalt);            /* street */
+  box(19,31,-0.01,0.02,0,52,M.conc);                      /* driveway */
+  /* front walk: it starts AT the stoop and is as wide as the door, because that is what
+     a front walk is. It used to run down the middle of the plot at x 0, six feet to the
+     side of the only door in the house, and ended nowhere. */
+  box(WXR-1.6,WXR+1.6,-0.01,0.10,WZ1+3.4,46,M.conc);
+  /* a low hedge line: mass, not leaves — at this distance a blob tree is the giveaway.
+     It sits LEFT of the walk and clear of the stoop; before, three of the bushes stood
+     on the stoop slab. */
+  for(let i=0;i<6;i++){
+    const x=-15.1+i*1.05+ (rnd()-.5)*0.3;
+    box(x-0.55,x+0.55,0,1.5+rnd()*0.5,10.6,12.0,M.tarp,{r:.4,seg:2});
+  }
+
+  /* ---------------- the neighbourhood ----------------
+     Until now those six bushes WERE the environment. Everything else — 240 ft of lawn,
+     the street, the sky — was flat, and the house stood on it like a model on a green
+     table: behind the ridge there was nothing at all, so the roof, which is the subject,
+     was cut out against bare sky with no world to belong to. The sister pages both have
+     this and it is the third reason the page read cheap.
+     Three rules keep it cheap in frames as well as in triangles:
+       – three materials, so three extra draw calls and not one per object; everything
+         here goes through put(), which merges per material,
+       – cast:false / recv:false on all of them. They sit at z −45…−95 and |x| up to 100,
+         mostly OUTSIDE the moon's shadow camera (x ±60, z far 200) anyway, so a shadow
+         map entry would buy nothing and cost a map lookup on every fragment,
+       – no station camera goes past x ±12 / z −6…8 except the hero at z 78, so none of
+         this can ever be walked into. Checked against the camera table, not assumed.
+     Colour, not fog, does the recession: the fog here is FogExp2 at ~0.0003 for the hero's
+     camera distance, which over 160 ft is a 0.2 % effect — i.e. none. So the masses are
+     mixed toward the horizon band of the sky instead, which is what actually makes a tree
+     line sit behind a roof. */
+  /* envMapIntensity .12, and the colour well below the sky's horizon band. The first
+     attempt used .85-roughness masses at the default env strength and they came out
+     LIGHTER than the sky they stood against — a row of pale slabs, i.e. a skyline. A
+     backdrop at 130 ft has to be darker than what is behind it or it is not a backdrop. */
+  const bkDark=new THREE.MeshStandardMaterial({color:0x0B1018,roughness:1,envMapIntensity:.12});
+  const bkWall=new THREE.MeshStandardMaterial({color:0x151D27,roughness:.9,envMapIntensity:.25});
+  const bkWin=new THREE.MeshStandardMaterial({color:0x0a0a0a,emissive:new THREE.Color(0xFFC07A),emissiveIntensity:.42,roughness:.4});
+  [bkDark,bkWall,bkWin].forEach(m=>{m.userData.cast=false;m.userData.recv=false;});
+  /* A tree LINE, not a row of trees. The first attempt placed 16 separated masses 20-34 ft
+     tall and it read as a skyline of blank towers — worse than the bare horizon it was
+     meant to fix, because a tower has a flat top and a tree does not. What makes a tree
+     line is that it is continuous and that its upper edge is ragged, so: clumps every 4.2 ft
+     that overlap their neighbours, two boxes each at different heights and yaws, and the
+     whole band kept BELOW the ridge line. The numbers are checked against the hero camera
+     (y 7.09, z 77.9): at z −56 a 17 ft top subtends 0.074 rad against the ridge's 0.110, so
+     the house stands clear above the trees and only the occasional taller specimen reaches
+     the roofline. That is the whole point — the roof is the subject, the trees are behind.
+     ⚠️ And they are TAPERED, not boxes. The second attempt here was boxes, lower and much
+     darker than the first, and the orbit sheet still showed a row of containers — because
+     a box has a flat top FACING THE SKY, and the hemisphere light plus the moon paint that
+     top face pale no matter how dark the material is. The silhouette was fixed; the top
+     faces gave it away anyway. A five-sided taper has no sky-facing face worth the name. */
+  for(let x=-106;x<=106;x+=4.2){
+    const z=-56+(rnd()-.5)*11, tall=rnd()<0.20;
+    const h=(9+rnd()*8)*(tall?1.45:1), r=2.6+rnd()*1.9;
+    put(new THREE.CylinderGeometry(r*0.12,r,h,5,1),bkDark,V(x,h/2,z),[0,(rnd()-.5)*1.2,0]);
+    const h2=h*(0.50+rnd()*0.35), r2=r*(0.55+rnd()*0.30);
+    put(new THREE.CylinderGeometry(r2*0.15,r2,h2,5,1),bkDark,V(x+(rnd()-.5)*4.6,h2/2,z-2.8),[0,(rnd()-.5)*1.2,0]);
+  }
+  /* two neighbouring houses, set back on their own lots and clear of the driveway at
+     x 19…31. Gable ends are extruded the same way the main house's are, so there is no
+     triangle of sky left between the two slopes. */
+  function bkHouse(x0,x1,z0,z1,eave,ridge,win){
+    const zc=(z0+z1)/2, half=(z1-z0)/2, rise=ridge-eave;
+    box(x0,x1,0,eave,z0,z1,bkWall);
+    const slen=Math.hypot(half,rise)+0.6, ang=Math.atan2(rise,half);
+    put(new THREE.BoxGeometry(x1-x0+1.4,0.5,slen),bkDark,V((x0+x1)/2,(eave+ridge)/2,zc+half/2),[ang,0,0]);
+    put(new THREE.BoxGeometry(x1-x0+1.4,0.5,slen),bkDark,V((x0+x1)/2,(eave+ridge)/2,zc-half/2),[-ang,0,0]);
+    [x0,x1-0.3].forEach(a=>{
+      const sh=new THREE.Shape([new THREE.Vector2(z0,eave),new THREE.Vector2(z1,eave),new THREE.Vector2(zc,ridge)]);
+      const g=new THREE.ExtrudeGeometry(sh,{depth:0.3,bevelEnabled:false});
+      g.rotateY(-Math.PI/2);put(g,bkWall,V(a+0.3,0,0),null,{});
+    });
+    /* a lit window is a frame, a reveal and TWO panes. One flat emissive rectangle at
+       0.8 read as a beige sticky note pasted on the wall — measured on the hero crop,
+       85 px tall and perfectly uniform. Small, split, and dim enough to stay under the
+       bloom threshold (1.05) so it glows without flaring. */
+    win.forEach(([wx,wy,ww,wh])=>{
+      box(wx-ww/2-0.18,wx+ww/2+0.18,wy-0.18,wy+wh+0.18,z1-0.16,z1+0.05,bkWall);
+      box(wx-ww/2,wx-0.06,wy,wy+wh,z1-0.11,z1+0.02,bkWin);
+      box(wx+0.06,wx+ww/2,wy,wy+wh,z1-0.11,z1+0.02,bkWin);
+    });
+  }
+  /* set back on their own lots, clear of the driveway at x 19…31 and of every station
+     camera (all of them inside x ±12 / z −6…8, except the hero at z 78) */
+  bkHouse(-66,-42,-34,-10,10,14.5,[[-59,3.2,2.0,2.6],[-48,3.2,1.8,2.6]]);
+  bkHouse(38,62,-30,-6,9.5,13.5,[[44,3.0,1.9,2.5],[56,7.2,1.7,2.2]]);
+
+  /* ---------------- walls ----------------
+     A wall with an opening is built as the pieces AROUND the opening. The alternative —
+     a closed slab with a pane of glass parked in front of it — is what this scene had,
+     and it is why both front windows and the front door were invisible: every one of
+     them sat 4 inches BEHIND the siding it was supposed to be set into. A blank lit
+     wall with a ladder on it is exactly the "shed" the client saw. */
+  function wallX(x0,x1,y0,y1,z0,z1,mat,loecher,o={}){
+    let cx=x0;
+    for(const [a,b,c,d] of (loecher||[]).slice().sort((p,q)=>p[0]-q[0])){
+      if(a>cx+1e-4)box(cx,a,y0,y1,z0,z1,mat,o);
+      if(c>y0+1e-4)box(a,b,y0,c,z0,z1,mat,o);
+      if(d<y1-1e-4)box(a,b,d,y1,z0,z1,mat,o);
+      cx=b;
+    }
+    if(cx<x1-1e-4)box(cx,x1,y0,y1,z0,z1,mat,o);
+  }
+  /* ⚠️ No grain:"x" on siding, on any wall. worldUV swaps u and v for that flag, and the
+     Dutch-lap shader lays its courses along v — so the front and the back wall came out
+     with the lap lines running VERTICALLY while the two side walls, which had no flag,
+     ran horizontally. Two different claddings on one house, visible in the hero and at
+     the curb. The flag belongs on boards (rafters, soffit), not on a clad surface. */
+  const WIN1=[3.2,7.2,EAVE-6.6,EAVE-2.2], WIN2=[9.6,12.4,EAVE-6.6,EAVE-2.6];
+  const DRX0=WXR-1.6, DRX1=WXR+1.6, DRY=7.9;   /* the door sits under the wing ridge */
+  wallX(HX0,HX1,0,EAVE,-0.35,0,M.siding,[WIN1,WIN2]);      /* front wall */
+  box(HX0,HX1,0,EAVE,HZ0,HZ0+0.35,M.siding);               /* back wall */
+  box(HX0,HX0+0.35,0,EAVE,HZ0,0,M.siding);                 /* left wall */
+  box(HX1-0.35,HX1,0,EAVE,HZ0,0,M.siding);                 /* right wall */
+  /* main gable ends, above the eave.
+     ⚠️ THE SIGN. The shape is drawn in its own xy — x carries the house's z (HZ0…0),
+     y carries the height — and is then stood up about Y. A rotation of +90° maps local
+     x onto world −z, so the whole triangle landed at z 0…+24: two dark sails hanging in
+     the air 24 ft IN FRONT of the house, one on each side, with no wall under them. They
+     were in the hero, in the totale and in every single orbit frame. −90° maps x onto
+     world +z, which puts each triangle exactly on top of its own side wall (x −16…−15.65
+     and 15.65…16) and closes the body. */
+  [[HX0,HX0+0.35],[HX1-0.35,HX1]].forEach(([a,b])=>{
+    const sh=new THREE.Shape([new THREE.Vector2(HZ0,EAVE),new THREE.Vector2(0,EAVE),new THREE.Vector2(RZ,RIDGE)]);
+    const g=new THREE.ExtrudeGeometry(sh,{depth:b-a,bevelEnabled:false});
+    g.rotateY(-Math.PI/2);
+    put(g,M.siding,V(b,0,0),null,{});
+  });
+  /* the wing: two side walls, the gable end with the door cut out of it */
+  box(WX0,WX0+0.35,0,EAVE,WZ0,WZ1,M.siding);
+  box(WX1-0.35,WX1,0,EAVE,WZ0,WZ1,M.siding);
+  wallX(WX0,WX1,0,EAVE,WZ1-0.35,WZ1,M.siding,[[DRX0,DRX1,0,DRY]]);
+  {
+    const sh=new THREE.Shape([new THREE.Vector2(WX0,EAVE),new THREE.Vector2(WX1,EAVE),new THREE.Vector2(WXR,WR)]);
+    const g=new THREE.ExtrudeGeometry(sh,{depth:0.35,bevelEnabled:false});
+    put(g,M.siding,V(0,0,WZ1-0.35),null,{});
+  }
+  /* corner boards: a vinyl house without them reads as a painted box */
+  [[HX0,-0.35],[HX1-0.22,-0.35],[WX0-0.05,WZ1-0.22],[WX1-0.17,WZ1-0.22]].forEach(([x,z])=>{
+    box(x,x+0.22,0,EAVE+0.1,z,z+0.22,M.trim,{r:.02});
+  });
+
+  /* windows: two on the main front. zf is the OUTER face of the wall they sit in, and
+     the opening is already cut out of it above — so the sash can go back in the jamb
+     where it belongs and the casing can stand proud of the siding. */
+  const winMats=[];
+  function window4(x0,x1,y0,y1,zf){
+    box(x0-0.06,x1+0.06,y0-0.06,y1+0.06,zf-0.40,zf-0.34,M.black);        /* the dark room behind */
+    box(x0-0.03,x0+0.05,y0,y1,zf-0.36,zf-0.04,M.trim);                   /* jamb linings: the */
+    box(x1-0.05,x1+0.03,y0,y1,zf-0.36,zf-0.04,M.trim);                   /* opening needs depth, */
+    box(x0,x1,y1-0.08,y1+0.03,zf-0.36,zf-0.04,M.trim);                   /* not a paper edge */
+    const m=mesh(new THREE.PlaneGeometry(x1-x0-0.12,y1-y0-0.12),winGlass,V((x0+x1)/2,(y0+y1)/2,zf-0.14));
+    box(x0,x1,(y0+y1)/2-0.05,(y0+y1)/2+0.05,zf-0.18,zf-0.08,M.trim);     /* meeting rail */
+    box(x0-0.28,x1+0.28,y0-0.22,y0+0.03,zf-0.12,zf+0.16,M.trim,{r:.03}); /* sill */
+    box(x0-0.28,x0,y0,y1+0.28,zf-0.04,zf+0.12,M.trim,{r:.02});           /* casing */
+    box(x1,x1+0.28,y0,y1+0.28,zf-0.04,zf+0.12,M.trim,{r:.02});
+    box(x0-0.28,x1+0.28,y1,y1+0.28,zf-0.04,zf+0.12,M.trim,{r:.02});
+    winMats.push(m);
+  }
+  window4(WIN1[0],WIN1[1],WIN1[2],WIN1[3],0);
+  window4(WIN2[0],WIN2[1],WIN2[2],WIN2[3],0);
+  /* front door in the wing gable, with a lit fanlight over it — same story as the
+     windows: set into the opening, casing proud, and centred on the wing ridge. */
+  box(DRX0-0.06,DRX1+0.06,0,DRY+0.06,WZ1-0.42,WZ1-0.36,M.black);         /* the hall behind */
+  box(DRX0,DRX1,0,7.16,WZ1-0.34,WZ1-0.26,M.door,{r:.03});                /* leaf, back in the jamb */
+  box(DRX0,DRX1,7.16,7.26,WZ1-0.36,WZ1-0.06,M.trim);                     /* transom bar */
+  mesh(new THREE.PlaneGeometry(DRX1-DRX0-0.16,0.54),porchGlass,V(WXR,7.56,WZ1-0.24));
+  box(DRX0-0.03,DRX0+0.05,0,DRY,WZ1-0.36,WZ1-0.04,M.trim);               /* jamb linings */
+  box(DRX1-0.05,DRX1+0.03,0,DRY,WZ1-0.36,WZ1-0.04,M.trim);
+  box(DRX0,DRX1,DRY-0.08,DRY,WZ1-0.36,WZ1-0.04,M.trim);
+  box(DRX0-0.30,DRX0,0,DRY+0.30,WZ1-0.04,WZ1+0.12,M.trim,{r:.02});       /* casing, proud */
+  box(DRX1,DRX1+0.30,0,DRY+0.30,WZ1-0.04,WZ1+0.12,M.trim,{r:.02});
+  box(DRX0-0.30,DRX1+0.30,DRY,DRY+0.30,WZ1-0.04,WZ1+0.12,M.trim,{r:.02});
+  box(WXR-3,WXR+3,-0.02,0.5,WZ1,WZ1+3.4,M.conc,{r:.05});                 /* stoop, square to the door */
+  /* porch light beside the door, ON the wall and not inside it */
+  box(WXR+2.05,WXR+2.40,6.6,7.4,WZ1-0.06,WZ1+0.26,M.lampBody,{r:.05});
+  const porchLens=mesh(new THREE.BoxGeometry(0.26,0.6,0.24),porchGlass,V(WXR+2.22,7.0,WZ1+0.10));
+
+  /* ---------------- roof: rafters, deck, underlayment, shingles ---------------- */
+  LOAD.set(.70,900);
+  const TH_DECK=0.075, TH_FELT=0.026, TH_SH=0.055;   /* exaggerated for legibility, see the copy */
+  const SW=1.5*IN;
+  /* rafters on the front slope, 16" o.c. */
+  for(let x=HX0+0.7;x<HX1;x+=1.333){
+    const g=new THREE.BoxGeometry(SW,7.25*IN,(RZ-(OH+0))*-1*SEC);
+    put(g,M.wood,V(x,surfY((RZ+OH)/2)-(7.25*IN/2+0.02)*NY,(RZ+OH)/2-(7.25*IN/2+0.02)*NZ),[PA,0,0],{grain:"x"});
+  }
+  /* the deck, the underlayment and the field of old shingles.
+     They are cut short over the window at x 4…11 — that is the pulled-apart build-up. */
+  const CUX0=4.6,CUX1=11.4;
+  /* a point on the front slope, offset along the ROOF NORMAL — not straight up.
+     Getting this wrong by NY/NZ is how parts end up buried inside their own slab. */
+  const onRoof=(x,z,off)=>V(x,surfY(z)+off*NY,z+off*NZ);
+  /* where the storm took the field off. Declared here because the shingle layer has to
+     be laid AROUND it — a patch dropped on top of a closed slab is simply invisible,
+     and that is exactly what this station used to show: nothing. */
+  const DMG={x:-2.6,z:-4.6};
+  /* three tabs wide (3 ft) and two courses deep — a blow-off is a strip, not a hatch.
+     The first try was 3.5 x 2.6 ft and read as a trapdoor cut into the roof. */
+  const SH_HOLE={x0:DMG.x-1.50,x1:DMG.x+1.50,z0:DMG.z-0.52,z1:DMG.z+0.60,r:0.095,s:0.7};
+  const FELT_HOLE={x0:DMG.x-0.18,x1:DMG.x+0.42,z0:DMG.z-0.30,z1:DMG.z+0.08,r:0.09,s:2.3};
+  /* One layer of the field, laid as strips so a hole can be left in it. The strip ends are
+     jittered per strip: a perfectly straight tear edge is the most reliable CAD tell there is.
+     Draw calls do not suffer — everything merges per material in flush(). */
+  function layerField(x0,x1,z0,z1,off,th,mat,o,hole,step){
+    if(!hole||hole.x1<=x0||hole.x0>=x1){mSlab(x0,x1,z0,z1,off,th,mat,o);return;}
+    if(hole.x0>x0)mSlab(x0,hole.x0,z0,z1,off,th,mat,o);
+    if(hole.x1<x1)mSlab(hole.x1,x1,z0,z1,off,th,mat,o);
+    const n=Math.max(1,Math.round((hole.x1-hole.x0)/step)),span=hole.x1-hole.x0;
+    for(let i=0;i<n;i++){
+      const xa=hole.x0+span*i/n, xb=hole.x0+span*(i+1)/n;
+      /* own deterministic jitter, not rnd(): the seeded stream feeds the ridge caps after
+         this and must not shift when the tear is retuned */
+      const ja=(Math.sin(i*2.37+hole.s)+Math.sin(i*5.81+hole.s*3.1))*.25+.5;
+      const jb=(Math.sin(i*1.71+hole.s+2.1)+Math.sin(i*4.33+hole.s))*.25+.5;
+      const za=hole.z0-hole.r*ja, zb=hole.z1+hole.r*jb;
+      if(za>z0+1e-4)mSlab(xa,xb,z0,za,off,th,mat,o);
+      if(zb<z1-1e-4)mSlab(xa,xb,zb,z1,off,th,mat,o);
+    }
+  }
+  function frontLayers(x0,x1,z0,z1){
+    mSlab(x0,x1,z0,z1,TH_DECK/2,TH_DECK,M.deck);
+    layerField(x0,x1,z0,z1,TH_DECK+TH_FELT/2,TH_FELT,M.felt,{grain:"x"},FELT_HOLE,0.11);
+    layerField(x0,x1,z0,z1,TH_DECK+TH_FELT+TH_SH/2,TH_SH,M.shOld,{},SH_HOLE,0.21);
+  }
+  frontLayers(HX0-OH,CUX0,RZ,OH);
+  frontLayers(CUX1,HX1+OH,RZ,OH);
+  /* the cut-away window: each layer stops a little further up the slope than the one
+     above it, so you see the edge of all five at once. Built as its own group so the
+     whole stack can pull apart along the roof normal at that station. */
+  const cutG=new THREE.Group();SX.add(cutG);
+  const cutLayers=[];
+  {
+    const steps=[
+      {off:TH_DECK/2,th:TH_DECK,mat:M.deck,z1:-8.4,o:{}},
+      {off:TH_DECK+TH_FELT/2,th:TH_FELT,mat:M.felt,z1:-6.4,o:{grain:"x"}},
+      {off:TH_DECK+TH_FELT+TH_SH/2,th:TH_SH,mat:M.shOld,z1:-4.4,o:{}}
+    ];
+    steps.forEach((s,i)=>{
+      const g=new THREE.Group();cutG.add(g);
+      flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+      mSlab(CUX0,CUX1,RZ,s.z1,s.off,s.th,s.mat,s.o);
+      flush(g);
+      cutLayers.push({g,i,n:V(0,NY,NZ)});
+    });
+    /* the rafter tails and the open deck under the window read as the fifth layer */
+    flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+    for(let x=CUX0+0.5;x<CUX1;x+=1.333){
+      const g=new THREE.BoxGeometry(SW,7.25*IN,(OH-(-8.4))*SEC);
+      put(g,M.wood,V(x,surfY((-8.4+OH)/2)-(7.25*IN/2+0.02)*NY,(-8.4+OH)/2-(7.25*IN/2+0.02)*NZ),[PA,0,0],{grain:"x"});
+    }
+    const rg=new THREE.Group();cutG.add(rg);flush(rg);
+    cutLayers.push({g:rg,i:-1,n:V(0,NY,NZ)});
+  }
+  /* back slope: deck + shingles only, it is never seen close */
+  bSlab(HX0-OH,HX1+OH,HZ0-OH,RZ,TH_DECK/2,TH_DECK,M.deck);
+  bSlab(HX0-OH,HX1+OH,HZ0-OH,RZ,TH_DECK+TH_FELT+TH_SH/2,TH_SH,M.shOld,{flipV:true});
+  /* the wing slopes */
+  [[-1,WX0-OH,WXR],[1,WXR,WX1+OH]].forEach(([s,a,b])=>{
+    wSlab(s,a,b,WZ0,WZ1+OH,TH_DECK/2,TH_DECK,M.deck,{grain:"x"});
+    wSlab(s,a,b,WZ0,WZ1+OH,TH_DECK+TH_FELT+TH_SH/2,TH_SH,M.shOld,{grain:"x"});
+  });
+
+  /* ridge: a vented ridge, then cap shingles folded over it one at a time.
+     Without the caps the roof ends on a CAD edge, and that is exactly what it looks like. */
+  const RY=surfY(RZ)+TH_DECK+TH_FELT+TH_SH;
+  /* The vent goes UNDER the caps. It was sitting 0.08 ft above them, so the one bare
+     metal part of the whole roof ran the full width of the house right along the top
+     edge — a white stripe on the ridge in the hero, in the totale and in every orbit
+     frame. A ridge vent is not visible from the ground; what you see is that the cap
+     line stands a little higher, and it does, because the caps ride on it. */
+  box(HX0-0.2,HX1+0.2,RY-0.10,RY-0.03,RZ-0.62,RZ+0.62,M.flash,{r:.03});
+  {
+    const CAPRUN=0.78, CAPX=0.4167, CAPT=0.05;      /* 5" to weather, like every other course */
+    const CAPY=TH_DECK+TH_FELT+TH_SH+CAPT/2;         /* sits ON the field, not above it */
+    for(let x=HX0-OH;x<HX1+OH;x+=CAPX){
+      const xa=x, xb=Math.min(x+CAPX-0.006,HX1+OH);
+      if(xb-xa<0.05)continue;
+      const ry=CAPY+(rnd()-.5)*0.006;
+      mSlab(xa,xb,RZ,RZ+CAPRUN,ry,CAPT,M.shOld);
+      bSlab(xa,xb,RZ-CAPRUN,RZ,ry,CAPT,M.shOld,{flipV:true});
+    }
+  }
+  /* wing ridge caps */
+  for(let z=WZ0;z<WZ1+OH;z+=0.4167){
+    const z1=Math.min(z+0.4107,WZ1+OH);
+    if(z1-z<0.05)continue;
+    const wy=TH_DECK+TH_FELT+TH_SH+0.025+(rnd()-.5)*0.006;
+    wSlab(-1,WXR-1.2,WXR,z,z1,wy,0.05,M.shOld,{grain:"x"});
+    wSlab(1,WXR,WXR+1.2,z,z1,wy,0.05,M.shOld,{grain:"x"});
+  }
+
+  /* ---------------- the valleys: W-profile flashing, open, with its own moss ----------------
+     Both lines fall out of the wing: they start where the wing eave crosses the main
+     eave line (z = OH) and end where the wing ridge dies into the main slope (WXR,WZ0).
+     Nothing here is a fitted number — change the wing and the valleys follow. */
+  function valley(sign){
+    const az=1.5, bx=WXR, bz=WZ0;
+    const ax=sign<0?VL-az:az-VR;          /* x+z=VL on the left, z-x=VR on the right */
+    const a=V(ax,surfY(az)+TH_DECK+TH_FELT+0.02,az), b=V(bx,surfY(bz)+TH_DECK+TH_FELT+0.02,bz);
+    const dir=b.clone().sub(a), len=dir.length();
+    const g=new THREE.BoxGeometry(1.7,0.05,len,1,1,1);
+    const q=new THREE.Quaternion().setFromUnitVectors(V(0,0,1),dir.clone().normalize());
+    const mtx4=new THREE.Matrix4().compose(a.clone().add(b).multiplyScalar(0.5),q,V(1,1,1));
+    put(g,M.flash,null,null,{m:mtx4,keepUV:false,grain:"x"});
+    /* the rib down the middle of the valley — the thing that stops water crossing over */
+    const g2=new THREE.BoxGeometry(0.16,0.14,len);
+    put(g2,M.flash,null,null,{m:mtx4.clone().multiply(new THREE.Matrix4().makeTranslation(0,0.07,0)),grain:"x"});
+    /* the screws that hold it: each one becomes a drip source for the shingles below */
+    for(let i=0.1;i<0.95;i+=0.28){
+      const p=a.clone().lerp(b,i);p.x+=sign<0?0.78:-0.78;p.y+=0.03;
+      put(RB(0.10,0.05,0.10,0.014,2),M.nail,p);
+      wsrc(p.clone(),0.10,sign<0?3:2);
+    }
+    return {a,b};
+  }
+  const vL=valley(-1), vR=valley(1);
+
+  /* ---------------- eave: fascia, soffit, drip edge, gutter, downspout ---------------- */
+  const EY=surfY(OH);                        /* deck reference at the eave edge */
+  function eaveRun(x0,x1){
+    box(x0,x1,EY-0.72,EY+0.02,OH,OH+0.13,M.fascia,{grain:"x"});          /* fascia */
+    box(x0,x1,EY-0.74,EY-0.68,-0.30,OH,M.trim,{grain:"x"});              /* soffit */
+    /* drip edge: an L of sheet with the hem turned back under — this is what makes an
+       edge read as roofing instead of a slab lying on a box */
+    box(x0,x1,EY+0.02,EY+0.07,OH-0.34,OH+0.10,M.flash,{grain:"x"});
+    box(x0,x1,EY-0.30,EY+0.04,OH+0.06,OH+0.11,M.flash,{grain:"x"});
+    /* K-style gutter: back, bottom, face, return lip — four thin folds, not a tube */
+    box(x0,x1,EY-0.70,EY-0.10,OH+0.13,OH+0.18,M.gutter,{grain:"x"});
+    box(x0,x1,EY-0.70,EY-0.64,OH+0.13,OH+0.62,M.gutter,{grain:"x"});
+    box(x0,x1,EY-0.64,EY-0.10,OH+0.57,OH+0.62,M.gutter,{grain:"x",r:.02});
+    box(x0,x1,EY-0.16,EY-0.10,OH+0.47,OH+0.58,M.gutter,{grain:"x"});
+    /* hangers every 32 in — visible from below, and each one a drip source */
+    for(let x=x0+1;x<x1;x+=2.67){
+      box(x-0.05,x+0.05,EY-0.22,EY-0.13,OH+0.16,OH+0.60,M.flash);
+      if(x>6&&x<12)wsrc(V(x,EY-0.18,OH+0.4),0.06,1);
+    }
+  }
+  /* the main eave stops where the wing crosses it and picks up again on the other side —
+     the two gaps are the wing's own eaves, at exactly the two valley feet. */
+  eaveRun(HX0-OH,VL-OH);eaveRun(OH-VR,HX1+OH);
+  /* the wing eaves */
+  function wingEave(s){
+    const x=s<0?WX0-OH:WX1+OH, y=wingY(x);
+    box(x-(s<0?0.13:0),x+(s<0?0:0.13),y-0.72,y+0.02,WZ0,WZ1+OH,M.fascia);
+    box(x,x+(s<0?0.34:-0.34),y-0.74,y-0.68,WZ0,WZ1+OH,M.trim);
+    box(x-(s<0?0.10:-0.34),x+(s<0?0.34:0.10),y+0.02,y+0.07,WZ0,WZ1+OH,M.flash);
+  }
+  wingEave(-1);wingEave(1);
+  /* rake trim on the gable ends */
+  [[HX0-0.1,HX0+0.12],[HX1-0.12,HX1+0.1]].forEach(([a,b])=>{
+    for(let z=HZ0;z<OH;z+=1){
+      const y0=z<RZ?RIDGE+PITCH*(z-RZ):surfY(z);
+      const y1=z+1<RZ?RIDGE+PITCH*(z+1-RZ):surfY(z+1);
+      /* ⚠️ The sign. A rotation of +θ about x tilts local +z towards +y, so a board that
+         has to FALL with z needs −atan2(dy,dz), not +. With the sign the wrong way round
+         every board crossed the roof plane instead of lying in it: one end sank under the
+         shingles, the other poked out — and the rake read as a dashed line of pale wedges
+         floating along the gable, each with its own shadow. It was visible in the hero and
+         at the valley station from the first render and was never a texture problem.
+         And it sits BELOW the field now: a rake board is what the shingles overhang, not
+         something that stands proud of them. */
+      put(new THREE.BoxGeometry(b-a,0.3,Math.hypot(1,y1-y0)),M.trim,V((a+b)/2,(y0+y1)/2-0.05,z+0.5),[-Math.atan2(y1-y0,1),0,0],{});
+    }
+  });
+  /* downspout on the right corner, into a splash block */
+  const SPX=HX1+OH-0.6;
+  box(SPX-0.28,SPX+0.28,EY-0.68,EY-0.30,OH+0.18,OH+0.55,M.spout,{r:.04});
+  box(SPX-0.20,SPX+0.20,0.7,EY-0.58,OH+0.30,OH+0.62,M.spout,{r:.04});
+  box(SPX-0.20,SPX+0.20,0.55,0.92,OH+0.30,OH+1.5,M.spout,{r:.04});
+  box(SPX-0.7,SPX+0.7,-0.01,0.28,OH+1.3,OH+3.4,M.curb,{r:.06});
+  /* straps */
+  [3.2,7.4].forEach(y=>box(SPX-0.3,SPX+0.3,y,y+0.16,OH+0.26,OH+0.66,M.flash));
+
+  /* ---------------- the damage: lifted tabs, exposed nails, the water trail ---------------- */
+  LOAD.set(.76,900);
+  const dmgG=new THREE.Group();SX.add(dmgG);
+  const nailPts=[];
+  {
+    /* The hole itself is cut out of the field above (layerField/SH_HOLE), so what is left
+       to build here is only what sits IN it: the torn lip of underlayment, the fastener
+       line the missing course hung on, and the deck where even the felt went.
+       The lip is the piece that makes the tear read as a tear and not as a printed edge. */
+    flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+    mSlab(FELT_HOLE.x0-0.05,FELT_HOLE.x1+0.05,FELT_HOLE.z0-0.05,FELT_HOLE.z1+0.05,TH_DECK+0.006,0.008,M.deckWet,{grain:"x"});
+    flush(dmgG);
+    flush();
+    [[-0.24,-0.30,-0.30,0.34],[0.46,0.06,0.26,-0.42]].forEach(([ex,ez,cx,cz],k)=>{
+      const g2=new THREE.Group();
+      g2.position.copy(onRoof(DMG.x+ex,DMG.z+ez,TH_DECK+TH_FELT));
+      g2.rotation.set(PA,k?0.5:-0.42,0);
+      dmgG.add(g2);
+      flush();
+      put(new THREE.BoxGeometry(0.26,0.006,0.19),M.felt,V(cx*0.20,0.028,cz*0.16),[0.62,0,0.18],{grain:"x"});
+      flush(g2);
+    });
+    /* Four nails left standing in the open — the number the headline names. They are the
+       fasteners of the course that blew away,
+       so they sit in one line near the top of the tear, not scattered. 1" head, backed
+       out about half an inch — any bigger and they read as furniture, which is exactly
+       what the first attempt looked like. Each one is a drip source in the wear layer. */
+    flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+    const up=V(0,NY,NZ);
+    [[-1.12,-0.34],[-0.38,-0.29],[0.36,-0.35],[1.14,-0.30]].forEach(([dx,dz],i)=>{
+      const p=onRoof(DMG.x+dx,DMG.z+dz,TH_DECK+TH_FELT);
+      put(new THREE.CylinderGeometry(0.010,0.010,0.048,6),M.nail,p.clone().addScaledVector(up,0.014),[PA,0,0]);
+      put(RB(0.050,0.011,0.050,0.004,1),M.nail,p.clone().addScaledVector(up,0.034),[PA,0,0]);
+      const src=p.clone().addScaledVector(up,0.03);
+      nailPts.push(src);
+      wsrc(src,0.065,9);
+    });
+    flush(dmgG);
+  }
+  /* The lifted tabs. They are the course directly ABOVE the tear: its lower edge lost the
+     course that used to hold it down, the seal strip let go, and it now curls up over the
+     open hole. Hinge at the top (up-slope), free edge down-slope, curling up — so from a
+     camera standing below them you see the lit top face of each tab against the dark hole.
+     Three links, because a tab that opens as one rigid plank reads as a hatch.
+     ⚠️ Two sign traps, both already paid for once:
+       – on this slope a tab is ABOVE the surface only while its angle stays UNDER the
+         pitch angle, so the lift SUBTRACTS from PA and the geometry sits DOWN-slope of
+         the hinge. Reversed, the whole thing rotates into the roof and the station is empty.
+       – hinging at the lower lip of the hole instead of the upper one turns the tabs away
+         from the camera and they read as broken slats hanging off an edge. */
+  const tabs=[];
+  {
+    const TW=0.86,TL=0.66,SEG=3;
+    /* ⚠️ Third trap, found by looking at station 3 instead of at this code: the hinge used
+       to sit at TH_SH*1.5, i.e. 0.1835 along the normal, while the field's top face is at
+       0.156. The tab is 0.028 thick and centred on the hinge, so its underside sat 0.0135 ft
+       — a sixth of an inch — ABOVE the shingle it is nailed to. At this station the camera
+       is a third of a foot away, so a sixth of an inch is a visible line of daylight under
+       every tab head, and all three read as floating planks. Now the underside is 0.002 INTO
+       the field: a tab that is still fastened has no gap at its head, only at its butt.
+       The middle tab also went 0.52 → 0.78 rad, because at 0.52 the hinge leg (a*0.30) is
+       only 6–9° and it read as embedded in the roof rather than lifted off it. */
+    [[-1.00,1.30,0.20],[-0.01,0.78,-0.13],[0.98,0.92,0.27]].forEach(([dx,lift,yaw],i)=>{
+      const x=DMG.x+dx, z=SH_HOLE.z0-TL+0.05;
+      const g=new THREE.Group();
+      g.position.copy(onRoof(x,z,TH_DECK+TH_FELT+TH_SH+0.012));
+      g.rotation.set(PA,0,0);
+      SX.add(g);
+      /* two nails at the head, so what holds the tab down is IN the picture. A lifted tab
+         with no visible fastening is just a plank lying on a roof. */
+      [-0.26,0.26].forEach(nx=>{
+        const p=onRoof(x+nx,z+0.07,TH_DECK+TH_FELT+TH_SH+0.030);
+        put(RB(0.052,0.022,0.052,0.010,2),M.nail,p,[PA,0,0]);
+      });
+      const links=[g];
+      for(let s=0;s<SEG;s++){
+        const parent=links[s];
+        const link=new THREE.Group();
+        link.position.set(0,0,s===0?0:TL/SEG);
+        parent.add(link);links.push(link);
+        flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+        /* ou/ov park the tab on one whole tab cell of the shingle texture, so the slot
+           lands on its side edges and the butt line on its free edge */
+        put(RB(TW,0.028,TL/SEG,0.008,2),M.shOld,V(0,0,TL/(2*SEG)),null,{ou:1/6,ov:0.24+s*(TL/SEG)/1.118});
+        flush(link);
+      }
+      g.userData={lift,links:links.slice(1),rot:yaw+(rnd()-.5)*0.06,roll:(rnd()-.5)*0.16};
+      tabs.push(g);
+    });
+  }
+  /* what station 3 focuses on */
+  const FOCUS=onRoof(DMG.x,SH_HOLE.z0-0.10,TH_DECK+TH_FELT+TH_SH+0.26);
+  /* the water trail: it runs from the hole straight down the slope, and — as on every
+     photograph of a real stain — its EDGE is darker than its middle, because the rim
+     is the last thing to dry. */
+  {
+    const c=document.createElement("canvas");c.width=192;c.height=512;const x=c.getContext("2d");
+    x.clearRect(0,0,192,512);
+    /* the canvas carries the SHAPE in its alpha and stays white in RGB — the darkness
+       comes from the material colour, so the stain cannot end up brighter than the roof
+       it is drawn on (it did, and it looked like a sheet of plastic lying there) */
+    for(let i=0;i<3;i++){
+      const w0=22+i*9;
+      const g=x.createLinearGradient(96-w0,0,96+w0,0);
+      g.addColorStop(0,"rgba(255,255,255,0)");g.addColorStop(.20,"rgba(255,255,255,.90)");
+      g.addColorStop(.5,"rgba(255,255,255,.44)");g.addColorStop(.80,"rgba(255,255,255,.90)");g.addColorStop(1,"rgba(255,255,255,0)");
+      x.fillStyle=g;x.globalAlpha=.72;
+      x.beginPath();x.moveTo(96-w0,0);
+      for(let y=0;y<=512;y+=16){const m=Math.sin(y*0.021+i*2.1)*9+Math.sin(y*0.061+i)*4;x.lineTo(96+m-w0*(1-y/900),y);}
+      for(let y=512;y>=0;y-=16){const m=Math.sin(y*0.021+i*2.1)*9+Math.sin(y*0.061+i)*4;x.lineTo(96+m+w0*(1-y/900),y);}
+      x.closePath();x.fill();
+    }
+    const gg=x.createLinearGradient(0,0,0,512);gg.addColorStop(0,"rgba(0,0,0,1)");gg.addColorStop(.85,"rgba(0,0,0,.25)");gg.addColorStop(1,"rgba(0,0,0,0)");
+    x.globalCompositeOperation="destination-in";x.fillStyle=gg;x.fillRect(0,0,192,512);
+    const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=ANISO;
+    const TRL=3.4;
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(1.5,TRL),plain(0x0F0C0A,.88,{map:t,transparent:true,opacity:1.0,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));
+    /* it starts at the lower lip of the tear and runs down-slope from there — offset along
+       the roof normal, not straight up, or it cuts into the field it is supposed to stain */
+    const zc=SH_HOLE.z1+TRL/2-0.30;
+    m.position.copy(onRoof(DMG.x+0.25,zc,TH_DECK+TH_FELT+TH_SH+0.014));
+    m.rotation.set(-Math.PI/2+PA,0,0);
+    m.renderOrder=2;SX.add(m);
+    M.trailTex=t;
+  }
+  /* the repair: new courses, laid from the bottom up. Each course is its own group so it
+     can slide into place while the camera holds on this station. */
+  const courses=[];
+  {
+    const EXP=0.4167;                              /* 5" to weather */
+    for(let i=0;i<7;i++){
+      const z1=DMG.z+1.45-i*EXP, z0=z1-EXP*2.4;    /* each course laps the one below */
+      /* the ends of the courses are staggered, or the finished repair is a perfect
+         rectangle lying on the roof — the most reliable CAD tell there is */
+      const cx0=DMG.x-1.85-0.24*(Math.sin(i*2.13)*.5+.5), cx1=DMG.x+1.85+0.24*(Math.sin(i*1.39+1.7)*.5+.5);
+      const g=new THREE.Group();SX.add(g);
+      flush();   /* everything built so far goes to the scene BEFORE this sub-group starts */
+      /* A course is not a plate. Laid as one slab per course the repair read as a dark
+         rectangle dropped on the roof — four straight edges, one flat top, the most
+         reliable CAD tell there is. So each course is laid as the 12" tabs it is really
+         made of: a keyway between them, the butt edge of each tab a centimetre off its
+         neighbour's, and a hair of thickness difference from tab to tab. The raking torch
+         then does the rest — every butt edge throws its own short shadow, and that is what
+         makes a shingle read as a shingle. Rounded, because a curvature mask cannot see a
+         hard box edge and the edge wear would never appear (see ABNUTZUNG.md). */
+      const TABW=1.0, KEY=0.032, nT=Math.max(1,Math.round((cx1-cx0)/TABW)), wT=(cx1-cx0)/nT;
+      for(let j=0;j<nT;j++){
+        const jx=Math.sin(j*3.11+i*1.7)*.5+.5, jz=Math.sin(j*2.41+i*4.3)*.5+.5;
+        /* each course lies ON the one below, so it stands a little further off the deck
+           than its neighbour: that step is what the raking torch turns into the line of
+           butt shadows the station is about. 0.006 was below the shadow's resolution. */
+        mSlab(cx0+j*wT+KEY*.5, cx0+(j+1)*wT-KEY*.5, z0, z1+(jz-.5)*0.055,
+              TH_DECK+TH_FELT+TH_SH/2+0.010*i+(jx-.5)*0.005, TH_SH, M.shNew, {r:0.006});
+      }
+      flush(g);
+      g.visible=false;
+      courses.push(g);
+    }
+  }
+
+  /* ---------------- the ladder ---------------- */
+  LOAD.set(.82,700);
+  /* It stands on the ground, it leans on the EAVE, and it is set at 1:4 — one foot out
+     for every four up, which is the angle every extension ladder has a sticker about.
+     What it used to be: a line from z 6.9 on the lawn to y 11.9 at z 1.25, i.e. 1:2,
+     with its head 1.5 ft INSIDE the roof deck and its rails crossing the gutter. On the
+     hero it read as a ladder standing in front of a blank wall and ending in nothing.
+     The 1:4 was then rebuilt correctly and it STILL read as floating, because 1:4 was
+     never the fault. The fault was the contact: the rail line was pinned 0.28 ft in
+     FRONT of the gutter face, so along its whole 13 ft the ladder touched the house
+     nowhere, and the only thing that did touch was a 1.4 ft matchstick strut landing on
+     the outermost lip of the roof — too small to read at any station. Three inches of
+     air is the worst possible number here: too much to look like contact, too little to
+     look deliberate. So now:
+       – the rail line is pinned so the rails BEAR on the gutter's top outer corner
+         (LKZ is derived from that corner, not guessed), which is where a leaning ladder
+         on a house with a K-gutter actually sits,
+       – its slope is still 1:4, so the foot and the head both follow,
+       – the head stops three rungs (3 ft, one rung per foot) above the roof edge,
+       – and the standoff became a real standoff: 2.6 ft arms that visibly arch over the
+         gutter and land on the shingle field 2.2 ft up-slope, with a pad you can see.
+     ⚠️ The rails CANNOT bear on the fascia, which is what the copy used to claim: the
+     fascia sits at z 1.5…1.63 and the gutter hangs in front of it out to z 2.12, so a
+     1:4 rail reaching the fascia passes straight through the gutter's back. Checked, not
+     assumed — that is why the copy now says what the geometry does. */
+  const LADX=8.4;                                   /* in the gap between the two windows */
+  const LRISE=4;                                    /* 1:4 */
+  /* the gutter's top outer corner — the one point on this eave a ladder can rest on */
+  const GFZ=OH+0.62, GFY=EY-0.10;                   /* gutter face z, gutter top y */
+  /* rail half-depth carried along the rail normal, so the rail's INNER FACE lands on the
+     corner instead of its centre line sitting 0.15 ft inside the gutter */
+  const LN=Math.hypot(1,LRISE);                     /* 1:4 → normal is (LRISE,1)/LN */
+  /* 21.09.2026 — der Berührungsvertrag (werkzeuge/beruehrung.mjs) hat hier 0.1088 (33.2 mm) LUFT
+     zwischen Holm-Innenfläche und Rinnenstirn gemessen, obwohl die Ableitung darüber Überdeckung
+     ergeben sollte: Halbtiefe 0.15 entlang der Normalen (1,LRISE)/LN, minus 0.02 Biss in die Lippe.
+     Die Abweichung konnte ich NICHT analytisch auflösen — die Rechnung sagt −0.02, gemessen wurde
+     +0.1088. Deshalb steht die Differenz hier als ausgewiesener Messwert und nicht als hübschere
+     Formel, die nur so tut, als sei sie hergeleitet. Abnahme ist der Vertrag, nicht das Auge:
+     `node werkzeuge/beruehrung.mjs --vertrag werkzeuge/vertraege/portfolio.beruehrung.mjs`
+     muss „leiter-liegt-an-der-rinne-an" grün melden. Wer die Ursache findet, ersetzt LKGAP durch 0. */
+  /* NACHTRAG 21.09.2026, Review note: "Sprossen /, Gestell \" — Holme und Sprossen waren
+     GEGENEINANDER verdreht. Ursache ist ein Vorzeichen, kein Versatz: eine Drehung um X bildet
+     lokal +Y auf (0,cos θ,sin θ) ab, der Holm soll der Linie (dy,dz) folgen, also ist θ = +ang
+     und nicht −ang. Mit −ang kippt das Gestell spiegelbildlich; die Sprossen fallen kaum auf,
+     weil eine flache Platte bei ±14° fast gleich aussieht, ihre POSITIONEN aber weiter auf der
+     richtigen Linie liegen. Dasselbe Vorzeichen stand am Abstandhalter (sang) und am Bügel.
+     ⚠️ Der Versatz LKGAP ist davon UNABHÄNGIG — ich hatte vermutet, er käme von derselben
+     Ursache, das ist falsch: cos ist gerade, die z-Halbtiefe ändert sich beim Vorzeichenwechsel
+     nicht. Gemessen mit richtiger Drehung wieder 0.1088. Ursache weiterhin ungeklärt. */
+  const LKGAP=0.1088;
+  const LKY=GFY+0.15*(1/LN), LKZ=GFZ+0.15*(LRISE/LN)-0.02-LKGAP;   /* −0.02 = the lip takes the weight */
+  const lz=y=>LKZ-(y-LKY)/LRISE;                    /* the rail line */
+  const LTY=(EY+0.07)+3.3, LFY=0.12;                /* rails 3.3 ft over the drip edge = three rungs;
+                                                       LFY meets the top of the rubber foot, no gap */
+  const LTZ=lz(LTY), LFZ=lz(LFY);
+  {
+    const dy=LTY-LFY, dz=LTZ-LFZ, len=Math.hypot(dy,dz), ang=Math.atan2(dz,dy);
+    [-0.7,0.7].forEach(dx=>{
+      const g=new THREE.BoxGeometry(0.16,len,0.30);
+      put(g,M.ladder,V(LADX+dx,LFY+dy/2,LFZ+dz/2),[ang,0,0],{});
+    });
+    /* one rung per foot of rise, so "three rungs above the eave" is a countable fact */
+    const n=Math.round(dy);
+    for(let i=1;i<n;i++){
+      const f=i/n;
+      put(RB(1.4,0.09,0.24,0.02,2),M.ladder,V(LADX,LFY+dy*f,LFZ+dz*f),[ang,0,0],{});
+    }
+    /* the standoff: it arches OVER the gutter and rests on the roof field, which is the
+       whole reason a roofer carries one. It used to be a 1.4 ft strut of 0.10 ft stock
+       landing 0.45 ft up-slope — i.e. on the drip edge itself, the one part of a roof
+       that carries nothing. At 2.6 ft of 0.14 ft stock landing 2.2 ft up the field it is
+       a shape you can read from the lawn, and the clearance over the gutter was checked
+       along its whole length, not only at its ends: 2.4 ft at the gutter lip, 2.1 ft at
+       the drip edge, 0.7 ft at the wall line, 0 where it lands. */
+    const SFZ=OH-2.2, SFY=surfY(SFZ)+TH_DECK+TH_FELT+TH_SH;    /* on the field, well up-slope */
+    const SHY=LTY-1.0, SHZ=lz(SHY)-0.12;                       /* bolted just under the head */
+    const sdy=SFY-SHY, sdz=SFZ-SHZ, slen=Math.hypot(sdy,sdz), sang=Math.atan2(sdz,sdy);
+    [-0.75,0.75].forEach(dx=>put(new THREE.BoxGeometry(0.14,slen,0.14),M.ladder,
+      V(LADX+dx,(SHY+SFY)/2,(SHZ+SFZ)/2),[sang,0,0]));
+    /* the bracket that bolts the arms to the rails — without it the arms sprout from air */
+    put(RB(1.9,0.18,0.20,0.03,2),M.ladder,V(LADX,SHY,SHZ+0.04),[ang,0,0]);
+    /* the cross tube and its two pads, lying IN the roof plane */
+    put(RB(2.0,0.13,0.30,0.05,2),M.ladder,V(LADX,SFY+0.07*NY,SFZ+0.07*NZ),[PA,0,0]);
+    [-0.75,0.75].forEach(dx=>put(RB(0.42,0.10,0.46,0.04,2),M.rubber,
+      V(LADX+dx,SFY+0.05*NY,SFZ+0.05*NZ),[PA,0,0]));
+    contact(2.9,1.5,V(LADX,SFY+0.012*NY,SFZ+0.012*NZ),0.5,[-Math.PI/2+PA,0,0]);
+    /* feet */
+    [-0.7,0.7].forEach(dx=>put(RB(0.26,0.12,0.5,0.04,2),M.rubber,V(LADX+dx,0.06,LFZ)));
+    contact(2.6,1.4,V(LADX,0.012,LFZ),0.55,[-Math.PI/2,0,0]);
+  }
+
+  /* ---------------- props on the lawn ---------------- */
+  {
+    /* tarp with four bundles of new shingles on it */
+    const TX=13.5,TZ=13;
+    put(new THREE.PlaneGeometry(9,7),M.tarp,V(TX,0.03,TZ),[-Math.PI/2,0,0.12]);
+    for(let i=0;i<4;i++){
+      const x=TX-2.2+ (i%2)*2.6+(rnd()-.5)*0.3, z=TZ-1.3+Math.floor(i/2)*2.4+(rnd()-.5)*0.3;
+      const h=0.42;
+      box(x-1.6,x+1.6,0.04,0.04+h,z-0.7,z+0.7,M.wrap,{r:.05,rot:[0,(rnd()-.5)*0.4,0]});
+      contact(3.6,1.8,V(x,0.02,z),0.5,[-Math.PI/2,0,0]);
+    }
+    /* a bin of tear-off, a pry bar leaning on it */
+    box(17.6,20.2,0.02,3.4,16.4,18.6,M.wrap,{r:.12});
+    put(new THREE.BoxGeometry(0.10,4.4,0.24),M.tool,V(17.2,2.2,18.9),[0.28,0,0.10]);
+    contact(3.6,3.2,V(18.9,0.02,17.5),0.55,[-Math.PI/2,0,0]);
+    /* mailbox at the curb */
+    put(new THREE.CylinderGeometry(0.10,0.10,4.2,8),M.tool,V(17.5,2.1,49.2));
+    put(RB(0.7,0.7,1.4,0.28,3),M.lampBody,V(17.5,4.5,49.2));
+    contact(1.2,1.2,V(17.5,0.02,49.2),0.5,[-Math.PI/2,0,0]);
+    /* street lamp across the road */
+    put(new THREE.CylinderGeometry(0.22,0.30,24,10),M.lampBody,V(-26,12,58));
+    put(new THREE.BoxGeometry(5.5,0.26,0.26),M.lampBody,V(-23.5,23.9,58));
+    box(-21.6,-20.4,23.2,23.8,57.5,58.5,M.lampBody,{r:.12});
+  }
+  const streetLens=mesh(new THREE.BoxGeometry(1.0,0.22,0.8),streetGlass,V(-21,23.3,58));
+
+  /* the work lamp on the lawn — the one light in the scene that is the page's accent colour */
+  const LMP=V(12.4,0,7.2);
+  {
+    [[-0.9,0],[0.45,0.78],[0.45,-0.78]].forEach(([dx,dz])=>{
+      put(new THREE.BoxGeometry(0.10,4.2,0.10),M.lampBody,V(LMP.x+dx*0.9,2.05,LMP.z+dz*0.9),[dz*0.2,0,-dx*0.2]);
+    });
+    put(RB(0.5,0.4,0.5,0.08,2),M.lampBody,V(LMP.x,4.1,LMP.z));
+    put(RB(1.5,0.9,0.55,0.07,2),M.lampBody,V(LMP.x,4.7,LMP.z),[0.34,0.2,0]);
+    contact(3.2,3.2,V(LMP.x,0.02,LMP.z),0.45,[-Math.PI/2,0,0]);
+  }
+  const lampLens=mesh(new THREE.BoxGeometry(1.25,0.62,0.06),lampGlass,V(LMP.x-0.06,4.63,LMP.z+0.28));
+  lampLens.rotation.set(0.34,0.2,0);
+  const lampHalo=halo(V(LMP.x,4.7,LMP.z+0.4),5.2,GLOW,0);
+  const porchHalo=halo(V(WXR+2.22,7.0,WZ1+0.3),3.4,0xFFC07A,0);
+  /* 14 ft of additive sprite, 48 ft from the camera at the reviews station: that is a
+     sixth of the frame, it sat directly over the headline, and with a brighter sky behind
+     it the bloom threshold caught it as well. A street lamp four gardens away is a point
+     with a small glow, not a cloud. */
+  const streetHalo=halo(V(-21,23.3,58),6,0xBFD4E8,0);
+
+  flush();
+  LOAD.set(.86,700);
+
+  /* ---------------- light ---------------- */
+  /* the moon: the only thing that models the whole roof. Cool, low, from the left. */
+  const moon=new THREE.DirectionalLight(0x8FAEDC,0.80);
+  moon.position.set(-70,60,42);moon.target.position.set(0,10,-4);
+  moon.castShadow=true;moon.shadow.mapSize.set(Q.sh,Q.sh);
+  moon.shadow.camera.left=-60;moon.shadow.camera.right=60;moon.shadow.camera.top=50;moon.shadow.camera.bottom=-20;
+  moon.shadow.camera.near=10;moon.shadow.camera.far=200;moon.shadow.bias=-0.0012;moon.shadow.normalBias=0.04;
+  SX.add(moon);SX.add(moon.target);
+  const hemi=new THREE.HemisphereLight(0x1B2A3E,0x090C10,0.38);SX.add(hemi);
+  /* the work lamp itself */
+  const work=new THREE.SpotLight(0xFFAE6B,0,70,0.72,0.52,1.35);
+  work.position.set(LMP.x,4.7,LMP.z);work.target.position.set(0,13,-4);
+  work.castShadow=true;work.shadow.mapSize.set(Q.sh/2,Q.sh/2);   /* broad and soft — half the map is invisible and halves the re-render */work.shadow.bias=-0.002;work.shadow.normalBias=0.05;
+  SX.add(work);SX.add(work.target);
+  /* the head torch: a roofer at night has one, and it is what makes a close-up readable */
+  const torch=new THREE.SpotLight(0xFFE7C8,0,30,0.46,0.74,1.5);
+  torch.position.set(0,20,6);torch.target.position.set(DMG.x,surfY(DMG.z),DMG.z);
+  /* The torch casts. Without this the three macro stations had no shadow in them at all:
+     a lifted tab floated over the field with nothing under it, the tear had no depth, and
+     the whole thing read as a flat print of a roof rather than as a hole in one. It is the
+     only light in configuration 1, and those stations have the frame budget for it. */
+  /* 512 px, not 1024: the frustum is four metres wide, so a texel is eight millimetres —
+     finer than the tab edge it has to resolve — and the map is re-rendered often enough
+     that its size is paid for again and again (measured: 1024 cost ~1 ms more per frame). */
+  torch.castShadow=true;torch.shadow.mapSize.set(Q.sh/4,Q.sh/4);
+  torch.shadow.camera.near=0.4;torch.shadow.camera.far=26;
+  torch.shadow.bias=-0.0009;torch.shadow.normalBias=0.012;
+  const torchLast=V(0,-9e3,0);
+  SX.add(torch);SX.add(torch.target);
+  const porch=new THREE.PointLight(0xFFC07A,0,26,1.6);porch.position.set(WXR+2.22,7.0,WZ1+0.45);SX.add(porch);
+  const streetL=new THREE.PointLight(0xBFD4E8,0,120,1.5);streetL.position.set(-21,23,58);SX.add(streetL);
+  const warmIn=new THREE.PointLight(0xFFC78A,0,22,1.8);warmIn.position.set(6,6,-2);SX.add(warmIn);
+  /* ---- the single biggest frame cost on this page, and it was invisible in the code ----
+     A light with intensity 0 is still a light: three compiles it into every material and
+     evaluates its full BRDF for every fragment. This scene fills the frame with one roof
+     plane, so every one of those lights is paid on every pixel. Measured, paired A/B at the
+     close stations: the three point lamps cost 6.8–14.5 ms/frame and the head torch a
+     further 2.8–8.7 ms — while all four were dark.
+     So the lights are switched by VISIBILITY, not by intensity, in three configurations
+     that never overlap (the torch is out before the house wakes up). Changing the light
+     count recompiles every material, which is why all three configurations are compiled
+     during loading — at runtime the switch is then a program-cache hit. */
+  /* The hero was almost black: the moon sat behind the camera, so it lit the front of the
+     house flat and left the roof — the one thing the page is about — as a hole in the sky.
+     This is the counter-light: cool, from behind and to the left, low enough to run along
+     the ridge and down the rake, so the roof reads as a SILHOUETTE WITH AN EDGE instead of
+     being lifted out of the blue hour with a brighter exposure.
+     It lives in light configuration 0, which is the only configuration that had no extra
+     light in it — so the hero gets its edge for no more per-pixel cost than before. */
+  const rim=new THREE.DirectionalLight(0xB6CDEC,0);
+  rim.position.set(-52,26,-64);rim.target.position.set(4,12,-2);
+  SX.add(rim);SX.add(rim.target);
+  /* rim is NOT in a set any more: it is always visible, so it survives every configuration
+     switch. That is affordable where the three point lamps were not — a DirectionalLight has
+     no distance attenuation and casts no shadow here, so it is one extra BRDF evaluation per
+     fragment with no shadow-map lookup. Measured after the change, desktop, reference-a in
+     the same serial run as the control. Configuration 0 is now empty, which is allowed:
+     the point of the three sets is that the count changes, and it still does. */
+  const LIGHTSETS=[[],[torch],[porch,streetL,warmIn]];
+  let lightCfg=-1;
+  function setLights(c){
+    if(c===lightCfg)return;
+    lightCfg=c;
+    for(let i=0;i<LIGHTSETS.length;i++)for(const l of LIGHTSETS[i])l.visible=(i===c);
+    /* ⚠️ Do NOT drop the work lamp's shadow here to buy back the torch's. It was tried,
+       it saved about 1 ms, and it cost the three macro stations their colour: the lamp is
+       0xFFAE6B and stands on the lawn BELOW the eave, so without its shadow it lit every
+       surface that faces down-slope — the lifted tabs and the cut edge of the tear went
+       from dark grey (39,33,25) to orange (107,72,46), which is that lamp's own hue.
+       The lamp is turned DOWN at those stations instead, which is what actually happens:
+       up on the roof it is the head torch that does the work. */
+    shadowDirty=true;
+  }
+  const cfgFor=t=>t<1.55?0:(t<6.1?1:2);
+  setLights(0);
+
+  /* ---------------- rain ---------------- */
+  LOAD.set(.90,600);
+  const rain=(()=>{
+    const n=Q.rain,g=new THREE.BufferGeometry();
+    const p=new Float32Array(n*3),s=new Float32Array(n);
+    for(let i=0;i<n;i++){p[i*3]=(rnd()-.5)*70;p[i*3+1]=rnd()*44;p[i*3+2]=(rnd()-.5)*70;s[i]=rnd();}
+    g.setAttribute("position",new THREE.BufferAttribute(p,3));
+    g.setAttribute("seed",new THREE.BufferAttribute(s,1));
+    const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,fog:false,
+      uniforms:{uTime:{value:0},uOp:{value:0},uPx:{value:1}},
+      vertexShader:"attribute float seed;uniform float uTime;uniform float uPx;varying float vA;void main(){vec3 p=position;p.y=mod(p.y-uTime*(26.0+seed*16.0),44.0);p.x+=sin(seed*31.0)*1.4;vec4 mv=modelViewMatrix*vec4(p,1.0);gl_Position=projectionMatrix*mv;gl_PointSize=(1.6+seed*2.4)*uPx*70.0/-mv.z;vA=0.30+0.70*fract(seed*7.3);}",
+      /* points are square, so the drop is drawn as a narrow vertical streak inside one */
+      fragmentShader:"uniform float uOp;varying float vA;void main(){vec2 d=gl_PointCoord-0.5;float a=smoothstep(0.30,0.0,abs(d.x))*smoothstep(0.52,0.06,abs(d.y));if(a<0.01)discard;gl_FragColor=vec4(vec3(0.72,0.80,0.92)*a*vA*uOp,1.0);}"});
+    const pts=new THREE.Points(g,m);pts.frustumCulled=false;pts.renderOrder=4;SX.add(pts);
+    return {pts,m};
+  })();
+  /* water in the gutter and out of the spout */
+  const waterMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,fog:false,
+    uniforms:{uTime:{value:0},uOp:{value:0},uSpd:{value:1}},
+    vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+    fragmentShader:`uniform float uTime;uniform float uOp;uniform float uSpd;varying vec2 vUv;
+      float h(vec2 p){p=fract(p*vec2(443.897,441.423));p+=dot(p,p.yx+19.19);return fract((p.x+p.y)*p.x);}
+      float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+        return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+      void main(){vec2 uv=vUv;uv.y-=uTime*uSpd;
+        float a=n(uv*vec2(3.0,26.0))*0.6+n(uv*vec2(9.0,64.0))*0.4;
+        float edge=smoothstep(0.0,0.14,vUv.x)*smoothstep(1.0,0.86,vUv.x);
+        float v=(0.16+0.84*smoothstep(0.42,0.92,a))*edge*uOp;
+        if(v<0.01)discard;
+        gl_FragColor=vec4(vec3(0.62,0.72,0.86)*v,v*0.9);}`});
+  /* the running water sits in the gutter run right of the wing — same two numbers as eaveRun */
+  const gutterWater=mesh(new THREE.PlaneGeometry(HX1+OH-(OH-VR),0.42),waterMat,V((HX1+OH+OH-VR)/2,EY-0.60,OH+0.36));
+  gutterWater.rotation.x=-Math.PI/2;gutterWater.renderOrder=3;
+  const spoutWater=mesh(new THREE.PlaneGeometry(0.34,7.4),waterMat,V(SPX,4.2,OH+0.64));
+  spoutWater.renderOrder=3;
+  const splash=halo(V(SPX,0.4,OH+2.6),2.6,0x9FB6D0,0);
+
+  /* =============== CAMERA: stations → two CatmullRom curves =============== */
+  /* nine framings, nine different lenses and distances: a wide from the lawn, a tight
+     three-quarter at the gutter, a raking shot across the field, a 24 mm macro on the
+     damage, a low side view of the layer stack, a wider repair shot from the other side,
+     an up-angle at the eave in the rain, the totale, and the curb. */
+  const DEF=[
+    /* 0  from the lawn, low, the whole front: house, ladder, work lamp */
+    {stop:0,L:[2,8,3],D:[0.06,-0.015,1],w:40,h:27,wm:31,hm:31,smy:.30},
+    /* 1  three-quarter up at the ladder head, gutter and eave in the same frame */
+    {stop:1,L:[LADX-0.4,EAVE-0.1,3.4],D:[0.80,-0.12,1],w:12,h:9.5,wm:8,hm:8.4,fov:36},
+    {via:true,L:[-2,15,4],D:[0.5,0.4,1],w:22,h:18},
+    /* 2  down INTO the valley where the two roofs meet.
+       It used to look at the LEFT valley from a camera standing at x −3, i.e. from the
+       far side of the wing ridge: the sight line cleared that ridge by ten inches, so
+       what filled the frame was the wing's other slope in front and the main slope
+       behind, with the valley itself a black slot between them. That is the "dark wedge"
+       — the crease was never in the picture.
+       Now: the RIGHT valley, from the side it is actually open to, and the framing is
+       set on the bisector of the two planes (main slope normal + wing slope normal), so
+       both faces are in the frame at a similar angle and the flashing runs corner to
+       corner as a crease, not as a stripe. It is also the valley with the tonal split:
+       the main slope faces the moon, the wing's right slope faces away from it. */
+    {stop:2,L:[-1.7-VR,surfY(-1.7)+0.08,-1.7],D:[0.86,0.62,0.30],w:6.9,h:5.2,wm:5.0,hm:5.2,fov:30,tsx:-0.95,tsy:0.30,tsi:1.35},
+    /* 3  low and raking across the damage, so the lifted tabs stand against the roof */
+    /* raking, ~20° off the roof plane and a quarter turn to the side: that is the only
+       angle at which a lifted tab stands against the field instead of lying in it.
+       Looking up-slope, so the tear is behind the tabs and the water trail runs at us. */
+    {stop:3,L:[DMG.x-0.05,surfY(DMG.z-0.46)+0.30,DMG.z-0.46],D:[0.40,0.01,0.90],w:3.45,h:2.55,wm:2.5,hm:2.6,fov:34,dof:1,sx:.20},
+    {via:true,L:[3,surfY(-5)+1.8,-5],D:[0.75,0.45,0.6],w:13,h:11},
+    /* 4  from the side, low, so all five layer edges are in a line */
+    {stop:4,L:[8.0,surfY(-5.4)+0.35,-5.4],D:[0.88,0.26,0.42],w:9,h:7,wm:6,hm:6.2,fov:30},
+    /* 5  along the new courses, not down onto them.
+       At 30° above the roof plane with the head torch nearly on the lens, a course 0.66
+       in thick throws no shadow at all: the repair read as one flat grey rectangle and
+       the copy's "every course nailed above the seal strip and under the one above it"
+       had nothing to point at. Two changes, both about grazing light:
+         – the camera comes down a little and the frame tightens, so a 5-inch course
+           is a real band in the picture and not a line,
+         – tsx/tsy carry the torch OUT of the camera's own angle until it stands about
+           10° over the roof plane and up-slope of the work — that is the angle at which
+           a butt edge and a keyway each draw their own shadow. tsi pays for the extra
+           distance; a raking light that is also a dark light shows nothing (tried: the
+           first attempt put the torch 1.45 d out with no compensation and the station
+           went black). */
+    {stop:5,L:[DMG.x-0.10,surfY(DMG.z+0.18)+0.22,DMG.z+0.18],D:[-0.74,0.22,0.62],w:3.7,h:2.7,wm:4.4,hm:4.2,fov:32,tsx:-1.30,tsy:0.34,tsi:2.0},
+    {via:true,L:[8,11,5],D:[0.35,0.1,1],w:16,h:13},
+    /* 6  the eave, from outside and a little below: the copy promises a CHAIN — off the
+       field, over the drip edge, into the gutter, down the spout, away from the wall —
+       so the framing has to contain the whole chain and end on the spout. The old look
+       was straight up at the soffit from under the lamp: no spout in frame at all, and
+       the gutter a single blown-out highlight. Looking ALONG the gutter towards the
+       corner puts the run, the outlet and the spout in one line. */
+    {stop:6,L:[SPX-0.3,6.4,OH+0.5],D:[0.66,-0.09,0.74],w:9.8,h:9.6,wm:7.0,hm:9.2,fov:34,sx:.22},
+    {via:true,L:[6,14,16],D:[0.14,0.16,1],w:40,h:34},
+    /* 7  the totale from across the street */
+    {stop:7,L:[-1,10,0],D:[0.07,0.10,1],w:52,h:34,wm:42,hm:40,haze:.9},
+    {via:true,L:[12,7,20],D:[0.3,0.10,1],w:32,h:26},
+    /* 8  at the curb */
+    {stop:8,L:[13,4.4,35],D:[0.30,0.06,1],w:18,h:13.5,wm:13,hm:13,haze:.8}
+  ];
+  const ctrl=[];DEF.forEach((d,i)=>{if(!d.via)ctrl[d.stop]=i;});
+  let posC,lookC,uP,uL,shifts=[],fovs=[],wide=true,W=1,Hh=1;
+  function frameFor(d,a){
+    const fov=d.fov||32,t=Math.tan(THREE.MathUtils.degToRad((a<0.8?fov+6:fov)/2));let dist,sx=0,sy=0;
+    if(wide){dist=Math.max(d.h/(2*t),d.w/(2*t*a*0.58));sx=d.via?0.1:(d.sx??0.2);}
+    else{const w=d.wm??d.w*0.72,h=d.hm??d.h*0.72;dist=Math.max(w/(2*t*a),h/(2*t*0.5));sy=d.via?0.12:(d.smy??0.24);}
+    const L=V(...d.L),dir=V(...d.D).normalize();
+    return {P:L.clone().addScaledVector(dir,dist),L,sx,sy,dist,fov:a<0.8?fov+6:fov};
+  }
+  function buildPath(){
+    const a=camera.aspect;wide=a>=1.05;
+    const fr=DEF.map(d=>frameFor(d,a));
+    posC=new THREE.CatmullRomCurve3(fr.map(f=>f.P),false,"centripetal");
+    lookC=new THREE.CatmullRomCurve3(fr.map(f=>f.L),false,"centripetal");
+    const Mn=DEF.length,div=(Mn-1)*60;
+    posC.arcLengthDivisions=div;lookC.arcLengthDivisions=div;
+    const lp=posC.getLengths(div),ll=lookC.getLengths(div);
+    uP=fr.map((_,i)=>lp[i*60]/lp[div]);uL=fr.map((_,i)=>ll[i*60]/ll[div]);
+    shifts=fr.map(f=>[f.sx,f.sy]);fovs=fr.map(f=>f.fov);
+  }
+  const P=V(0,0,0),L=V(0,0,0);let shX=0,shY=0,fovNow=32;
+  function camAt(t){
+    const k=Math.min(NS-2,Math.floor(t)),f=t-k,a=ctrl[k],b=ctrl[k+1];
+    posC.getPointAt(clamp(lerp(uP[a],uP[b],f)),P);
+    lookC.getPointAt(clamp(lerp(uL[a],uL[b],f)),L);
+    shX=lerp(shifts[a][0],shifts[b][0],sm(f));shY=lerp(shifts[a][1],shifts[b][1],sm(f));
+    fovNow=lerp(fovs[a],fovs[b],sm(f));
+  }
+  const DEF_at=(t,key,dflt)=>{const k=Math.min(NS-2,Math.floor(t)),f=t-k;return lerp(DEF[ctrl[k]][key]??dflt,DEF[ctrl[k+1]][key]??dflt,f);};
+
+  let zeroBox=0;
+  function resize(){
+    const w=innerWidth,h=innerHeight;
+  /* ⚠️ Nullmasse. Ein verborgener Bereich (im Hintergrund wiederhergestellter Tab,
+     verstecktes iframe, Druckvorschau, Drehung auf manchen Handys) liefert 0x0. Dann wird
+     camera.aspect = w/h zu NaN, buildPath() legt eine Kurve mit NaN-Bogenlaengen an und
+     getPointAt(NaN) greift in CatmullRomCurve3 auf points[NaN] zu — "Cannot read properties
+     of undefined (reading 'x')". Der Rueckfallweg faengt den Wurf ab, also SIEHT das niemand:
+     der Besucher bekommt still die Nicht-3D-Fassung statt der Szene. Also nicht rechnen und
+     es beim naechsten Bild erneut versuchen. */
+    if(!(w>0&&h>0)){if(!zeroBox)zeroBox=requestAnimationFrame(()=>{zeroBox=0;resize();});return;}
+    W=w;Hh=h;
+    small=narrowQ.matches;
+    renderer.setPixelRatio(dpr);renderer.setSize(w,h,false);
+    composer.setPixelRatio(dpr);composer.setSize(w,h);
+    bloom.resolution.set(w*Q.bloomScale,h*Q.bloomScale);
+    camera.aspect=w/h;camera.updateProjectionMatrix();
+    grade.uniforms.uAsp.value=w/h;grade.uniforms.uTexel.value.set(1/(w*dpr),1/(h*dpr));
+    rain.m.uniforms.uPx.value=dpr*h/900;
+    buildPath();
+  }
+
+  /* =============== STATE =============== */
+  let tCam=0,tRM=-1,time=0,intro=reduce?0:1,px=0,py=0,pxs=0,pys=0,lastWet=-1;
+  const tmpD=V(0,0,0),focW=V(0,0,0),_tv=V(0,0,0),_tr=V(0,0,0),_tu=V(0,1,0);
+  function sceneState(t,dt,snap){
+    /* ---- readability inside the blue hour, not instead of it ----
+       Nothing here is a global exposure lift. These three are always-on lights, so their
+       intensity is free to move, and each station gets the amount of ambient it needs:
+       the hero needs the whole house modelled out of near-darkness, the close stations
+       need the opposite — the torch does the modelling there and extra fill only flattens
+       the granule. Cutting the fill at 2…5 is what puts the contrast back into the damage. */
+    const nah=sm(clamp((t-2.2)/0.9))*(1-sm(clamp((t-5.4)/0.8)));   /* 1 only at the three macro stations */
+    /* the fill cut at the macro stations is halved. It was moon −0.62 and hemi −0.24, and
+       that is where the muddy stations came from: measured p1/p50/p99 over the image area
+       right of the copy column, station 2 sat at 4/33/52 of 255 — the whole frame inside
+       48 levels, nothing above 20 % grey. Taking light away does not make contrast, it
+       makes underexposure; the contrast those stations needed is DIRECTION, and that now
+       comes from the rim light below, which used to be switched off here. */
+    moon.intensity=1.55-0.32*nah;
+    hemi.intensity=0.60-0.14*nah;
+    /* the counter-light no longer dies with the hero. It used to run 1.30 → 0 over t 0.9…1.55
+       and then the remaining 80 % of the scroll had moon, hemi and the work lamp — all three
+       from roughly the same side — on a frame that is nothing BUT roof plane. Cutting the
+       fill at the macro stations (nah, below) was supposed to put contrast back; on its own
+       it only lowered everything, which is what the 48-level histogram at station 2 was.
+       Contrast needs a direction, not less light. So the rim now keeps a floor the whole way
+       and is only damped where the head torch does the modelling. */
+    rim.intensity=0.70*(1-0.35*nah)+0.70*(1-sm(clamp((t-0.9)/0.65)));
+    /* the work lamp comes up during the first move, like somebody flicked it on */
+    const lampOn=sm(clamp((t+0.42)/1.05));
+    /* …and comes back DOWN for the eave station. It stands two metres from that framing
+       and at full power it blew the gutter out to white — the drip edge, the gutter and
+       the spout, which is the whole point of the copy there, were one flat highlight. */
+    const nahLampe=sm(clamp((t-5.0)/0.9))*(1-sm(clamp((t-6.6)/0.7)));
+    /* …and it also comes down for the LADDER station, for the same reason and measured the
+       same way. At full power the lit soffit and the wall under it went to near-white:
+       on the 390x844 frame, 19 % of the pixels in the band y 360…720 were at or above 240,
+       and that band is the middle of the picture — the eave, which is what the copy there
+       is about. The hero is untouched (nahLeiter is 0 at t=0), it needs that warm wall. */
+    const nahLeiter=sm(clamp((t-0.55)/0.5))*(1-sm(clamp((t-1.75)/0.5)));
+    const lampLvl=lampOn*(1-0.82*nahLampe)*(1-0.55*nah)*(1-0.45*nahLeiter);
+    work.intensity=620*lampLvl;lampGlass.emissiveIntensity=9*lampOn*(1-0.90*nahLampe);lampHalo.opacity=0.34*lampOn*(1-0.88*nahLampe);
+    /* head torch: only while we are actually up on the roof */
+    /* the fade-out ends at 6.1, exactly where the porch and the street lamp come up:
+       that way the torch and the three point lamps are never lit at the same time and
+       the scene needs three light configurations instead of four */
+    setLights(cfgFor(t));
+    const tor=sm(clamp((t-1.55)/0.6))*(1-sm(clamp((t-5.5)/0.6)));
+    torch.intensity=132*tor*DEF_at(t,"tsi",1);
+    if(tor>0.002){
+      /* It points where the camera is looking, because it is on the same head — but it is
+         carried out to the left and up. A light that sits exactly in the lens flattens
+         everything it touches: no shadow under a lifted tab, no relief in the granule.
+         Off to the side, the same lamp models the damage. */
+      /* How far out to the side is a per-station number now (tsx/tsy in DEF), because
+         "off to the side" is not one amount. At the tear a light 0.4 d out models a
+         lifted tab; at the finished repair the same light leaves the courses flat, and
+         only at about 1.4 d — nearly parallel to the roof — does each butt edge draw
+         its own line. Interpolated like every other station value. */
+      _tv.copy(L).sub(P).normalize();
+      _tr.crossVectors(_tv,_tu).normalize();
+      const td=P.distanceTo(L);
+      torch.position.copy(P).addScaledVector(_tr,DEF_at(t,"tsx",-0.42)*td).addScaledVector(_tu,DEF_at(t,"tsy",0.22)*td);
+      torch.target.position.copy(L);torch.target.updateMatrixWorld();
+      /* the map is only re-rendered when the lamp has really moved: during a hold the
+         breathing shifts it by millimetres, and re-shadowing for that is pure cost */
+      if(torch.position.distanceTo(torchLast)>0.20){torchLast.copy(torch.position);shadowDirty=true;}
+    }
+    /* the lifted tabs breathe in the wind, and lie back down once the repair runs */
+    const laid=sm(clamp((t-4.42)/0.42));
+    tabs.forEach((g,i)=>{
+      const d=g.userData;
+      const gust=reduce?0:Math.sin(time*(1.1+i*0.23)+i*2.1)*0.5+0.5;
+      const a=(d.lift*(0.62+0.38*gust))*(1-laid);
+      /* the hinge takes half the angle, the two links after it curl the rest — a tab
+         that opens as one rigid plank reads as a hatch */
+      g.visible=laid<0.96;
+      g.rotation.set(PA-a*0.30,d.rot*(1-laid),d.roll*(1-laid));
+      d.links[0].rotation.x=-a*0.22;
+      d.links[1].rotation.x=-a*0.24;
+      d.links[2].rotation.x=-a*0.24;
+      if(a>0.001&&Math.abs(a-(d.la||0))>0.075){d.la=a;shadowDirty=true;}
+    });
+    /* the build-up pulls apart at its own station and closes again afterwards */
+    const ex=sm(clamp((t-3.35)/0.55))*(1-sm(clamp((t-4.42)/0.5)));
+    cutLayers.forEach(l=>{
+      const k=l.i<0?-0.55:(l.i+1);
+      l.g.position.set(0,l.n.y*k*0.85*ex,l.n.z*k*0.85*ex);
+      l.g.visible=true;
+    });
+    if(ex>0.002&&ex<0.998)shadowDirty=true;
+    /* the repair: courses arrive one by one from up-slope */
+    courses.forEach((g,i)=>{
+      const q=clamp((t-4.58-i*0.040)/0.14);
+      const on=q>0.001;
+      if(g.visible!==on){g.visible=on;shadowDirty=true;}
+      if(on){const e=1-Math.pow(1-q,3);g.position.set(0,(1-e)*0.8,-(1-e)*1.9);if(q<1)shadowDirty=true;}
+    });
+    /* rain from station 6, easing off again by the totale */
+    const wet=sm(clamp((t-5.35)/0.85))*(1-0.55*sm(clamp((t-6.9)/1.0)));
+    rain.m.uniforms.uOp.value=reduce?0:0.62*wet;
+    rain.pts.visible=wet>0.01;
+    waterMat.uniforms.uOp.value=wet*0.85;
+    gutterWater.visible=spoutWater.visible=wet>0.02;
+    splash.opacity=0.20*wet;
+    if(Math.abs(wet-lastWet)>0.004){lastWet=wet;wetU.value=wet*0.9;}
+    /* the house wakes up towards the end: porch, street lamp, a window */
+    const ev=sm(clamp((t-6.1)/0.9));
+    porch.intensity=26*ev;porchGlass.emissiveIntensity=2.6*ev;porchHalo.opacity=0.26*ev;
+    streetL.intensity=900*ev;streetGlass.emissiveIntensity=3.2*ev;streetHalo.opacity=0.13*ev;
+    warmIn.intensity=70*ev;winGlass.emissiveIntensity=0.55*ev;
+  }
+  function place(dt,snap){
+    if(!posC)return;   /* siehe resize(): bei Nullmassen gibt es noch keine Kamerakurve */
+    camAt(tCam);
+    const d=P.distanceTo(L);
+    if(intro>0){P.sub(L).multiplyScalar(1+0.34*intro*intro).add(L);}
+    pxs+=(px-pxs)*(snap?1:1-Math.exp(-dt*2.5));pys+=(py-pys)*(snap?1:1-Math.exp(-dt*2.5));
+    /* breathing, hand-held drift during holds — scaled by distance, or the macro shakes
+       and the totale stands still */
+    const br=Math.sin(time*0.31)*0.0045+Math.sin(time*0.83+1.3)*0.0015, bv=Math.sin(time*0.23)*0.0032+Math.sin(time*0.67+0.4)*0.0012;
+    tmpD.set(pxs*0.03*d+br*d,-pys*0.018*d+bv*d,0);
+    camera.position.copy(P).add(tmpD);camera.lookAt(L);
+    camera.fov=fovNow;
+    camera.near=Math.max(0.05,d*0.012);camera.far=Math.max(2600,d*10);
+    camera.setViewOffset(W,Hh,-shX*W,shY*Hh,W,Hh);
+    camera.updateProjectionMatrix();
+    sky.position.copy(camera.position);
+    rain.pts.position.set(camera.position.x,0,camera.position.z);
+    fog.density=DEF_at(tCam,"haze",.35)*0.0016/Math.max(1,d/40);
+    grade.uniforms.uWarm.value=tCam>6.2?0.25:0;
+    const dof=reduce?0:0.70*(1-sm(clamp((Math.abs(tCam-3)-0.12)/0.45)));
+    grade.uniforms.uDof.value=dof;grade.uniforms.uVig.value=0.36+0.12*dof;
+    /* focus on the lifted tabs, not on the middle of the hole: they are the nearest thing
+       and the thing the copy is about */
+    if(dof>0.002){focW.copy(FOCUS).project(camera);grade.uniforms.uFoc.value.set(focW.x*.5+.5,focW.y*.5+.5);}
+  }
+
+  /* pointer: a slight parallax, mice only */
+  if(matchMedia("(pointer: fine)").matches&&!reduce){
+    addEventListener("pointermove",e=>{px=e.clientX/innerWidth*2-1;py=e.clientY/innerHeight*2-1;},{passive:true});
+  }
+
+  resize();
+  addEventListener("resize",()=>{resize();});
+  measure();
+  tCam=tFromScroll(scrollY);
+  if(reduce)tCam=Math.round(tCam);
+  sceneState(tCam,0,true);place(0,true);
+
+  /* compile everything before the first visible frame */
+  wsrcFlush();
+  /* compile every light configuration, not just the one the first frame happens to need:
+     otherwise the first scroll past t=1.55 and past t=6.1 recompiles every material on the
+     spot and drops a fistful of frames */
+  if(renderer.compileAsync){
+    const soll=lightCfg;let zi=0;const schritte=LIGHTSETS.length*ZONES.length;
+    for(let c=0;c<LIGHTSETS.length;c++){
+      setLights(c);
+      for(const z of ZONES){await renderer.compileAsync(z,camera);LOAD.set(.93+.05*(++zi/schritte),350);}
+    }
+    setLights(soll);
+  }
+  composer.render();
+  stage.classList.add("on");
+  LOAD.done();
+  if(ST)ST.refresh();else measure();
+
+  /* quality guard: if frames are slow on this machine, drop resolution once */
+  let fcount=0,slowAvg=-1,steps=0,lastStep=0,perfAcc=0,perfN=0;
+  const footer=document.querySelector(".end");
+  let raf=0,last=performance.now(),snapUntil=performance.now()+900;
+  function render(){composer.render();}
+  function frame(now){
+    raf=requestAnimationFrame(frame);
+    const dt=Math.max(0,Math.min(0.05,(now-last)/1000));last=now;time+=dt;
+    perfAcc+=dt;perfN++;if(perfN>=60){window.__pgFps=perfN/perfAcc;perfAcc=0;perfN=0;}
+    const target=tFromScroll(scrollY);
+    const snap=now<snapUntil;
+    if(reduce){
+      const r=Math.round(target);
+      if(r!==tRM){
+        const firstRM=tRM<0;tRM=r;
+        const apply=()=>{tCam=r;sceneState(tCam,0,true);place(0,true);shadowDirty=true;render();stage.classList.add("on");};
+        if(firstRM)apply();else{stage.classList.remove("on");setTimeout(apply,260);}
+      }
+      return;
+    }
+    if(snap)tCam=target;else tCam+=(target-tCam)*(1-Math.exp(-dt*4.2));
+    intro=Math.max(0,intro-dt/2.6);
+    const covered=footer.getBoundingClientRect().top<=0;
+    if(covered)return;
+    sceneState(tCam,dt,snap);place(dt,snap);
+    grade.uniforms.uTime.value=time;rain.m.uniforms.uTime.value=time;waterMat.uniforms.uTime.value=time;
+    render();
+    /* Self-degradation, and it has to keep watching. The one-shot version only ever looked
+       at the first 150 frames — that is the hero, the cheapest station on the page, so it
+       never fired on the close-up stations where the wear shader fills the whole frame.
+       Now a sustained run of slow frames steps the pixel ratio down, twice at most, and
+       never back up, so it cannot oscillate. */
+    if(fcount>30){
+      slowAvg=slowAvg<0?dt:slowAvg+(dt-slowAvg)*0.06;
+      window.__pgAvgFrame=slowAvg;
+      if(slowAvg>0.0195&&dpr>1.0&&steps<2&&now-lastStep>2500){
+        steps++;lastStep=now;dpr=Math.max(1,dpr-0.25);if(steps>1)Q.bloomScale=.5;resize();slowAvg=-1;
+      }
+    }else fcount++;
+  }
+  function startLoop(){cancelAnimationFrame(raf);last=performance.now();raf=requestAnimationFrame(frame);}
+  startLoop();
+  document.addEventListener("visibilitychange",()=>{if(document.hidden)cancelAnimationFrame(raf);else startLoop();});
+  addEventListener("pageshow",e=>{if(e.persisted){snapUntil=performance.now()+400;startLoop();}});
+  /* the debug handle the measuring scripts look for: without `t` nothing can check
+     whether reduced-motion really lands ON a station, and without `renderer` there are
+     no draw calls per framing */
+  window.__pg={get t(){return tCam;},get target(){return tFromScroll(scrollY);},anchors:()=>anchors.slice(),camera,renderer,scene:SX,zones:ZONES,composer,grade,bloom,dbg:{moon,work,torch,rain,tabs,courses,cutLayers},punkte:[porch,streetL,warmIn]};
+
+  addEventListener("pagehide",()=>{
+    cancelAnimationFrame(raf);
+    ZONES.forEach(z=>z.traverse(o=>{if(o.geometry)o.geometry.dispose();const m=o.material;if(m){(Array.isArray(m)?m:[m]).forEach(x=>{for(const k in x){const v=x[k];if(v&&v.isTexture&&!v.isRenderTargetTexture)v.dispose();}x.dispose();});}}));
+    genRTs.forEach(r=>r.dispose());gen.mat.dispose();gen.quad.geometry.dispose();
+    [haloTex,shTex].forEach(t=>t.dispose());
+    envRT.dispose();rt.dispose();composer.dispose();renderer.dispose();
+  },{once:true});
+}
+</script>
+</body>
+</html>
